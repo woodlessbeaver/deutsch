@@ -1,0 +1,9 @@
+*
+!.gitignore
+!*.html
+!assets/
+!assets/**
+!css/
+!css/**
+!js/
+!js/**

@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="assets/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" href="assets/favicon-32x32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<title>Konjugation — Starke · Unregelmässige · Gemischte Verben</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/common.css">
+<style>
+.top-bar{position:sticky;top:0;z-index:100;background:#232327ee;backdrop-filter:blur(12px);border-bottom:1px solid #3e3e44;padding:14px 16px 10px}
+.top-bar h1{font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;color:#f0f0f4;letter-spacing:-.5px;text-align:center;margin-bottom:6px}
+.top-bar .sub{text-align:center;font-size:14px;color:#ababba;margin-bottom:8px}
+.controls{max-width:920px;margin:0 auto;display:flex;flex-wrap:wrap;gap:5px;align-items:center;justify-content:center}
+.search-box{flex:1 1 220px;max-width:300px;padding:7px 12px;border:2px solid #58585e;border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:14px;outline:none;transition:border-color .2s;background:#2b2b2f;color:#e0e0e4}
+.search-box:focus{border-color:#6366f1}
+.search-box::placeholder{color:#6a6a7a}
+.fbtn{padding:4px 8px;border:2px solid #44444c;border-radius:7px;background:#343438;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;cursor:pointer;transition:all .15s;color:#8888a0;white-space:nowrap}
+.fbtn:hover{border-color:#ababba}
+.fbtn.active{background:#3a1848;border-color:#7a60c0;color:#c8a8ff}
+.stats{width:100%;text-align:center;font-family:'JetBrains Mono',monospace;font-size:13px;color:#ababba;margin-top:4px}
+
+.container{max-width:960px;margin:0 auto;padding:14px}
+
+/* ─── Pattern overview cards ─── */
+.patterns{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px;justify-content:center}
+.pat-card{padding:8px 14px;border-radius:9px;border:2px solid #44444c;background:#343438;cursor:pointer;transition:all .15s;text-align:center;min-width:90px}
+.pat-card:hover{border-color:#7a60c0;transform:translateY(-1px)}
+.pat-card.pc-active{border-color:#7a60c0;background:#2a1848}
+.pat-card .vowels{font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:700;margin-bottom:2px}
+.pat-card .count{font-family:'JetBrains Mono',monospace;font-size:10px;color:#8888a0}
+
+/* ─── Verb table ─── */
+.vtable{width:100%;border-collapse:separate;border-spacing:0 3px}
+.vtable thead th{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:#8888a0;text-transform:uppercase;letter-spacing:.5px;padding:4px 8px;text-align:left;position:sticky;top:110px;background:#2b2b2f;z-index:10}
+.vtable tbody tr{background:#343438;transition:all .12s;cursor:default}
+.vtable tbody tr:hover{background:#3e3e44;transform:translateX(2px)}
+.vtable td{padding:8px 10px;font-size:14px;border-top:1px solid #3e3e44;border-bottom:1px solid #3e3e44}
+.vtable td:first-child{border-left:1px solid #3e3e44;border-radius:8px 0 0 8px}
+.vtable td:last-child{border-right:1px solid #3e3e44;border-radius:0 8px 8px 0}
+
+.v-inf{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:15px;color:#f0f0f4}
+.v-pres{font-family:'JetBrains Mono',monospace;font-size:13px;color:#c8a8ff}
+.v-prat{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;color:#e8a840}
+.v-part{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;color:#70d890}
+.v-aux{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600}
+.v-hat{color:#8888a0}
+.v-ist{color:#60d0e8}
+.v-mean{font-size:13px;color:#ababba}
+.v-pat{font-family:'JetBrains Mono',monospace;font-size:10px;color:#8888a0;background:#2a2a38;padding:1px 5px;border-radius:3px}
+
+/* Vowel highlight */
+.vow{font-weight:700;text-decoration:underline;text-underline-offset:2px}
+
+/* Group header row */
+.group-header td{background:#2a1848!important;border-color:#3a2060!important;padding:6px 10px}
+.group-header .gh-text{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;color:#c8a8ff}
+.group-header .gh-pattern{font-family:'JetBrains Mono',monospace;font-size:12px;color:#8888a0;margin-left:8px}
+
+/* ─── Section label ─── */
+.sec-label{font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;color:#e0e0e4;margin:24px 0 10px;display:flex;align-items:center;gap:8px}
+.sec-label .dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+
+/* Notes */
+.notes{margin:16px 0;padding:14px 18px;background:#343438;border-radius:10px;border:1px solid #44444c;font-size:14px;line-height:1.8;color:#c0c0c8}
+.notes .notes-title{font-weight:700;font-family:'JetBrains Mono',monospace;color:#e0e0e4;margin-bottom:6px;font-size:13px}
+
+.empty{display:none;text-align:center;padding:40px;color:#8888a0;font-size:15px}
+
+@media(max-width:700px){
+  .top-bar h1{font-size:20px}
+  .pat-card{min-width:70px;padding:6px 8px}
+  .pat-card .vowels{font-size:13px}
+  .controls{gap:3px}
+  .fbtn{font-size:10px;padding:3px 5px}
+
+  /* Table → Cards */
+  .vtable thead{display:none}
+  .vtable{border-spacing:0 8px}
+  .vtable tbody tr{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:2px 12px;
+    background:#343438;
+    border:1px solid #44444c;
+    border-radius:10px;
+    padding:10px 14px;
+  }
+  .vtable tbody tr:hover{transform:none}
+  .vtable td{
+    display:block;border:none!important;
+    border-radius:0!important;
+    background:transparent!important;
+    padding:2px 0;
+  }
+  .vtable td::before{
+    content:attr(data-label);
+    font-family:'JetBrains Mono',monospace;
+    font-size:9px;font-weight:700;
+    color:#8888a0;text-transform:uppercase;
+    letter-spacing:.3px;
+    display:block;margin-bottom:1px;
+  }
+  .vtable td:nth-child(1){grid-column:1/3;padding-bottom:4px}
+  .vtable td:nth-child(1)::before{display:none}
+  .vtable td:nth-child(6){grid-column:1/3;padding-top:4px;border-top:1px solid #3e3e44!important}
+  .v-inf{font-size:16px}
+  .v-pres{font-size:13px}
+  .v-prat,.v-part{font-size:14px}
+  .v-mean{font-size:12px}
+
+  /* Group headers */
+  .group-header td{grid-column:1/3;background:#2a1848!important;border-radius:8px!important;border:none!important}
+}
+/* ─── Guess Mode ─── */
+.fbtn.guess-active{background:#2a1848;border-color:#7a60c0;color:#c8a8ff}
+/* ─── Futur I ─── */
+.futur-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 16px;
+  font-size: 14px;
+  margin: 12px 0 16px;
+  max-width: 420px;
+}
+.futur-grid .fg-pron { color: #ababba; font-family: 'JetBrains Mono', monospace; font-size: 13px; }
+.futur-grid .fg-form { color: #e0e0e4; }
+.futur-grid .fg-form em { color: #60d0e8; font-style: normal; font-weight: 600; }
+.futur-note {
+  background: #2e2e34;
+  border-left: 3px solid #60d0e8;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 12px 0;
+  font-size: 13px;
+  color: #c8c8d0;
+  line-height: 1.6;
+}
+.futur-note strong { color: #60d0e8; font-weight: 600; }
+.futur-ex {
+  margin: 6px 0;
+  padding-left: 12px;
+  border-left: 2px solid #3a3a40;
+  color: #c8c8d0;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.futur-ex em { color: #e8a840; font-style: normal; }
+/* ─── werden Übersicht ─── */
+.werden-section {
+  margin-top: 28px;
+  padding: 20px;
+  background: #2e2e34;
+  border-radius: 8px;
+}
+.werden-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 16px;
+  font-weight: 700;
+  color: #f0f0f4;
+  margin-bottom: 12px;
+}
+.werden-grid {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr 1fr;
+  gap: 0;
+  font-size: 13px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.werden-grid .wg-header {
+  background: #3a3a42;
+  padding: 8px 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  font-size: 11px;
+  color: #c8c8d0;
+  text-align: center;
+}
+.werden-grid .wg-fn {
+  background: #333338;
+  padding: 10px 12px;
+  font-weight: 600;
+  color: #e0e0e4;
+  border-bottom: 1px solid #3a3a40;
+  display: flex;
+  align-items: center;
+}
+.werden-grid .wg-cell {
+  padding: 10px 12px;
+  color: #c8c8d0;
+  border-bottom: 1px solid #3a3a40;
+  line-height: 1.5;
+}
+.werden-grid .wg-cell em { font-style: normal; font-weight: 700; }
+.werden-grid .wg-cell .w-cyan { color: #60d0e8; }
+.werden-grid .wg-cell .w-gold { color: #e8a840; }
+.werden-grid .wg-cell .w-pink { color: #f08888; }
+.werden-grid .wg-cell .w-purp { color: #c8a8ff; }
+</style>
+</head>
+<body>
+<div class="top-bar">
+  <h1>Konjugation</h1>
+  <div class="sub">Starke · Unregelmässige · Gemischte Verben</div>
+  <div class="controls">
+    <input type="text" class="search-box" id="search" placeholder="Suche Verb …">
+    <button class="fbtn" id="guess-btn" onclick="toggleGuess()">🎯 Raten</button>
+    <button class="fbtn" id="shuffle-btn" onclick="toggleShuffle()">🔀 Mischen</button>
+    <button class="fbtn active" data-f="all" onclick="setFilter(this)">Alle</button>
+    <button class="fbtn" data-f="hat" onclick="setFilter(this)">hat</button>
+    <button class="fbtn" data-f="ist" onclick="setFilter(this)">ist</button>
+    <button class="fbtn" data-f="sc" onclick="setFilter(this)">Stammwechsel</button>
+  </div>
+  <div class="stats">Showing <span id="stats">0</span></div>
+</div>
+
+<div class="container">
+  <div class="sec-label"><span class="dot" style="background:#c8a8ff"></span> Ablautmuster <span style="font-weight:400;font-size:13px;color:#ababba">— klicken zum Filtern</span></div>
+  <div class="patterns" id="patterns"></div>
+
+  <div class="sec-label"><span class="dot" style="background:#f08888"></span> Verben</div>
+  <table class="vtable" id="vtable">
+    <thead><tr>
+      <th>Infinitiv</th>
+      <th>er/sie</th>
+      <th>Präteritum</th>
+      <th>Partizip II</th>
+      <th></th>
+      <th>Bedeutung</th>
+    </tr></thead>
+    <tbody id="tbody"></tbody>
+  </table>
+  <div class="empty" id="empty">Keine Verben gefunden.</div>
+
+  <div class="notes" style="margin-top:24px;">
+    <div class="notes-title">📌 Legende</div>
+    <span class="v-pres">lila</span> = Präsens-Stammwechsel (er/sie Form) ·
+    <span class="v-prat">orange</span> = Präteritum ·
+    <span class="v-part">grün</span> = Partizip II ·
+    <span class="v-ist">blau</span> = mit <em>sein</em> ·
+    Muster wie <span style="font-family:'JetBrains Mono',monospace;color:#c8a8ff">ei→ie→ie</span> zeigen den Vokalwechsel: Infinitiv → Präteritum → Partizip
+  </div>
+  <div class="notes">
+    <div class="notes-title">💡 haben oder sein?</div>
+    <strong>sein</strong> bei: Bewegung mit Richtung (gehen, fahren, fliegen, kommen, laufen …), Zustandsänderung (werden, sterben, wachsen, einschlafen …), und die Ausnahmen <em>sein</em>, <em>bleiben</em>, <em>passieren</em>, <em>gelingen</em>, <em>geschehen</em>.<br>
+    <strong>haben</strong> bei: allem anderen.
+  </div>
+
+  <!-- ═══ PLUSQUAMPERFEKT ═══ -->
+  <div class="sec-label" style="margin-top:32px"><span class="dot" style="background:#e8a840"></span> Plusquamperfekt</div>
+
+  <div class="notes" style="margin-bottom:16px">
+    Beschreibt eine Handlung, die <strong>vor</strong> einer anderen vergangenen Handlung passiert ist (Vorzeitigkeit).
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px">
+    <table class="vtable" style="border-collapse:collapse">
+      <thead><tr><th></th><th style="color:#e8a840">haben</th></tr></thead>
+      <tbody>
+        <tr><td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#8888a0">ich</td><td style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#e0e0e4"><span style="color:#e8a840;font-weight:700">hatte</span> + Partizip II</td></tr>
+        <tr><td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#8888a0">du</td><td style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#e0e0e4"><span style="color:#e8a840;font-weight:700">hattest</span> + Partizip II</td></tr>
+        <tr><td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#8888a0">er/sie/es</td><td style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#e0e0e4"><span style="color:#e8a840;font-weight:700">hatte</span> + Partizip II</td></tr>
+        <tr><td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#8888a0">wir</td><td style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#e0e0e4"><span style="color:#e8a840;font-weight:700">hatten</span> + Partizip II</td></tr>
+        <tr><td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#8888a0">ihr</td><td style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#e0e0e4"><span style="color:#e8a840;font-weight:700">hattet</span> + Partizip II</td></tr>
+        <tr><td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#8888a0">sie/Sie</td><td style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#e0e0e4"><span style="color:#e8a840;font-weight:700">hatten</span> + Partizip II</td></tr>
+      </tbody>
+    </table>
+    <table class="vtable" style="border-collapse:collapse">
+      <thead><tr><th></th><th style="color:#60d0e8">sein</th></tr></thead>
+      <tbody>
+        <tr><td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#8888a0">ich</td><td style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#e0e0e4"><span style="color:#60d0e8;font-weight:700">war</span> + Partizip II</td></tr>
+        <tr><td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#8888a0">du</td><td style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#e0e0e4"><span style="color:#60d0e8;font-weight:700">warst</span> + Partizip II</td></tr>
+        <tr><td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#8888a0">er/sie/es</td><td style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#e0e0e4"><span style="color:#60d0e8;font-weight:700">war</span> + Partizip II</td></tr>
+        <tr><td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#8888a0">wir</td><td style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#e0e0e4"><span style="color:#60d0e8;font-weight:700">waren</span> + Partizip II</td></tr>
+        <tr><td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#8888a0">ihr</td><td style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#e0e0e4"><span style="color:#60d0e8;font-weight:700">wart</span> + Partizip II</td></tr>
+        <tr><td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#8888a0">sie/Sie</td><td style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#e0e0e4"><span style="color:#60d0e8;font-weight:700">waren</span> + Partizip II</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="notes" style="padding:12px 18px;margin-bottom:12px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8888a0;margin-bottom:8px;letter-spacing:1px">ZEITSTRAHL</div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#e0e0e4;line-height:1.8">
+      <span style="color:#8888a0">──────────────────────────────────────────►</span> <span style="color:#ababba">Zeit</span><br>
+      &nbsp;&nbsp;&nbsp;<span style="color:#e8a840">▲</span> <span style="color:#e8a840">PQP</span> <span style="color:#ababba">(zuerst)</span>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#c8a8ff">▲</span> <span style="color:#c8a8ff">Prät./Perfekt</span> <span style="color:#ababba">(danach)</span>
+    </div>
+  </div>
+
+  <div class="notes" style="padding:0;overflow:hidden;margin-bottom:12px">
+    <table class="vtable" style="border-collapse:collapse;margin:0">
+      <thead><tr><th style="color:#c8a8ff">Präteritum / Perfekt</th><th style="color:#e8a840">Plusquamperfekt (frühere Handlung)</th></tr></thead>
+      <tbody>
+        <tr>
+          <td style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#e0e0e4">Ich kam um 07:01 Uhr zum Bahnhof.</td>
+          <td style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#e0e0e4">Der Zug <span style="color:#e8a840;font-weight:700">war</span> schon <span style="color:#70d890;font-weight:700">abgefahren</span>.</td>
+        </tr>
+        <tr>
+          <td style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#e0e0e4">Ich fand meine Geldbörse nicht.</td>
+          <td style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#e0e0e4">Ich <span style="color:#e8a840;font-weight:700">hatte</span> sie wahrscheinlich im Bus <span style="color:#70d890;font-weight:700">verloren</span>.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="notes">
+    <div class="notes-title">🔗 Wichtige Konnektoren</div>
+    <strong style="color:#60d0e8">nachdem</strong> → löst immer einen Tempuswechsel aus:<br>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#e0e0e4;margin-left:16px"><em>Nachdem er die Zähne <span style="color:#e8a840;font-weight:700">geputzt hatte</span>, <span style="color:#c8a8ff;font-weight:700">ging</span> er ins Bett.</em></span><br><br>
+    <strong style="color:#60d0e8">als</strong> → PQP kann in beiden Teilsätzen stehen:<br>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#e0e0e4;margin-left:16px"><em>Als ich den Brief <span style="color:#e8a840;font-weight:700">gelesen hatte</span>, <span style="color:#c8a8ff;font-weight:700">habe</span> ich angefangen zu lachen.</em></span>
+  </div>
+</div>
+
+<!-- ═══ FUTUR I ═══ -->
+<div class="sec-label" style="margin-top:32px"><span class="dot" style="background:#60d0e8"></span> Futur I</div>
+
+<div style="color:#ababba;font-size:13px;margin-bottom:8px">
+  Bildung: <strong style="color:#60d0e8">werden</strong> <span style="color:#ababba">(konjugiert)</span> + <strong style="color:#e8a840">Infinitiv</strong> <span style="color:#ababba">(am Satzende)</span>
+</div>
+
+<div class="futur-grid">
+  <span class="fg-pron">ich</span>     <span class="fg-form"><em>werde</em> … Infinitiv</span>
+  <span class="fg-pron">du</span>      <span class="fg-form"><em>wirst</em> … Infinitiv</span>
+  <span class="fg-pron">er/sie/es</span> <span class="fg-form"><em>wird</em> … Infinitiv</span>
+  <span class="fg-pron">wir</span>     <span class="fg-form"><em>werden</em> … Infinitiv</span>
+  <span class="fg-pron">ihr</span>     <span class="fg-form"><em>werdet</em> … Infinitiv</span>
+  <span class="fg-pron">sie/Sie</span> <span class="fg-form"><em>werden</em> … Infinitiv</span>
+</div>
+
+<div style="color:#c8a8ff;font-size:13px;font-weight:600;margin:16px 0 6px">Verwendung</div>
+
+<div class="futur-ex">
+  <strong style="color:#60d0e8;font-size:12px">Zukunft</strong><br>
+  Morgen <em>werde</em> ich einkaufen <em>gehen</em>.<br>
+  Nächstes Jahr <em>werden</em> wir nach Japan <em>reisen</em>.
+</div>
+
+<div class="futur-ex">
+  <strong style="color:#60d0e8;font-size:12px">Vermutung</strong><br>
+  Er <em>wird</em> wohl krank <em>sein</em>.<br>
+  Sie <em>wird</em> wahrscheinlich schon zu Hause <em>sein</em>.
+</div>
+
+<div class="futur-ex">
+  <strong style="color:#60d0e8;font-size:12px">Versprechen / Vorsatz</strong><br>
+  Ich <em>werde</em> das nie <em>vergessen</em>.<br>
+  Wir <em>werden</em> unser Bestes <em>tun</em>.
+</div>
+
+<div class="futur-note">
+  <strong>Gesprochenes Deutsch:</strong> Oft wird <strong>Präsens + Zeitangabe</strong> statt Futur I benutzt:<br>
+  <em style="color:#e8a840">Morgen gehe ich einkaufen.</em> = <em style="color:#e8a840">Morgen werde ich einkaufen gehen.</em><br><br>
+  <strong>Nebensatz-Wortstellung:</strong> <em>werden</em> geht ans Satzende:<br>
+  Ich weiss, dass er morgen <em style="color:#e8a840">kommen wird</em>.
+</div>
+
+<!-- ═══ WERDEN ÜBERSICHT ═══ -->
+<div class="werden-section">
+  <div class="werden-title">Die Funktionen von „werden"</div>
+
+  <div class="werden-grid">
+    <div class="wg-header">Funktion</div>
+    <div class="wg-header">Struktur</div>
+    <div class="wg-header">Beispiel</div>
+    <div class="wg-header">Partizip II</div>
+
+    <div class="wg-fn" style="color:#60d0e8">Vollverb</div>
+    <div class="wg-cell"><em class="w-cyan">wird</em> + Adjektiv/Nomen</div>
+    <div class="wg-cell">Das Klima <em class="w-cyan">wird</em> immer heisser.</div>
+    <div class="wg-cell"><em class="w-gold">geworden</em></div>
+
+    <div class="wg-fn" style="color:#e8a840">Futur I</div>
+    <div class="wg-cell"><em class="w-cyan">wird</em> + <em class="w-gold">Infinitiv</em></div>
+    <div class="wg-cell">Ich <em class="w-cyan">werde</em> morgen <em class="w-gold">kommen</em>.</div>
+    <div class="wg-cell">—</div>
+
+    <div class="wg-fn" style="color:#f08888">Passiv</div>
+    <div class="wg-cell"><em class="w-cyan">wird</em> + <em class="w-pink">Partizip II</em></div>
+    <div class="wg-cell">Das Haus <em class="w-cyan">wird</em> <em class="w-pink">gebaut</em>.</div>
+    <div class="wg-cell"><em class="w-gold">worden</em></div>
+
+    <div class="wg-fn" style="color:#c8a8ff">Konjunktiv II</div>
+    <div class="wg-cell"><em class="w-purp">würde</em> + <em class="w-gold">Infinitiv</em></div>
+    <div class="wg-cell">Ich <em class="w-purp">würde</em> gerne <em class="w-gold">reisen</em>.</div>
+    <div class="wg-cell">—</div>
+  </div>
+</div>
+
+<script src="js/common.js"></script>
+<script>
+// Data: [infinitiv, er/sie_präsens, präteritum_3sg, partizip_II, aux(h/i), meaning, pattern, stemChange]
+// pattern: ablaut group label
+// stemChange: present tense vowel change or ""
+const V = [
+// ═══ ei → ie → ie ═══
+["bleiben","bleibt","blieb","geblieben","i","to stay, remain","ei→ie→ie",""],
+["erscheinen","erscheint","erschien","erschienen","i","to appear","ei→ie→ie",""],
+["leihen","leiht","lieh","geliehen","h","to lend","ei→ie→ie",""],
+["scheinen","scheint","schien","geschienen","h","to seem, shine","ei→ie→ie",""],
+["schreiben","schreibt","schrieb","geschrieben","h","to write","ei→ie→ie",""],
+["schreien","schreit","schrie","geschrien","h","to scream","ei→ie→ie",""],
+["schweigen","schweigt","schwieg","geschwiegen","h","to be silent","ei→ie→ie",""],
+["steigen","steigt","stieg","gestiegen","i","to climb, rise","ei→ie→ie",""],
+["treiben","treibt","trieb","getrieben","h","to drive, do (sport)","ei→ie→ie",""],
+["entscheiden","entscheidet","entschied","entschieden","h","to decide","ei→ie→ie",""],
+["beschreiben","beschreibt","beschrieb","beschrieben","h","to describe","ei→ie→ie",""],
+// ═══ ei → i → i ═══
+["beissen","beisst","biss","gebissen","h","to bite","ei→i→i",""],
+["greifen","greift","griff","gegriffen","h","to grab","ei→i→i",""],
+["leiden","leidet","litt","gelitten","h","to suffer","ei→i→i",""],
+["pfeifen","pfeift","pfiff","gepfiffen","h","to whistle","ei→i→i",""],
+["reiten","reitet","ritt","geritten","i","to ride (horse)","ei→i→i",""],
+["schneiden","schneidet","schnitt","geschnitten","h","to cut","ei→i→i",""],
+["streiten","streitet","stritt","gestritten","h","to argue","ei→i→i",""],
+// ═══ ie → o → o ═══
+["biegen","biegt","bog","gebogen","h","to bend","ie→o→o",""],
+["bieten","bietet","bot","geboten","h","to offer","ie→o→o",""],
+["fliegen","fliegt","flog","geflogen","i","to fly","ie→o→o",""],
+["fliehen","flieht","floh","geflohen","i","to flee","ie→o→o",""],
+["fliessen","fliesst","floss","geflossen","i","to flow","ie→o→o",""],
+["giessen","giesst","goss","gegossen","h","to pour, water","ie→o→o",""],
+["schieben","schiebt","schob","geschoben","h","to push","ie→o→o",""],
+["schiessen","schiesst","schoss","geschossen","h","to shoot","ie→o→o",""],
+["schliessen","schliesst","schloss","geschlossen","h","to close","ie→o→o",""],
+["verlieren","verliert","verlor","verloren","h","to lose","ie→o→o",""],
+["ziehen","zieht","zog","gezogen","h","to pull, move","ie→o→o",""],
+// ═══ i → a → u ═══
+["binden","bindet","band","gebunden","h","to tie, bind","i→a→u",""],
+["finden","findet","fand","gefunden","h","to find","i→a→u",""],
+["gelingen","gelingt","gelang","gelungen","i","to succeed","i→a→u",""],
+["klingen","klingt","klang","geklungen","h","to sound","i→a→u",""],
+["singen","singt","sang","gesungen","h","to sing","i→a→u",""],
+["sinken","sinkt","sank","gesunken","i","to sink","i→a→u",""],
+["springen","springt","sprang","gesprungen","i","to jump","i→a→u",""],
+["trinken","trinkt","trank","getrunken","h","to drink","i→a→u",""],
+["verschwinden","verschwindet","verschwand","verschwunden","i","to disappear","i→a→u",""],
+["zwingen","zwingt","zwang","gezwungen","h","to force","i→a→u",""],
+// ═══ i → a → o ═══
+["beginnen","beginnt","begann","begonnen","h","to begin","i→a→o",""],
+["gewinnen","gewinnt","gewann","gewonnen","h","to win","i→a→o",""],
+["schwimmen","schwimmt","schwamm","geschwommen","i","to swim","i→a→o",""],
+// ═══ e → a → o ═══
+["brechen","bricht","brach","gebrochen","h","to break","e→a→o","e→i"],
+["empfehlen","empfiehlt","empfahl","empfohlen","h","to recommend","e→a→o","e→ie"],
+["helfen","hilft","half","geholfen","h","to help","e→a→o","e→i"],
+["nehmen","nimmt","nahm","genommen","h","to take","e→a→o","e→i"],
+["sprechen","spricht","sprach","gesprochen","h","to speak","e→a→o","e→i"],
+["sterben","stirbt","starb","gestorben","i","to die","e→a→o","e→i"],
+["treffen","trifft","traf","getroffen","h","to meet, hit","e→a→o","e→i"],
+["werfen","wirft","warf","geworfen","h","to throw","e→a→o","e→i"],
+["zunehmen","nimmt zu","nahm zu","zugenommen","h","to gain weight, increase","e→a→o","e→i"],
+["übernehmen","übernimmt","übernahm","übernommen","h","to take over","e→a→o","e→i"],
+// ═══ e → a → e ═══
+["essen","isst","ass","gegessen","h","to eat","e→a→e","e→i"],
+["geben","gibt","gab","gegeben","h","to give","e→a→e","e→i"],
+["geschehen","geschieht","geschah","geschehen","i","to happen","e→a→e","e→ie"],
+["lesen","liest","las","gelesen","h","to read","e→a→e","e→ie"],
+["sehen","sieht","sah","gesehen","h","to see","e→a→e","e→ie"],
+["treten","tritt","trat","getreten","i","to step, kick","e→a→e","e→i"],
+["vergessen","vergisst","vergass","vergessen","h","to forget","e→a→e","e→i"],
+["messen","misst","mass","gemessen","h","to measure","e→a→e","e→i"],
+["aufgeben","gibt auf","gab auf","aufgegeben","h","to give up","e→a→e","e→i"],
+// ═══ a → u → a ═══
+["backen","bäckt","buk","gebacken","h","to bake","a→u→a","a→ä"],
+["fahren","fährt","fuhr","gefahren","i","to drive, go","a→u→a","a→ä"],
+["graben","gräbt","grub","gegraben","h","to dig","a→u→a","a→ä"],
+["laden","lädt","lud","geladen","h","to load, invite","a→u→a","a→ä"],
+["schlagen","schlägt","schlug","geschlagen","h","to hit, beat","a→u→a","a→ä"],
+["tragen","trägt","trug","getragen","h","to carry, wear","a→u→a","a→ä"],
+["wachsen","wächst","wuchs","gewachsen","i","to grow","a→u→a","a→ä"],
+["waschen","wäscht","wusch","gewaschen","h","to wash","a→u→a","a→ä"],
+// ═══ a → ie → a ═══
+["fallen","fällt","fiel","gefallen","i","to fall","a→ie→a","a→ä"],
+["gefallen","gefällt","gefiel","gefallen","h","to please","a→ie→a","a→ä"],
+["halten","hält","hielt","gehalten","h","to hold, stop","a→ie→a","a→ä"],
+["lassen","lässt","liess","gelassen","h","to let, leave","a→ie→a","a→ä"],
+["raten","rät","riet","geraten","h","to guess, advise","a→ie→a","a→ä"],
+["schlafen","schläft","schlief","geschlafen","h","to sleep","a→ie→a","a→ä"],
+["laufen","läuft","lief","gelaufen","i","to run, walk","a→ie→a","au→äu"],
+["verlassen","verlässt","verliess","verlassen","h","to leave, abandon","a→ie→a","a→ä"],
+["beraten","berät","beriet","beraten","h","to advise","a→ie→a","a→ä"],
+// ═══ Sonderfälle (stark) ═══
+["gehen","geht","ging","gegangen","i","to go, walk","Sonder",""],
+["kommen","kommt","kam","gekommen","i","to come","Sonder",""],
+["rufen","ruft","rief","gerufen","h","to call, shout","Sonder",""],
+["stehen","steht","stand","gestanden","h","to stand","Sonder",""],
+["tun","tut","tat","getan","h","to do","Sonder",""],
+["liegen","liegt","lag","gelegen","h","to lie (position)","Sonder",""],
+["sitzen","sitzt","sass","gesessen","h","to sit","Sonder",""],
+["sein","ist","war","gewesen","i","to be","Sonder",""],
+["werden","wird","wurde","geworden","i","to become","Sonder","e→i"],
+["haben","hat","hatte","gehabt","h","to have","Sonder",""],
+["wissen","weiss","wusste","gewusst","h","to know (fact)","Sonder",""],
+["stossen","stösst","stiess","gestossen","h","to push, bump","Sonder","o→ö"],
+["besitzen","besitzt","besass","besessen","h","to own, possess","Sonder",""],
+// ═══ Gemischt ═══
+["bringen","bringt","brachte","gebracht","h","to bring","gemischt",""],
+["denken","denkt","dachte","gedacht","h","to think","gemischt",""],
+["kennen","kennt","kannte","gekannt","h","to know (person)","gemischt",""],
+["nennen","nennt","nannte","genannt","h","to name, call","gemischt",""],
+["rennen","rennt","rannte","gerannt","i","to run (fast)","gemischt",""],
+["senden","sendet","sandte","gesandt","h","to send","gemischt",""],
+["wenden","wendet","wandte","gewandt","h","to turn","gemischt",""],
+["brennen","brennt","brannte","gebrannt","h","to burn","gemischt",""],
+];
+
+// Build pattern overview
+const patGroups = {};
+V.forEach(v => {
+  const p = v[6];
+  if (!patGroups[p]) patGroups[p] = 0;
+  patGroups[p]++;
+});
+const patOrder = ["ei→ie→ie","ei→i→i","ie→o→o","i→a→u","i→a→o","e→a→o","e→a→e","a→u→a","a→ie→a","Sonder","gemischt"];
+
+let currentPat = 'all', currentAux = 'all', onlySC = false, searchTerm = '';
+
+const patsEl = document.getElementById('patterns');
+let pp = '<div class="pat-card pc-active" data-p="all" onclick="setPat(this)"><div class="vowels" style="color:#e0e0e4">Alle</div><div class="count">'+V.length+' Verben</div></div>';
+patOrder.forEach(p => {
+  if (patGroups[p]) {
+    const label = p === 'gemischt' ? 'Gem.' : p === 'Sonder' ? 'Sonder' : p;
+    const col = p === 'gemischt' ? '#c8a8ff' : p === 'Sonder' ? '#f08888' : '#e0e0e4';
+    pp += `<div class="pat-card" data-p="${p}" onclick="setPat(this)"><div class="vowels" style="color:${col}">${label}</div><div class="count">${patGroups[p]}</div></div>`;
+  }
+});
+patsEl.innerHTML = pp;
+
+function setPat(el) {
+  document.querySelectorAll('.pat-card').forEach(c => c.classList.remove('pc-active'));
+  el.classList.add('pc-active');
+  currentPat = el.dataset.p;
+  render();
+}
+function setFilter(btn) {
+  document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const f = btn.dataset.f;
+  if (f === 'all') { currentAux = 'all'; onlySC = false; }
+  else if (f === 'hat') { currentAux = 'h'; onlySC = false; }
+  else if (f === 'ist') { currentAux = 'i'; onlySC = false; }
+  else if (f === 'sc') { currentAux = 'all'; onlySC = true; }
+  render();
+}
+document.getElementById('search').addEventListener('input', function() {
+  searchTerm = this.value.toLowerCase().trim();
+  render();
+});
+
+let guessMode = false;
+let shuffleMode = false;
+function toggleShuffle() {
+  shuffleMode = !shuffleMode;
+  document.getElementById('shuffle-btn').classList.toggle('guess-active', shuffleMode);
+  render();
+}
+function toggleGuess() {
+  guessMode = !guessMode;
+  document.getElementById('guess-btn').classList.toggle('guess-active', guessMode);
+  render();
+}
+document.getElementById('tbody').addEventListener('click', function(e) {
+  if (!guessMode) return;
+  const cell = e.target.closest('.guess-cell-hidden, .guess-cell-revealed');
+  if (!cell) return;
+  if (cell.classList.contains('guess-cell-hidden')) {
+    cell.classList.remove('guess-cell-hidden'); cell.classList.add('guess-cell-revealed');
+  } else {
+    cell.classList.remove('guess-cell-revealed'); cell.classList.add('guess-cell-hidden');
+  }
+});
+
+function render() {
+  const tbody = document.getElementById('tbody');
+  const empty = document.getElementById('empty');
+  const stats = document.getElementById('stats');
+
+  let f = V;
+  if (currentPat !== 'all') f = f.filter(v => v[6] === currentPat);
+  if (currentAux !== 'all') f = f.filter(v => v[4] === currentAux);
+  if (onlySC) f = f.filter(v => v[7] !== '');
+  if (searchTerm) f = f.filter(v => normalize(v[0].toLowerCase()).includes(normalize(searchTerm)) || normalize(v[5].toLowerCase()).includes(normalize(searchTerm)));
+
+  if (!f.length) { tbody.innerHTML = ''; empty.style.display = 'block'; stats.textContent = '0'; return; }
+  empty.style.display = 'none';
+  stats.textContent = f.length + ' Verben';
+
+  let h = '';
+
+  if (shuffleMode) {
+    shuffleArray(f).forEach(v => {
+      const [inf, pres, prat, part, aux, mean, pat, sc] = v;
+      const auxClass = aux === 'i' ? 'v-ist' : 'v-hat';
+      const auxText = aux === 'i' ? 'ist' : 'hat';
+      const scBadge = sc ? `<span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#c8a8ff;background:#2a1848;padding:1px 4px;border-radius:3px;margin-left:4px">${sc}</span>` : '';
+      const gc = guessMode ? ' class="guess-cell-hidden"' : '';
+      h += `<tr>`;
+      h += `<td data-label="Infinitiv"><span class="v-inf">${inf}</span>${scBadge}</td>`;
+      h += `<td data-label="er/sie"${gc}><span class="v-pres">${pres}</span></td>`;
+      h += `<td data-label="Präteritum"${gc}><span class="v-prat">${prat}</span></td>`;
+      h += `<td data-label="Partizip II"${gc}><span class="v-part">${part}</span></td>`;
+      h += `<td data-label="Hilfsverb"${gc}><span class="v-aux ${auxClass}">${auxText}</span></td>`;
+      h += `<td data-label="Bedeutung"${gc}><span class="v-mean">${mean}</span></td>`;
+      h += `</tr>`;
+    });
+    tbody.innerHTML = h;
+    return;
+  }
+
+  let lastPat = '';
+
+  // Sort by pattern order
+  const order = {};
+  patOrder.forEach((p,i) => order[p] = i);
+  const sorted = [...f].sort((a,b) => (order[a[6]]||99) - (order[b[6]]||99) || a[0].localeCompare(b[0]));
+
+  sorted.forEach(v => {
+    const [inf, pres, prat, part, aux, mean, pat, sc] = v;
+
+    // Group header
+    if (pat !== lastPat && !searchTerm) {
+      const label = pat === 'gemischt' ? 'Gemischte Verben' : pat === 'Sonder' ? 'Sonderfälle' : pat;
+      h += `<tr class="group-header"><td colspan="6"><span class="gh-text">${label}</span></td></tr>`;
+      lastPat = pat;
+    }
+
+    const auxClass = aux === 'i' ? 'v-ist' : 'v-hat';
+    const auxText = aux === 'i' ? 'ist' : 'hat';
+    const scBadge = sc ? `<span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#c8a8ff;background:#2a1848;padding:1px 4px;border-radius:3px;margin-left:4px">${sc}</span>` : '';
+
+    const gc = guessMode ? ' class="guess-cell-hidden"' : '';
+    h += `<tr>`;
+    h += `<td data-label="Infinitiv"><span class="v-inf">${inf}</span>${scBadge}</td>`;
+    h += `<td data-label="er/sie"${gc}><span class="v-pres">${pres}</span></td>`;
+    h += `<td data-label="Präteritum"${gc}><span class="v-prat">${prat}</span></td>`;
+    h += `<td data-label="Partizip II"${gc}><span class="v-part">${part}</span></td>`;
+    h += `<td data-label="Hilfsverb"${gc}><span class="v-aux ${auxClass}">${auxText}</span></td>`;
+    h += `<td data-label="Bedeutung"${gc}><span class="v-mean">${mean}</span></td>`;
+    h += `</tr>`;
+  });
+
+  tbody.innerHTML = h;
+}
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="assets/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" href="assets/favicon-32x32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<title>Präpositionen – German Prepositions &amp; Cases</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/common.css">
+<style>
+body { padding: 24px 16px 48px; }
+.container{max-width:860px;margin:0 auto;}
+header{text-align:center;margin-bottom:28px;}
+h1{font-family:'JetBrains Mono',monospace;font-size:28px;font-weight:700;color:#f0f0f4;letter-spacing:-0.5px;}
+header p{margin:4px 0 0;font-size:14px;color:#ababba;}
+.section{margin-bottom:32px;}
+.section-header{
+  display:flex;align-items:center;gap:10px;
+  margin-bottom:14px;padding-bottom:8px;
+  border-bottom:2px solid #e2e8f0;
+}
+.section-badge{
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;font-weight:700;
+  padding:4px 10px;border-radius:6px;
+  text-transform:uppercase;letter-spacing:1px;
+}
+.badge-akk{background:#1e3a5f;color:#8ec4ff;border:2px solid #3a6ea8;}
+.badge-dat{background:#5a1e3a;color:#ffa0c8;border:2px solid #a84070;}
+.badge-wechsel-akk{background:#1e3a5f;color:#8ec4ff;border:2px solid #3a6ea8;}
+.badge-wechsel-dat{background:#5a1e3a;color:#ffa0c8;border:2px solid #a84070;}
+.badge-wechsel{background:linear-gradient(135deg,#1e3a5f,#5a1e3a);color:#c8a8ff;border:2px solid #c4b5fd;}
+.badge-gen{background:#1a4a2a;color:#80e8a0;border:2px solid #6ee7b7;}
+.section-title{
+  font-family:'JetBrains Mono',monospace;
+  font-size:20px;font-weight:700;color:#e0e0e4;
+}
+.section-hint{
+  font-size:14px;color:#8888a0;font-style:italic;
+  margin:-8px 0 14px;line-height:1.5;
+}
+
+.prep-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+  gap:8px;
+}
+.prep-card{
+  position:relative;border-radius:10px;
+  padding:12px 14px;border:2px solid;
+  cursor:default;transition:transform 0.12s,box-shadow 0.12s;
+}
+.prep-card:hover{transform:translateY(-2px);z-index:5;}
+
+.prep-card.c-akk{background:#1e3050;border-color:#3a6ea8;}
+.prep-card.c-akk:hover{box-shadow:0 4px 12px #3a6ea866;}
+.prep-card.c-dat{background:#4a1e35;border-color:#a84070;}
+.prep-card.c-dat:hover{box-shadow:0 4px 12px #a8407066;}
+.prep-card.c-gen{background:#1a3a25;border-color:#40a060;}
+.prep-card.c-gen:hover{box-shadow:0 4px 12px #40a06066;}
+
+.prep-card.c-wechsel{background:#2e2040;border-color:#5a4080;}
+.prep-card.c-wechsel:hover{box-shadow:0 4px 12px #5a408066;}
+
+.prep-word{
+  font-family:'Inter', Arial, Helvetica, sans-serif;
+  font-size:20px;font-weight:700;color:#f0f0f4;
+}
+.prep-meaning{
+  font-size:15px;color:#c0c0c8;margin-top:2px;line-height:1.3;
+}
+.prep-case-tag{
+  display:inline-block;
+  font-family:'JetBrains Mono',monospace;
+  font-size:12px;font-weight:700;
+  padding:2px 6px;border-radius:4px;
+  margin-top:4px;text-transform:uppercase;
+  letter-spacing:0.5px;
+}
+.tag-akk{background:#1e3a5f;color:#8ec4ff;}
+.tag-dat{background:#5a1e3a;color:#ffa0c8;}
+.tag-gen{background:#1a4a2a;color:#80e8a0;}
+.tag-wechsel{background:#3a2860;color:#c8a8ff;}
+
+.prep-card:hover .tooltip{display:block;}
+.tooltip{padding:10px 16px;max-width:400px;white-space:normal;line-height:1.5;}
+.tooltip .ex-label{
+  font-family:'JetBrains Mono',monospace;
+  font-size:12px;font-weight:700;font-style:normal;
+  text-transform:uppercase;letter-spacing:1px;
+  opacity:0.6;display:block;margin-bottom:3px;
+}
+.tooltip .ex-line{
+  display:block;margin-bottom:4px;
+}
+.tooltip .ex-line:last-child{margin-bottom:0;}
+.tooltip em{font-style:normal;font-weight:700;color:#fbbf24;}
+
+.mnemonic-box{
+  margin-top:12px;padding:16px 20px;
+  background:#343438;border-radius:10px;
+  border:1px solid #44444c;
+  font-size:13px;line-height:1.7;color:#c0c0c8;
+}
+.mnemonic-box .title{
+  font-weight:700;font-family:'JetBrains Mono',monospace;
+  color:#e0e0e4;margin-bottom:8px;font-size:13px;
+}
+.mono{font-family:'JetBrains Mono',monospace;font-weight:700;}
+/* Guess mode */
+.guess-btn { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 500; padding: 5px 12px; border-radius: 7px; background: #343438; color: #8888a0; border: 1px solid #44444c; transition: all .15s; cursor: pointer; margin-top: 6px; }
+.guess-btn:hover, .guess-btn.active { background: #2a1848; color: #c8a8ff; border-color: #7a60c0; }
+
+.prep-card.guess-neutral {
+  background: #2e2e34;
+  border-color: #555;
+}
+.prep-card.guess-neutral:hover {
+  box-shadow: 0 4px 12px #55555566;
+}
+.prep-card.guess-neutral .tooltip {
+  display: none !important;
+}
+.prep-card.guess-neutral .prep-case-tag {
+  display: none;
+}
+.prep-card.guess-neutral .prep-meaning {
+  visibility: hidden;
+}
+
+@media(max-width:600px){
+  .prep-grid{grid-template-columns:1fr;}
+  .tooltip{min-width:220px;font-size:12px;}
+}
+
+/* ─── Verben mit Präpositionalergänzung ─── */
+.vp-section {
+  margin-top: 32px;
+  padding: 20px;
+  background: #2e2e34;
+  border-radius: 8px;
+}
+.vp-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 16px;
+  font-weight: 700;
+  color: #f0f0f4;
+  margin-bottom: 4px;
+}
+.vp-subtitle {
+  font-size: 12px;
+  color: #ababba;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+.vp-prep-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  margin: 18px 0 6px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  display: inline-block;
+}
+.vp-akk { background: #1e3a5f; color: #8ec4ff; }
+.vp-dat { background: #5a1e3a; color: #ffa0c8; }
+.vp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 24px;
+  font-size: 13px;
+  margin: 6px 0 12px;
+  padding-left: 4px;
+}
+.vp-grid .vp-verb { color: #e0e0e4; font-weight: 600; }
+.vp-grid .vp-ex { color: #ababba; font-size: 12px; font-style: italic; }
+.vp-grid .vp-ex em { color: #e8a840; font-style: normal; }
+.vp-note {
+  background: #333338;
+  border-left: 3px solid #c8a8ff;
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin: 14px 0;
+  font-size: 12px;
+  color: #ababba;
+  line-height: 1.6;
+}
+.vp-note strong { color: #c8a8ff; font-weight: 600; }
+.vp-note em { color: #e8a840; font-style: normal; }
+
+@media(max-width:600px){
+  .vp-grid{grid-template-columns:1fr;gap:2px;}
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>Präpositionen &amp; Kasus</h1>
+    <p>für Beispielsätze hovern · hervorgehobene Wörter zeigen den Kasus</p>
+    <button class="guess-btn" id="guess-btn" onclick="toggleGuess()">🎯 Raten</button>
+  </header>
+
+  <!-- AKKUSATIV -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-badge badge-akk">Akkusativ</span>
+      <span class="section-title">Immer Akkusativ</span>
+    </div>
+    <p class="section-hint">Immer Akkusativ — ohne Ausnahme. Eselsbrücke: <strong class="mono">FUDGE BOP</strong> (für, um, durch, gegen, entlang, bis, ohne, pro)</p>
+    <div class="prep-grid" id="akk-grid"></div>
+  </div>
+
+  <!-- DATIV -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-badge badge-dat">Dativ</span>
+      <span class="section-title">Immer Dativ</span>
+    </div>
+    <p class="section-hint">Immer Dativ. Eselsbrücke: <strong class="mono">ABS GANZ MV</strong> (aus, bei, seit, gegenüber, ab, nach, zu, mit, von)</p>
+    <div class="prep-grid" id="dat-grid"></div>
+  </div>
+
+  <!-- WECHSEL -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-badge badge-wechsel">Wechsel</span>
+      <span class="section-title">Wechselpräpositionen (Akk oder Dat)</span>
+    </div>
+    <p class="section-hint"><strong>Wohin?</strong> (Bewegung/Richtung) → Akkusativ · <strong>Wo?</strong> (Ort/Position) → Dativ. Diese 9 muss man verinnerlichen.</p>
+    <div class="prep-grid" id="wechsel-grid"></div>
+  </div>
+
+  <!-- GENITIV -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-badge badge-gen">Genitiv</span>
+      <span class="section-title">Genitiv</span>
+    </div>
+    <p class="section-hint">Eher formell / schriftlich. In der gesprochenen Schweizer Mundart werden viele mit Dativ + von ersetzt, aber in Texten und im Geschäftsleben kommen sie vor.</p>
+    <div class="prep-grid" id="gen-grid"></div>
+  </div>
+
+  <div class="mnemonic-box">
+    <div class="title">The Wechselpräpositionen Rule</div>
+    <strong>Wo?</strong> (where — stationary) → <span class="mono" style="color:#ffa0c8;">Dativ</span><br>
+    <em>Das Buch liegt <strong>auf dem Tisch</strong>.</em> (It's sitting there.)<br><br>
+    <strong>Wohin?</strong> (where to — movement) → <span class="mono" style="color:#8ec4ff;">Akkusativ</span><br>
+    <em>Ich lege das Buch <strong>auf den Tisch</strong>.</em> (I'm placing it there.)<br><br>
+    The preposition stays the same — only the article changes. If the thing <em>ends up</em> somewhere new → Akkusativ. If it's <em>already there</em> → Dativ.
+  </div>
+
+  <div class="mnemonic-box" style="margin-top:12px;">
+    <div class="title">Contractions (common in speech &amp; writing)</div>
+    an + dem = <span class="mono">am</span> · an + das = <span class="mono">ans</span> · auf + das = <span class="mono">aufs</span> · bei + dem = <span class="mono">beim</span> · in + dem = <span class="mono">im</span> · in + das = <span class="mono">ins</span> · von + dem = <span class="mono">vom</span> · zu + dem = <span class="mono">zum</span> · zu + der = <span class="mono">zur</span>
+  </div>
+</div>
+
+<!-- ═══ VERBEN MIT PRÄPOSITIONALERGÄNZUNG ═══ -->
+<div class="vp-section">
+  <div class="vp-title">Verben mit Präpositionalergänzung</div>
+  <div class="vp-subtitle">Viele Verben haben eine feste Präposition mit festem Kasus. Diese muss man lernen.<br>
+  <strong style="color:#8ec4ff">blau</strong> = Akkusativ &nbsp;&nbsp; <strong style="color:#ffa0c8">rosa</strong> = Dativ</div>
+
+  <!-- ── an ── -->
+  <div class="vp-prep-label vp-akk">an + Akk</div>
+  <div class="vp-grid">
+    <span class="vp-verb">denken an</span>     <span class="vp-ex">Er denkt nur noch <em>an sie</em>.</span>
+    <span class="vp-verb">sich erinnern an</span> <span class="vp-ex">Ich erinnere mich <em>an den Urlaub</em>.</span>
+    <span class="vp-verb">glauben an</span>    <span class="vp-ex">Glaubst du <em>an ein Leben nach dem Tod</em>?</span>
+    <span class="vp-verb">sich gewöhnen an</span> <span class="vp-ex">Ich gewöhne mich <em>an das Klima</em>.</span>
+  </div>
+
+  <div class="vp-prep-label vp-dat">an + Dat</div>
+  <div class="vp-grid">
+    <span class="vp-verb">leiden an</span>     <span class="vp-ex">Er leidet <em>an einer Allergie</em>.</span>
+    <span class="vp-verb">sterben an</span>    <span class="vp-ex">Viele starben <em>an der Krankheit</em>.</span>
+    <span class="vp-verb">teilnehmen an</span> <span class="vp-ex">Alle nehmen <em>am Kurs</em> teil.</span>
+    <span class="vp-verb">zweifeln an</span>   <span class="vp-ex">Ich zweifle <em>an seiner Ehrlichkeit</em>.</span>
+  </div>
+
+  <!-- ── auf ── -->
+  <div class="vp-prep-label vp-akk">auf + Akk</div>
+  <div class="vp-grid">
+    <span class="vp-verb">achten auf</span>      <span class="vp-ex">Achte <em>auf die Aussprache</em>!</span>
+    <span class="vp-verb">aufpassen auf</span>    <span class="vp-ex">Kannst du <em>auf die Kinder</em> aufpassen?</span>
+    <span class="vp-verb">sich freuen auf</span>  <span class="vp-ex">Ich freue mich <em>auf die Ferien</em>. (Zukunft)</span>
+    <span class="vp-verb">hoffen auf</span>       <span class="vp-ex">Wir hoffen <em>auf besseres Wetter</em>.</span>
+    <span class="vp-verb">reagieren auf</span>    <span class="vp-ex">Sie hat <em>auf meine E-Mail</em> reagiert.</span>
+    <span class="vp-verb">sich vorbereiten auf</span> <span class="vp-ex">Ich bereite mich <em>auf die Prüfung</em> vor.</span>
+    <span class="vp-verb">verzichten auf</span>   <span class="vp-ex">Er verzichtet <em>auf Alkohol</em>.</span>
+    <span class="vp-verb">warten auf</span>       <span class="vp-ex">Ich warte <em>auf den Bus</em>.</span>
+  </div>
+
+  <!-- ── für ── -->
+  <div class="vp-prep-label vp-akk">für + Akk</div>
+  <div class="vp-grid">
+    <span class="vp-verb">danken für</span>       <span class="vp-ex">Ich danke dir <em>für deine Hilfe</em>.</span>
+    <span class="vp-verb">sich entscheiden für</span> <span class="vp-ex">Wir entscheiden uns <em>für das Restaurant</em>.</span>
+    <span class="vp-verb">sich interessieren für</span> <span class="vp-ex">Ich interessiere mich <em>für Geschichte</em>.</span>
+    <span class="vp-verb">sorgen für</span>       <span class="vp-ex">Wir sorgen <em>für die Getränke</em>.</span>
+  </div>
+
+  <!-- ── mit ── -->
+  <div class="vp-prep-label vp-dat">mit + Dat</div>
+  <div class="vp-grid">
+    <span class="vp-verb">anfangen mit</span>     <span class="vp-ex">Wir fangen <em>mit der Aufgabe</em> an.</span>
+    <span class="vp-verb">aufhören mit</span>     <span class="vp-ex">Hör <em>mit dem Lärm</em> auf!</span>
+    <span class="vp-verb">sich beschäftigen mit</span> <span class="vp-ex">Er beschäftigt sich <em>mit Lego</em>.</span>
+    <span class="vp-verb">sprechen mit</span>     <span class="vp-ex">Ich spreche <em>mit meinem Chef</em>.</span>
+    <span class="vp-verb">sich verabreden mit</span>  <span class="vp-ex">Ich verabrede mich <em>mit Freunden</em>.</span>
+    <span class="vp-verb">vergleichen mit</span>  <span class="vp-ex">Man kann Zürich <em>mit Wien</em> vergleichen.</span>
+  </div>
+
+  <!-- ── nach ── -->
+  <div class="vp-prep-label vp-dat">nach + Dat</div>
+  <div class="vp-grid">
+    <span class="vp-verb">fragen nach</span>      <span class="vp-ex">Er fragt <em>nach dem Weg</em>.</span>
+    <span class="vp-verb">sich erkundigen nach</span> <span class="vp-ex">Sie erkundigt sich <em>nach dem Preis</em>.</span>
+    <span class="vp-verb">riechen nach</span>     <span class="vp-ex">Es riecht <em>nach Kaffee</em>.</span>
+    <span class="vp-verb">suchen nach</span>      <span class="vp-ex">Ich suche <em>nach einer Lösung</em>.</span>
+  </div>
+
+  <!-- ── über ── -->
+  <div class="vp-prep-label vp-akk">über + Akk</div>
+  <div class="vp-grid">
+    <span class="vp-verb">berichten über</span>     <span class="vp-ex">Die Zeitung berichtet <em>über die Wahl</em>.</span>
+    <span class="vp-verb">sich beschweren über</span> <span class="vp-ex">Er beschwert sich <em>über den Lärm</em>.</span>
+    <span class="vp-verb">diskutieren über</span>   <span class="vp-ex">Wir diskutieren <em>über Politik</em>.</span>
+    <span class="vp-verb">sich freuen über</span>   <span class="vp-ex">Ich freue mich <em>über das Geschenk</em>. (Gegenwart)</span>
+    <span class="vp-verb">nachdenken über</span>    <span class="vp-ex">Ich denke <em>über dein Angebot</em> nach.</span>
+    <span class="vp-verb">sprechen über</span>      <span class="vp-ex">Wir sprechen <em>über das Problem</em>.</span>
+  </div>
+
+  <!-- ── um ── -->
+  <div class="vp-prep-label vp-akk">um + Akk</div>
+  <div class="vp-grid">
+    <span class="vp-verb">bitten um</span>        <span class="vp-ex">Ich bitte dich <em>um einen Gefallen</em>.</span>
+    <span class="vp-verb">sich kümmern um</span>  <span class="vp-ex">Wer kümmert sich <em>um die Katze</em>?</span>
+    <span class="vp-verb">sich sorgen um</span>   <span class="vp-ex">Ich sorge mich <em>um seine Gesundheit</em>.</span>
+  </div>
+
+  <!-- ── von ── -->
+  <div class="vp-prep-label vp-dat">von + Dat</div>
+  <div class="vp-grid">
+    <span class="vp-verb">abhängen von</span>      <span class="vp-ex">Es hängt <em>vom Wetter</em> ab.</span>
+    <span class="vp-verb">erzählen von</span>      <span class="vp-ex">Erzähl mir <em>von deiner Reise</em>!</span>
+    <span class="vp-verb">sich erholen von</span>  <span class="vp-ex">Ich erhole mich <em>vom Stress</em>.</span>
+    <span class="vp-verb">träumen von</span>       <span class="vp-ex">Ich träume <em>von einer Weltreise</em>.</span>
+  </div>
+
+  <!-- ── vor ── -->
+  <div class="vp-prep-label vp-dat">vor + Dat</div>
+  <div class="vp-grid">
+    <span class="vp-verb">sich fürchten vor</span> <span class="vp-ex">Er fürchtet sich <em>vor Spinnen</em>.</span>
+    <span class="vp-verb">warnen vor</span>        <span class="vp-ex">Experten warnen <em>vor der Hitze</em>.</span>
+  </div>
+
+  <!-- ── zu ── -->
+  <div class="vp-prep-label vp-dat">zu + Dat</div>
+  <div class="vp-grid">
+    <span class="vp-verb">gehören zu</span>       <span class="vp-ex">Das gehört <em>zum Leben</em>.</span>
+    <span class="vp-verb">gratulieren zu</span>   <span class="vp-ex">Ich gratuliere dir <em>zum Geburtstag</em>!</span>
+    <span class="vp-verb">einladen zu</span>      <span class="vp-ex">Wir laden euch <em>zur Hochzeit</em> ein.</span>
+    <span class="vp-verb">passen zu</span>        <span class="vp-ex">Die Bluse passt <em>zu deinem Rock</em>.</span>
+  </div>
+
+  <div class="vp-note">
+    <strong>sich freuen auf vs. über:</strong><br>
+    <em>auf</em> + Akk = Vorfreude (Zukunft): Ich freue mich <em>auf</em> den Urlaub.<br>
+    <em>über</em> + Akk = Freude (Gegenwart/Vergangenheit): Ich freue mich <em>über</em> das Geschenk.<br><br>
+    <strong>sprechen / erzählen / berichten:</strong><br>
+    <em>über</em> + Akk = Thema: Wir sprechen <em>über</em> Politik.<br>
+    <em>von</em> + Dat = Thema (informeller): Wir sprechen <em>von</em> Politik.<br>
+    <em>mit</em> + Dat = Gesprächspartner: Ich spreche <em>mit</em> meinem Chef.
+  </div>
+</div>
+
+<script src="js/common.js"></script>
+<script>
+const AKK = [
+  ["bis","until, to, by","Wir fahren <em>bis München</em>.","Bis nächste Woche! (Until next week!)"],
+  ["durch","through, by","Wir gehen <em>durch den Park</em>.","Die Stadt wurde <em>durch den Krieg</em> zerstört."],
+  ["entlang","along","Wir spazieren <em>den Fluss entlang</em>.","Gehen Sie <em>die Strasse entlang</em>."],
+  ["für","for","Das Geschenk ist <em>für meinen Vater</em>.","Ich arbeite <em>für ein Schweizer Unternehmen</em>."],
+  ["gegen","against, around (time)","Er ist <em>gegen den Vorschlag</em>.","Wir kommen <em>gegen sechs Uhr</em>."],
+  ["ohne","without","Ich trinke Kaffee <em>ohne Zucker</em>.","<em>Ohne dich</em> macht es keinen Spass."],
+  ["pro","per","Das kostet fünf Franken <em>pro Stück</em>.","Er fährt 200 km <em>pro Tag</em>."],
+  ["um","around, at (time)","Die Sitzung ist <em>um 14 Uhr</em>.","Wir gehen <em>um den See</em>."],
+  ["wider","against, contrary to","<em>Wider Erwarten</em> hat es geklappt.","Das ist <em>wider die Regeln</em>."],
+];
+
+const DAT = [
+  ["ab","from (time/place)","<em>Ab dem ersten Januar</em> gelten neue Regeln.","<em>Ab Zürich</em> fährt der Zug jede Stunde."],
+  ["aus","from, out of","Sie kommt <em>aus der Schweiz</em>.","Er trinkt <em>aus einer Tasse</em>."],
+  ["bei","at, near, during","Ich arbeite <em>bei einer Bank</em>.","<em>Beim Essen</em> reden wir nicht über Arbeit."],
+  ["dank","thanks to","<em>Dank dem guten Wetter</em> konnten wir wandern.","<em>Dank deiner Hilfe</em> hat alles geklappt."],
+  ["gegenüber","opposite, toward","Die Apotheke liegt <em>dem Bahnhof gegenüber</em>.","Er ist <em>mir gegenüber</em> immer freundlich."],
+  ["gemäss","according to","<em>Gemäss dem Bericht</em> steigt der Umsatz.","<em>Gemäss der Vereinbarung</em> liefern wir am Montag."],
+  ["mit","with, by (transport)","Ich fahre <em>mit dem Tram</em> zur Arbeit.","Ich rede <em>mit meinem Kollegen</em>."],
+  ["nach","after, to (cities/countries)","<em>Nach der Arbeit</em> gehe ich einkaufen.","Wir fliegen <em>nach Berlin</em>."],
+  ["seit","since, for (time)","Ich wohne <em>seit drei Jahren</em> in Zürich.","<em>Seit dem Umzug</em> fühle ich mich wohl."],
+  ["von","from, of, by","Das ist ein Geschenk <em>von meiner Mutter</em>.","Die Sitzung dauert <em>von neun bis elf</em>."],
+  ["zu","to, for","Ich gehe <em>zum Arzt</em>.","<em>Zum Glück</em> hat alles geklappt."],
+];
+
+const WECHSEL = [
+  ["an","at, on (vertical), to","<span class='ex-label'>AKK (wohin?)</span>Ich hänge das Bild <em>an die Wand</em>.","<span class='ex-label'>DAT (wo?)</span>Das Bild hängt <em>an der Wand</em>."],
+  ["auf","on (horizontal), onto","<span class='ex-label'>AKK (wohin?)</span>Ich lege das Buch <em>auf den Tisch</em>.","<span class='ex-label'>DAT (wo?)</span>Das Buch liegt <em>auf dem Tisch</em>."],
+  ["hinter","behind","<span class='ex-label'>AKK (wohin?)</span>Die Katze läuft <em>hinter das Haus</em>.","<span class='ex-label'>DAT (wo?)</span>Die Katze sitzt <em>hinter dem Haus</em>."],
+  ["in","in, into","<span class='ex-label'>AKK (wohin?)</span>Ich gehe <em>ins Büro</em>.","<span class='ex-label'>DAT (wo?)</span>Ich bin <em>im Büro</em>."],
+  ["neben","next to, beside","<span class='ex-label'>AKK (wohin?)</span>Ich setze mich <em>neben meinen Kollegen</em>.","<span class='ex-label'>DAT (wo?)</span>Ich sitze <em>neben meinem Kollegen</em>."],
+  ["über","over, above, about","<span class='ex-label'>AKK (wohin?)</span>Der Vogel fliegt <em>über den See</em>.","<span class='ex-label'>DAT (wo?)</span>Die Lampe hängt <em>über dem Tisch</em>."],
+  ["unter","under, among","<span class='ex-label'>AKK (wohin?)</span>Die Katze kriecht <em>unter das Bett</em>.","<span class='ex-label'>DAT (wo?)</span>Die Katze schläft <em>unter dem Bett</em>."],
+  ["vor","in front of, before, ago","<span class='ex-label'>AKK (wohin?)</span>Ich stelle das Velo <em>vor das Haus</em>.","<span class='ex-label'>DAT (wo?)</span>Das Velo steht <em>vor dem Haus</em>."],
+  ["zwischen","between","<span class='ex-label'>AKK (wohin?)</span>Ich setze mich <em>zwischen die Kinder</em>.","<span class='ex-label'>DAT (wo?)</span>Ich sitze <em>zwischen den Kindern</em>."],
+];
+
+const GEN = [
+  ["anstatt / statt","instead of","<em>Anstatt des Autos</em> nehme ich das Velo.","<em>Statt einer E-Mail</em> schreibe ich einen Brief."],
+  ["aufgrund","because of, due to","<em>Aufgrund des Wetters</em> fällt der Ausflug aus.","<em>Aufgrund der Ergebnisse</em> ändern wir die Strategie."],
+  ["ausserhalb","outside of","Das Lager liegt <em>ausserhalb der Stadt</em>.","<em>Ausserhalb der Arbeitszeit</em> bin ich nicht erreichbar."],
+  ["bezüglich","regarding, concerning","<em>Bezüglich Ihres Antrags</em> melde ich mich morgen.","<em>Bezüglich der Kosten</em> muss ich nachfragen."],
+  ["innerhalb","within, inside of","<em>Innerhalb der Frist</em> müssen Sie antworten.","<em>Innerhalb des Kantons</em> gibt es verschiedene Regelungen."],
+  ["laut","according to","<em>Laut des Berichts</em> steigen die Zahlen.","<em>Laut der Prognose</em> wird es regnen."],
+  ["trotz","despite, in spite of","<em>Trotz des Regens</em> gehen wir wandern.","<em>Trotz der Schwierigkeiten</em> hat es funktioniert."],
+  ["während","during","<em>Während der Sitzung</em> bitte das Handy ausschalten.","<em>Während des Semesters</em> arbeite ich Teilzeit."],
+  ["wegen","because of","<em>Wegen des Staus</em> komme ich zu spät.","<em>Wegen der Baustelle</em> ist die Strasse gesperrt."],
+  ["oberhalb","above","Das Dorf liegt <em>oberhalb des Sees</em>.","<em>Oberhalb der Nebelgrenze</em> scheint die Sonne."],
+  ["unterhalb","below","Das Haus steht <em>unterhalb der Kirche</em>.","<em>Unterhalb des Durchschnitts</em> liegt der Wert."],
+  ["infolge","as a result of","<em>Infolge des Unfalls</em> wurde die Strasse gesperrt.","<em>Infolge der Krise</em> mussten viele Stellen gestrichen werden."],
+  ["zugunsten","in favor of","Die Entscheidung fiel <em>zugunsten des Klägers</em>.","<em>Zugunsten der Umwelt</em> verzichten wir auf Flugreisen."],
+  ["anhand","by means of, based on","<em>Anhand der Daten</em> können wir den Trend erkennen.","<em>Anhand dieses Beispiels</em> erkläre ich die Regel."],
+  ["mithilfe","with the help of","<em>Mithilfe der neuen Software</em> geht es schneller.","<em>Mithilfe des Teams</em> haben wir es geschafft."],
+  ["anlässlich","on the occasion of","<em>Anlässlich des Jubiläums</em> gibt es einen Apéro.","<em>Anlässlich der Generalversammlung</em> sprach der CEO."],
+  ["hinsichtlich","with regard to","<em>Hinsichtlich der Qualität</em> gibt es keine Beschwerden.","<em>Hinsichtlich der Kosten</em> müssen wir sparen."],
+  ["mangels","for lack of","<em>Mangels Beweisen</em> wurde er freigesprochen.","<em>Mangels Interesse</em> findet der Kurs nicht statt."],
+];
+
+function buildCards(data, gridId, cardClass, tagClass, tagLabel, isWechsel) {
+  const grid = document.getElementById(gridId);
+  let html = '';
+  data.forEach(d => {
+    const [word, meaning, ex1, ex2] = d;
+    let tipContent;
+    if (isWechsel) {
+      tipContent = `<span class="ex-line">${ex1}</span><span class="ex-line" style="margin-top:6px;">${ex2}</span>`;
+    } else {
+      tipContent = `<span class="ex-line">${ex1}</span><span class="ex-line">${ex2}</span>`;
+    }
+    html += `<div class="prep-card ${cardClass}">
+      <div class="tooltip">${tipContent}</div>
+      <div class="prep-word">${word}</div>
+      <div class="prep-meaning">${meaning}</div>
+      <span class="prep-case-tag ${tagClass}">${tagLabel}</span>
+    </div>`;
+  });
+  grid.innerHTML = html;
+}
+
+buildCards(AKK, 'akk-grid', 'c-akk', 'tag-akk', 'Akkusativ', false);
+buildCards(DAT, 'dat-grid', 'c-dat', 'tag-dat', 'Dativ', false);
+buildCards(WECHSEL, 'wechsel-grid', 'c-wechsel', 'tag-wechsel', 'Akk ↔ Dat', true);
+buildCards(GEN, 'gen-grid', 'c-gen', 'tag-gen', 'Genitiv', false);
+
+let guessMode = false;
+const sections = document.querySelectorAll('.section');
+const mnemonicBoxes = document.querySelectorAll('.mnemonic-box');
+let guessGrid = null;
+
+function toggleGuess() {
+  guessMode = !guessMode;
+  document.getElementById('guess-btn').classList.toggle('active', guessMode);
+
+  if (guessMode) {
+    sections.forEach(s => s.style.display = 'none');
+    mnemonicBoxes.forEach(b => b.style.display = 'none');
+
+    if (!guessGrid) {
+      guessGrid = document.createElement('div');
+      guessGrid.className = 'prep-grid';
+      guessGrid.id = 'guess-grid';
+      document.querySelector('.container').insertBefore(guessGrid, mnemonicBoxes[0]);
+    }
+
+    const allCards = [];
+    function collectCards(data, cardClass, tagClass, tagLabel, isWechsel) {
+      data.forEach(d => {
+        const [word, meaning, ex1, ex2] = d;
+        let tipContent;
+        if (isWechsel) {
+          tipContent = `<span class="ex-line">${ex1}</span><span class="ex-line" style="margin-top:6px;">${ex2}</span>`;
+        } else {
+          tipContent = `<span class="ex-line">${ex1}</span><span class="ex-line">${ex2}</span>`;
+        }
+        allCards.push({ word, meaning, tipContent, cardClass, tagClass, tagLabel });
+      });
+    }
+    collectCards(AKK, 'c-akk', 'tag-akk', 'Akkusativ', false);
+    collectCards(DAT, 'c-dat', 'tag-dat', 'Dativ', false);
+    collectCards(WECHSEL, 'c-wechsel', 'tag-wechsel', 'Akk ↔ Dat', true);
+    collectCards(GEN, 'c-gen', 'tag-gen', 'Genitiv', false);
+
+    const shuffled = shuffleArray(allCards);
+    guessGrid.innerHTML = shuffled.map((c, i) => `<div class="prep-card guess-neutral" data-idx="${i}" data-class="${c.cardClass}" onclick="revealCard(this)">
+      <div class="tooltip">${c.tipContent}</div>
+      <div class="prep-word">${c.word}</div>
+      <div class="prep-meaning">${c.meaning}</div>
+      <span class="prep-case-tag ${c.tagClass}">${c.tagLabel}</span>
+    </div>`).join('');
+    guessGrid.style.display = '';
+  } else {
+    sections.forEach(s => s.style.display = '');
+    mnemonicBoxes.forEach(b => b.style.display = '');
+    if (guessGrid) guessGrid.style.display = 'none';
+  }
+}
+
+function revealCard(card) {
+  if (card.classList.contains('guess-neutral')) {
+    card.classList.remove('guess-neutral');
+    card.classList.add(card.dataset.class);
+  } else {
+    card.classList.remove(card.dataset.class);
+    card.classList.add('guess-neutral');
+  }
+}
+</script>
+</body>
+</html>
