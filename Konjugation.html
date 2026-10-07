@@ -110,6 +110,10 @@
   .v-pres{font-size:13px}
   .v-prat,.v-part{font-size:14px}
   .v-mean{font-size:12px}
+  .v-ex{font-size:11px}
+  .faust-rule{font-size:13px}
+  .faust-table{font-size:12px}
+  .faust-table th,.faust-table td{padding:3px 8px 3px 0}
 
   /* Group headers */
   .group-header td{grid-column:1/3;background:#2a1848!important;border-radius:8px!important;border:none!important}
@@ -199,6 +203,19 @@
 .werden-grid .wg-cell .w-gold { color: #e8a840; }
 .werden-grid .wg-cell .w-pink { color: #f08888; }
 .werden-grid .wg-cell .w-purp { color: #c8a8ff; }
+/* ─── Faustregeln, example, regional aux ─── */
+details.faust{margin:0 0 16px}
+details.faust summary{cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#e0e0e4;list-style-position:inside}
+details.faust[open] summary{color:#c8a8ff;margin-bottom:8px}
+.faust-rule{padding:8px 0;border-top:1px solid #44444c}
+.faust-rule:first-of-type{border-top:none}
+.faust-h{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#c8a8ff;display:block;margin-bottom:2px}
+.faust-warn{margin-top:6px;padding:6px 12px;background:#2b2b2f;border-left:3px solid #e8a840;border-radius:6px}
+.faust-table{border-collapse:collapse;margin-top:6px;font-size:13px}
+.faust-table th,.faust-table td{padding:4px 12px 4px 0;text-align:left;border-bottom:1px solid #3e3e44}
+.faust-table th{font-family:'JetBrains Mono',monospace;font-size:11px;color:#8888a0;text-transform:uppercase}
+.v-reg{font-family:'JetBrains Mono',monospace;font-size:10px;color:#8888a0}
+.v-ex{font-size:12px;color:#8888a0;font-style:italic;margin-top:2px;line-height:1.4}
 </style>
 </head>
 <body>
@@ -221,6 +238,52 @@
   <div class="sec-label"><span class="dot" style="background:#c8a8ff"></span> Ablautmuster <span style="font-weight:400;font-size:13px;color:#ababba">— klicken zum Filtern</span></div>
   <div class="patterns" id="patterns"></div>
 
+  <details class="notes faust">
+    <summary>📐 Faustregeln: starke Verben erkennen</summary>
+    <div class="faust-rule">
+      <span class="faust-h">Verben mit ei: ei→ie→ie oder ei→i→i</span>
+      Endet der Stamm auf <strong>-d, -t, -f, -ss</strong> oder <strong>-ch</strong>, ist das Muster <strong>meistens ei→i→i</strong>: schneiden - schnitt - geschnitten, reiten - ritt, greifen - griff, beissen - biss, streichen - strich.<br>
+      Ausnahmen mit ie: <strong>entscheiden</strong> - entschied, <strong>scheiden</strong> - schied, <strong>meiden</strong> - mied.<br>
+      Sonderfall: heissen - hiess - geheissen (Partizip wieder mit ei).
+      <div class="faust-warn">Nicht jedes Verb mit ei ist stark! <strong>meinen, zeigen, teilen</strong> sind schwach: meinte, zeigte, teilte. Achtung auch: <strong>reisen</strong> (schwach: reiste) ist nicht <strong>reissen</strong> (stark: riss).</div>
+    </div>
+    <div class="faust-rule">
+      <span class="faust-h">Partizip kennen → Präteritum kennen</span>
+      Nur wenn der 2. und 3. Vokal gleich sind: <strong>ei→ie→ie, ei→i→i, ie→o→o</strong>. Dann hat das Präteritum den Vokal des Partizips: entschieden → entschied, geschnitten → schnitt, geflogen → flog.<br>
+      Bei a→ie→a, e→a→e, i→a→u und i→a→o geht das nicht: dort das Präteritum extra lernen.
+    </div>
+    <div class="faust-rule">
+      <span class="faust-h">a→ie→a</span>
+      Das Präteritum hat <strong>ie</strong>: <span class="v-prat">riet, schlief, liess, fiel, hielt, briet</span>. Das Partizip kehrt zum Vokal des Infinitivs zurück: <span class="v-part">geraten, geschlafen, gebraten</span>.<br>
+      fangen (fing) und hängen (hing) haben i und stehen deshalb bei den Sonderfällen.
+    </div>
+    <div class="faust-rule">
+      <span class="faust-h">Kein ge- nach be-, ge-, er-, ver-, zer-, ent-, emp-, miss-</span>
+      Untrennbare Präfixe bekommen kein ge-: beraten (nicht <s style="color:#8888a0">geberaten</s>), zerschnitten, entschieden, empfohlen, verloren, erhalten.
+      <div class="faust-warn"><strong>Partizip = Infinitiv:</strong> Bei a→ie→a und e→a→e sieht das Partizip dann aus wie der Infinitiv: <strong>beraten, verlassen, erhalten, vergessen</strong>, gefallen. Sieht falsch aus, ist richtig: Ich habe den Brief erhalten. Er hat mich gut beraten.</div>
+    </div>
+    <div class="faust-rule">
+      <span class="faust-h">Trennbar: ge- in der Mitte</span>
+      Trennbare Präfixe (ein-, auf-, an-, zu- ...) sind betont und trennen sich ab (er trat ein). Das ge- steht in der Mitte: ein<strong>ge</strong>treten, auf<strong>ge</strong>geben, zu<strong>ge</strong>nommen.
+    </div>
+    <div class="faust-rule">
+      <span class="faust-h">Präfix weg, Grundverb prüfen</span>
+      Ist das Grundverb stark, ist das Präfixverb <strong>meistens</strong> auch stark: beraten → raten (riet), zerschneiden → schneiden (schnitt), entscheiden → scheiden (schied). Es gibt Ausnahmen: veranlassen ist schwach (veranlasste).
+    </div>
+    <div class="faust-rule">
+      <span class="faust-h">Verwechslungsgefahr: bitten, beten, bieten</span>
+      <table class="faust-table">
+        <thead><tr><th>Verb</th><th>Bedeutung</th><th>Präteritum</th><th>Partizip II</th></tr></thead>
+        <tbody>
+          <tr><td>bitten</td><td>to ask, request</td><td>bat</td><td>gebeten</td></tr>
+          <tr><td>beten</td><td>to pray</td><td>betete</td><td>gebetet (schwach)</td></tr>
+          <tr><td>bieten</td><td>to offer</td><td>bot</td><td>geboten</td></tr>
+        </tbody>
+      </table>
+      bitten - bat - gebeten: das e im Partizip steht weder im Infinitiv noch im Präteritum.
+    </div>
+  </details>
+
   <div class="sec-label"><span class="dot" style="background:#f08888"></span> Verben</div>
   <table class="vtable" id="vtable">
     <thead><tr>
@@ -241,11 +304,13 @@
     <span class="v-prat">orange</span> = Präteritum ·
     <span class="v-part">grün</span> = Partizip II ·
     <span class="v-ist">blau</span> = mit <em>sein</em> ·
+    <span class="v-hat">hat</span> (D) / <span class="v-ist">ist</span> (CH) = regional verschieden ·
     Muster wie <span style="font-family:'JetBrains Mono',monospace;color:#c8a8ff">ei→ie→ie</span> zeigen den Vokalwechsel: Infinitiv → Präteritum → Partizip
   </div>
   <div class="notes">
     <div class="notes-title">💡 haben oder sein?</div>
     <strong>sein</strong> bei: Bewegung mit Richtung (gehen, fahren, fliegen, kommen, laufen …), Zustandsänderung (werden, sterben, wachsen, einschlafen …), und die Ausnahmen <em>sein</em>, <em>bleiben</em>, <em>passieren</em>, <em>gelingen</em>, <em>geschehen</em>.<br>
+    <strong>liegen, sitzen, stehen, hängen</strong>: in Deutschland meist mit <strong>haben</strong> (hat gelegen), in der Schweiz, Österreich und Süddeutschland mit <strong>sein</strong> (ist gelegen). In der Tabelle: hat (D) / ist (CH).<br>
     <strong>haben</strong> bei: allem anderen.
   </div>
 
@@ -392,7 +457,7 @@
 
 <script src="js/common.js"></script>
 <script>
-// Data: [infinitiv, er/sie_präsens, präteritum_3sg, partizip_II, aux(h/i), meaning, pattern, stemChange]
+// Data: [infinitiv, er/sie_präsens, präteritum_3sg, partizip_II, aux(h/i), meaning, pattern, stemChange, example (optional)]
 // pattern: ablaut group label
 // stemChange: present tense vowel change or ""
 const V = [
@@ -408,6 +473,8 @@ const V = [
 ["treiben","treibt","trieb","getrieben","h","to drive, do (sport)","ei→ie→ie",""],
 ["entscheiden","entscheidet","entschied","entschieden","h","to decide","ei→ie→ie",""],
 ["beschreiben","beschreibt","beschrieb","beschrieben","h","to describe","ei→ie→ie",""],
+["meiden","meidet","mied","gemieden","h","to avoid","ei→ie→ie","","Seit dem Streit meidet er seinen Nachbarn."],
+["scheiden","scheidet","schied","geschieden","h","to separate; sich scheiden lassen = to divorce","ei→ie→ie","","Die beiden haben sich letztes Jahr scheiden lassen."],
 // ═══ ei → i → i ═══
 ["beissen","beisst","biss","gebissen","h","to bite","ei→i→i",""],
 ["greifen","greift","griff","gegriffen","h","to grab","ei→i→i",""],
@@ -416,6 +483,10 @@ const V = [
 ["reiten","reitet","ritt","geritten","i","to ride (horse)","ei→i→i",""],
 ["schneiden","schneidet","schnitt","geschnitten","h","to cut","ei→i→i",""],
 ["streiten","streitet","stritt","gestritten","h","to argue","ei→i→i",""],
+["zerschneiden","zerschneidet","zerschnitt","zerschnitten","h","to cut up","ei→i→i","","Sie hat das Papier in kleine Stücke zerschnitten."],
+["reissen","reisst","riss","gerissen","h","to tear, rip","ei→i→i","","Das Kind hat ein Blatt aus dem Heft gerissen."],
+["zerreissen","zerreisst","zerriss","zerrissen","h","to tear up","ei→i→i","","Tina hat den Brief wütend zerrissen."],
+["streichen","streicht","strich","gestrichen","h","to paint, spread, cross out","ei→i→i","","Wir haben die Wände weiss gestrichen."],
 // ═══ ie → o → o ═══
 ["biegen","biegt","bog","gebogen","h","to bend","ie→o→o",""],
 ["bieten","bietet","bot","geboten","h","to offer","ie→o→o",""],
@@ -428,6 +499,10 @@ const V = [
 ["schliessen","schliesst","schloss","geschlossen","h","to close","ie→o→o",""],
 ["verlieren","verliert","verlor","verloren","h","to lose","ie→o→o",""],
 ["ziehen","zieht","zog","gezogen","h","to pull, move","ie→o→o",""],
+["riechen","riecht","roch","gerochen","h","to smell","ie→o→o","","Hier riecht es nach frischem Brot."],
+["frieren","friert","fror","gefroren","h","to be cold, freeze","ie→o→o","","Ohne Jacke habe ich am Bahnhof gefroren."],
+["umziehen","zieht um","zog um","umgezogen","i","to move (house)","ie→o→o","","Wir sind letzten Sommer nach Zürich umgezogen."],
+["anbieten","bietet an","bot an","angeboten","h","to offer","ie→o→o","","Der Kellner bot uns einen Kaffee an."],
 // ═══ i → a → u ═══
 ["binden","bindet","band","gebunden","h","to tie, bind","i→a→u",""],
 ["finden","findet","fand","gefunden","h","to find","i→a→u",""],
@@ -439,6 +514,8 @@ const V = [
 ["trinken","trinkt","trank","getrunken","h","to drink","i→a→u",""],
 ["verschwinden","verschwindet","verschwand","verschwunden","i","to disappear","i→a→u",""],
 ["zwingen","zwingt","zwang","gezwungen","h","to force","i→a→u",""],
+["empfinden","empfindet","empfand","empfunden","h","to feel (an emotion)","i→a→u","","Nach der Prüfung empfand sie grosse Erleichterung."],
+["stinken","stinkt","stank","gestunken","h","to stink","i→a→u","","Der Abfall stinkt schon seit Tagen."],
 // ═══ i → a → o ═══
 ["beginnen","beginnt","begann","begonnen","h","to begin","i→a→o",""],
 ["gewinnen","gewinnt","gewann","gewonnen","h","to win","i→a→o",""],
@@ -454,6 +531,10 @@ const V = [
 ["werfen","wirft","warf","geworfen","h","to throw","e→a→o","e→i"],
 ["zunehmen","nimmt zu","nahm zu","zugenommen","h","to gain weight, increase","e→a→o","e→i"],
 ["übernehmen","übernimmt","übernahm","übernommen","h","to take over","e→a→o","e→i"],
+["vorwerfen","wirft vor","warf vor","vorgeworfen","h","to reproach (jdm etw.)","e→a→o","e→i","Sie wirft ihm vor, dass er nie zuhört."],
+["abbrechen","bricht ab","brach ab","abgebrochen","h","to break off, quit","e→a→o","e→i","Er hat das Studium nach zwei Semestern abgebrochen."],
+["zerbrechen","zerbricht","zerbrach","zerbrochen","i","to break apart (intr.; trans. mit hat)","e→a→o","e→i","Ihre Beziehung ist zerbrochen."],
+["gelten","gilt","galt","gegolten","h","to be valid; gelten als = be regarded as","e→a→o","e→i","Die Fahrkarte gilt nur für heute."],
 // ═══ e → a → e ═══
 ["essen","isst","ass","gegessen","h","to eat","e→a→e","e→i"],
 ["geben","gibt","gab","gegeben","h","to give","e→a→e","e→i"],
@@ -464,6 +545,8 @@ const V = [
 ["vergessen","vergisst","vergass","vergessen","h","to forget","e→a→e","e→i"],
 ["messen","misst","mass","gemessen","h","to measure","e→a→e","e→i"],
 ["aufgeben","gibt auf","gab auf","aufgegeben","h","to give up","e→a→e","e→i"],
+["eintreten","tritt ein","trat ein","eingetreten","i","to enter, join (in + Akk.)","e→a→e","e→i","Sie ist letztes Jahr in den Verein eingetreten."],
+["ansehen","sieht an","sah an","angesehen","h","to look at","e→a→e","e→ie","Wir haben uns den Film zweimal angesehen."],
 // ═══ a → u → a ═══
 ["backen","bäckt","buk","gebacken","h","to bake","a→u→a","a→ä"],
 ["fahren","fährt","fuhr","gefahren","i","to drive, go","a→u→a","a→ä"],
@@ -473,6 +556,10 @@ const V = [
 ["tragen","trägt","trug","getragen","h","to carry, wear","a→u→a","a→ä"],
 ["wachsen","wächst","wuchs","gewachsen","i","to grow","a→u→a","a→ä"],
 ["waschen","wäscht","wusch","gewaschen","h","to wash","a→u→a","a→ä"],
+["zerschlagen","zerschlägt","zerschlug","zerschlagen","h","to smash","a→u→a","a→ä","Der Sturm hat das Fenster zerschlagen."],
+["aufwachsen","wächst auf","wuchs auf","aufgewachsen","i","to grow up","a→u→a","a→ä","Ich bin in einem kleinen Dorf aufgewachsen."],
+["umfahren","fährt um","fuhr um","umgefahren","h","to knock down (trennbar)","a→u→a","a→ä","Der Autofahrer hat das Verkehrsschild umgefahren."],
+["umfahren","umfährt","umfuhr","umfahren","h","to drive around, bypass (untrennbar)","a→u→a","a→ä","Wir haben den Stau umfahren."],
 // ═══ a → ie → a ═══
 ["fallen","fällt","fiel","gefallen","i","to fall","a→ie→a","a→ä"],
 ["gefallen","gefällt","gefiel","gefallen","h","to please","a→ie→a","a→ä"],
@@ -483,20 +570,31 @@ const V = [
 ["laufen","läuft","lief","gelaufen","i","to run, walk","a→ie→a","au→äu"],
 ["verlassen","verlässt","verliess","verlassen","h","to leave, abandon","a→ie→a","a→ä"],
 ["beraten","berät","beriet","beraten","h","to advise","a→ie→a","a→ä"],
+["braten","brät","briet","gebraten","h","to fry, roast","a→ie→a","a→ä","Sie brät die Kartoffeln in der Pfanne."],
+["erhalten","erhält","erhielt","erhalten","h","to receive","a→ie→a","a→ä","Ich habe gestern deinen Brief erhalten."],
+["durchfallen","fällt durch","fiel durch","durchgefallen","i","to fail (bei + Dat.)","a→ie→a","a→ä","Er ist bei der Prüfung durchgefallen."],
+["loslassen","lässt los","liess los","losgelassen","h","to let go","a→ie→a","a→ä","Sie hat seine Hand nicht losgelassen."],
+// ═══ i/ie → a → e ═══
+["bitten","bittet","bat","gebeten","h","to ask, request (um + Akk.)","i/ie→a→e","","Ich bat ihn um Hilfe."],
+["liegen","liegt","lag","gelegen","hi","to lie (position)","i/ie→a→e","","Das Buch hat (D) / ist (CH) auf dem Tisch gelegen."],
+["sitzen","sitzt","sass","gesessen","hi","to sit","i/ie→a→e","","Wir haben (D) / sind (CH) lange im Garten gesessen."],
+["besitzen","besitzt","besass","besessen","h","to own, possess","i/ie→a→e",""],
 // ═══ Sonderfälle (stark) ═══
 ["gehen","geht","ging","gegangen","i","to go, walk","Sonder",""],
 ["kommen","kommt","kam","gekommen","i","to come","Sonder",""],
 ["rufen","ruft","rief","gerufen","h","to call, shout","Sonder",""],
-["stehen","steht","stand","gestanden","h","to stand","Sonder",""],
+["stehen","steht","stand","gestanden","hi","to stand","Sonder","","Ich habe (D) / bin (CH) eine Stunde an der Haltestelle gestanden."],
 ["tun","tut","tat","getan","h","to do","Sonder",""],
-["liegen","liegt","lag","gelegen","h","to lie (position)","Sonder",""],
-["sitzen","sitzt","sass","gesessen","h","to sit","Sonder",""],
 ["sein","ist","war","gewesen","i","to be","Sonder",""],
 ["werden","wird","wurde","geworden","i","to become","Sonder","e→i"],
 ["haben","hat","hatte","gehabt","h","to have","Sonder",""],
 ["wissen","weiss","wusste","gewusst","h","to know (fact)","Sonder",""],
 ["stossen","stösst","stiess","gestossen","h","to push, bump","Sonder","o→ö"],
-["besitzen","besitzt","besass","besessen","h","to own, possess","Sonder",""],
+["heissen","heisst","hiess","geheissen","h","to be called","Sonder","","Früher hiess die Strasse anders."],
+["fangen","fängt","fing","gefangen","h","to catch","Sonder","a→ä","Die Katze hat eine Maus gefangen."],
+["hängen","hängt","hing","gehangen","hi","to hang (intr., Wo? + Dat.)","Sonder","","Das Bild hat (D) / ist (CH) lange im Flur gehangen."],
+["vergehen","vergeht","verging","vergangen","i","to pass (time)","Sonder","","Die Zeit ist schnell vergangen."],
+["verstehen","versteht","verstand","verstanden","h","to understand","Sonder","","Hast du die Aufgabe verstanden?"],
 // ═══ Gemischt ═══
 ["bringen","bringt","brachte","gebracht","h","to bring","gemischt",""],
 ["denken","denkt","dachte","gedacht","h","to think","gemischt",""],
@@ -506,6 +604,7 @@ const V = [
 ["senden","sendet","sandte","gesandt","h","to send","gemischt",""],
 ["wenden","wendet","wandte","gewandt","h","to turn","gemischt",""],
 ["brennen","brennt","brannte","gebrannt","h","to burn","gemischt",""],
+["beibringen","bringt bei","brachte bei","beigebracht","h","to teach (jdm etw.)","gemischt","","Meine Mutter hat mir das Velofahren beigebracht."],
 ];
 
 // Build pattern overview
@@ -515,7 +614,7 @@ V.forEach(v => {
   if (!patGroups[p]) patGroups[p] = 0;
   patGroups[p]++;
 });
-const patOrder = ["ei→ie→ie","ei→i→i","ie→o→o","i→a→u","i→a→o","e→a→o","e→a→e","a→u→a","a→ie→a","Sonder","gemischt"];
+const patOrder = ["ei→ie→ie","ei→i→i","ie→o→o","i→a→u","i→a→o","e→a→o","e→a→e","a→u→a","a→ie→a","i/ie→a→e","Sonder","gemischt"];
 
 let currentPat = 'all', currentAux = 'all', onlySC = false, searchTerm = '';
 
@@ -574,6 +673,11 @@ document.getElementById('tbody').addEventListener('click', function(e) {
   }
 });
 
+function auxHtml(aux) {
+  if (aux === 'hi') return '<span class="v-aux v-hat">hat</span> <span class="v-reg">(D)</span> / <span class="v-aux v-ist">ist</span> <span class="v-reg">(CH)</span>';
+  return aux === 'i' ? '<span class="v-aux v-ist">ist</span>' : '<span class="v-aux v-hat">hat</span>';
+}
+
 function render() {
   const tbody = document.getElementById('tbody');
   const empty = document.getElementById('empty');
@@ -581,7 +685,7 @@ function render() {
 
   let f = V;
   if (currentPat !== 'all') f = f.filter(v => v[6] === currentPat);
-  if (currentAux !== 'all') f = f.filter(v => v[4] === currentAux);
+  if (currentAux !== 'all') f = f.filter(v => v[4].includes(currentAux));
   if (onlySC) f = f.filter(v => v[7] !== '');
   if (searchTerm) f = f.filter(v => normalize(v[0].toLowerCase()).includes(normalize(searchTerm)) || normalize(v[5].toLowerCase()).includes(normalize(searchTerm)));
 
@@ -593,9 +697,7 @@ function render() {
 
   if (shuffleMode) {
     shuffleArray(f).forEach(v => {
-      const [inf, pres, prat, part, aux, mean, pat, sc] = v;
-      const auxClass = aux === 'i' ? 'v-ist' : 'v-hat';
-      const auxText = aux === 'i' ? 'ist' : 'hat';
+      const [inf, pres, prat, part, aux, mean, pat, sc, ex] = v;
       const scBadge = sc ? `<span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#c8a8ff;background:#2a1848;padding:1px 4px;border-radius:3px;margin-left:4px">${sc}</span>` : '';
       const gc = guessMode ? ' class="guess-cell-hidden"' : '';
       h += `<tr>`;
@@ -603,8 +705,8 @@ function render() {
       h += `<td data-label="er/sie"${gc}><span class="v-pres">${pres}</span></td>`;
       h += `<td data-label="Präteritum"${gc}><span class="v-prat">${prat}</span></td>`;
       h += `<td data-label="Partizip II"${gc}><span class="v-part">${part}</span></td>`;
-      h += `<td data-label="Hilfsverb"${gc}><span class="v-aux ${auxClass}">${auxText}</span></td>`;
-      h += `<td data-label="Bedeutung"${gc}><span class="v-mean">${mean}</span></td>`;
+      h += `<td data-label="Hilfsverb"${gc}>${auxHtml(aux)}</td>`;
+      h += `<td data-label="Bedeutung"${gc}><span class="v-mean">${mean}</span>${ex ? `<div class="v-ex">${ex}</div>` : ''}</td>`;
       h += `</tr>`;
     });
     tbody.innerHTML = h;
@@ -616,10 +718,10 @@ function render() {
   // Sort by pattern order
   const order = {};
   patOrder.forEach((p,i) => order[p] = i);
-  const sorted = [...f].sort((a,b) => (order[a[6]]||99) - (order[b[6]]||99) || a[0].localeCompare(b[0]));
+  const sorted = [...f].sort((a,b) => (order[a[6]] ?? 99) - (order[b[6]] ?? 99) || a[0].localeCompare(b[0]));
 
   sorted.forEach(v => {
-    const [inf, pres, prat, part, aux, mean, pat, sc] = v;
+    const [inf, pres, prat, part, aux, mean, pat, sc, ex] = v;
 
     // Group header
     if (pat !== lastPat && !searchTerm) {
@@ -628,8 +730,6 @@ function render() {
       lastPat = pat;
     }
 
-    const auxClass = aux === 'i' ? 'v-ist' : 'v-hat';
-    const auxText = aux === 'i' ? 'ist' : 'hat';
     const scBadge = sc ? `<span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#c8a8ff;background:#2a1848;padding:1px 4px;border-radius:3px;margin-left:4px">${sc}</span>` : '';
 
     const gc = guessMode ? ' class="guess-cell-hidden"' : '';
@@ -638,8 +738,8 @@ function render() {
     h += `<td data-label="er/sie"${gc}><span class="v-pres">${pres}</span></td>`;
     h += `<td data-label="Präteritum"${gc}><span class="v-prat">${prat}</span></td>`;
     h += `<td data-label="Partizip II"${gc}><span class="v-part">${part}</span></td>`;
-    h += `<td data-label="Hilfsverb"${gc}><span class="v-aux ${auxClass}">${auxText}</span></td>`;
-    h += `<td data-label="Bedeutung"${gc}><span class="v-mean">${mean}</span></td>`;
+    h += `<td data-label="Hilfsverb"${gc}>${auxHtml(aux)}</td>`;
+    h += `<td data-label="Bedeutung"${gc}><span class="v-mean">${mean}</span>${ex ? `<div class="v-ex">${ex}</div>` : ''}</td>`;
     h += `</tr>`;
   });
 
