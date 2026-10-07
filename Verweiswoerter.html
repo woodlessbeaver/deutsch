@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="assets/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" href="assets/favicon-32x32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<title>Verweiswörter — Wiederholungen vermeiden</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/common.css">
+<style>
+body { padding: 0 0 48px; }
+
+header {
+  position: sticky; top: 0; z-index: 100;
+  background: #232327ee;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #3e3e44;
+  padding: 14px 20px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 8px;
+}
+h1 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 26px; font-weight: 700;
+  color: #f0f0f4; letter-spacing: -0.5px;
+}
+.subtitle {
+  font-size: 13px; color: #ababba; font-style: italic;
+}
+.back-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; font-weight: 500;
+  padding: 5px 9px; border-radius: 8px;
+  background: #343438; color: #8888a0;
+  text-decoration: none; border: 1px solid #44444c;
+  transition: all .15s;
+}
+.back-link:hover {
+  background: #2a1848; color: #c8a8ff;
+  border-color: #7a60c0;
+}
+
+.container { max-width: 880px; margin: 0 auto; padding: 0 16px; }
+
+.section { margin-top: 32px; }
+.sec-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 18px; font-weight: 700;
+  color: #f0f0f4;
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: 4px;
+}
+.sec-label .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; background: #c8a8ff; }
+.sec-sub { font-size: 12px; color: #ababba; margin-bottom: 14px; font-style: italic; }
+
+.card {
+  background: #2e2e34;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  font-size: 14px; color: #e0e0e4; line-height: 1.7;
+}
+.card p { margin: 4px 0; }
+.ref { color: #c8a8ff; font-weight: 700; }
+u { text-decoration: underline; text-underline-offset: 3px; }
+
+.tbl-wrap { overflow-x: auto; background: #343438; border: 1px solid #44444c; border-radius: 12px; padding: 12px; }
+table { width: 100%; border-collapse: collapse; }
+th {
+  text-align: left; padding: 8px 10px;
+  border-bottom: 2px solid #3e3e44;
+  color: #8888a0; font-size: 12px;
+  font-family: 'JetBrains Mono', monospace;
+}
+td {
+  padding: 8px 10px; border-bottom: 1px solid #3e3e44;
+  color: #e0e0e4; font-size: 13px; line-height: 1.6;
+  white-space: normal; vertical-align: top;
+}
+tr:last-child td { border-bottom: none; }
+td.typ { color: #ababba; }
+
+.note-link { font-size: 12px; color: #ababba; margin-top: 10px; }
+.note-link a { color: #c8a8ff; }
+
+.task { font-weight: 600; color: #f0f0f4; margin-top: 10px; }
+.orig { border-left: 2px solid #3a3a40; padding-left: 12px; color: #c8c8d0; }
+
+details {
+  margin-top: 8px; padding: 4px 10px; background: #2b2b2f;
+  border-radius: 6px; border: 1px solid #44444c;
+}
+summary {
+  cursor: pointer; font-family: 'JetBrains Mono', monospace;
+  font-size: 12px; font-weight: 700; color: #8888a0;
+}
+details[open] summary { color: #c8a8ff; }
+details .answer { font-size: 13px; color: #e0e0e4; padding: 4px 0; line-height: 1.7; }
+details .answer ul { padding-left: 20px; margin: 6px 0; }
+.answer-label { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #c8a8ff; font-weight: 700; margin-top: 8px; }
+
+@media(max-width:600px) {
+  h1 { font-size: 22px; }
+  .container { padding: 0 8px; }
+  td, th { padding: 6px 6px; font-size: 12px; }
+  details .answer { font-size: 12px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Verweiswörter</h1>
+    <div class="subtitle">Wiederholungen vermeiden, Sätze verbinden</div>
+  </div>
+  <a class="back-link" href="index.html">← Übersicht</a>
+</header>
+
+<div class="container">
+
+<!-- ═══ A ═══ -->
+<div class="section">
+  <div class="sec-label"><span class="dot"></span> Was sind Verweiswörter?</div>
+  <div class="card">
+    <p>Verweiswörter zeigen auf etwas, das schon gesagt wurde (zurückweisend), oder auf etwas, das noch kommt (vorausweisend).</p>
+    <p>Sie vermeiden Wiederholungen und verbinden die Sätze zu einem Text.</p>
+    <p style="margin-top:10px;"><u>Verena wollte die Gäste beeindrucken.</u> <span class="ref">Deshalb</span> kochte sie ein Risotto mit Trüffel und Safran.</p>
+  </div>
+</div>
+
+<!-- ═══ B ═══ -->
+<div class="section">
+  <div class="sec-label"><span class="dot"></span> Die 11 Typen</div>
+  <div class="sec-sub">Verweiswort fett und violett, worauf es zeigt unterstrichen</div>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Typ</th><th>Beispiel</th><th>Verweiswort</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="typ">Indefinitartikel / Definitartikel</td>
+          <td>Wir nehmen nächstes Jahr an <u>einer Gourmet-Reise</u> teil. <span class="ref">Die</span> Reise führt durch das Piemont.</td>
+          <td class="ref">einer / Die</td>
+        </tr>
+        <tr>
+          <td class="typ">Possessivartikel</td>
+          <td><u>Lukrezia Wildeisen</u> ist Köchin des Jahres. <span class="ref">Ihre</span> Gerichte verdienen das höchste Lob.</td>
+          <td class="ref">Ihre</td>
+        </tr>
+        <tr>
+          <td class="typ">Definitpronomen</td>
+          <td>In London habe ich <u>den teuersten Burger der Welt</u> probiert. <span class="ref">Das</span> war schon lange mein grösster Traum.</td>
+          <td class="ref">Das</td>
+        </tr>
+        <tr>
+          <td class="typ">Personalpronomen</td>
+          <td><u>Meine Schwester</u> legt grossen Wert auf qualitativ hochstehende Nahrungsmittel. <span class="ref">Sie</span> kauft nur bei Globus ein.</td>
+          <td class="ref">Sie</td>
+        </tr>
+        <tr>
+          <td class="typ">Relativpronomen / Präposition + Relativpronomen</td>
+          <td>Die <u>Beilagen</u>, <span class="ref">aus denen</span> Sie eine auswählen können, finden Sie auf der Speisekarte auf der letzten Seite.</td>
+          <td class="ref">aus denen</td>
+        </tr>
+        <tr>
+          <td class="typ">Temporales Konjunktionaladverb</td>
+          <td><u>Im Mittelalter</u> begann der Tag mit einem grossen Glas Wein. <span class="ref">Damals</span> trank man schon zum Frühstück Alkohol.</td>
+          <td class="ref">Damals</td>
+        </tr>
+        <tr>
+          <td class="typ">Lokales Konjunktionaladverb</td>
+          <td><u>Die Küche</u> ist der schmutzigste Ort der Wohnung. <span class="ref">Dort</span> befinden sich Milliarden von Bakterien.</td>
+          <td class="ref">Dort</td>
+        </tr>
+        <tr>
+          <td class="typ">Präpositionalpronomen (vorausweisend) (Korrelat)</td>
+          <td>Ich erinnere mich <span class="ref">daran</span>, <u>dass ich als Kind Spinat nicht mochte</u>.</td>
+          <td class="ref">daran</td>
+        </tr>
+        <tr>
+          <td class="typ">Präpositionalpronomen (zurückweisend)</td>
+          <td>Ich möchte heute <u>Gulaschsuppe kochen</u>. <span class="ref">Dafür</span> brauche ich Rindfleisch und Gemüse.</td>
+          <td class="ref">Dafür</td>
+        </tr>
+        <tr>
+          <td class="typ">Kausales Konjunktionaladverb</td>
+          <td><u>Verena wollte die Gäste beeindrucken.</u> <span class="ref">Deshalb</span> kochte sie ein Risotto mit Trüffel und Safran.</td>
+          <td class="ref">Deshalb</td>
+        </tr>
+        <tr>
+          <td class="typ">Synonym</td>
+          <td>In der Löwenstrasse wurde <u>ein neues Restaurant</u> eröffnet. <span class="ref">Das Lokal</span> heisst 'Chez Lucille'.</td>
+          <td class="ref">Das Lokal</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ═══ C ═══ -->
+<div class="section">
+  <div class="sec-label"><span class="dot"></span> Häufige Verweiswörter im Satz</div>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Wort</th><th>Bedeutung</th><th>Beispiel</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="ref">deshalb / dementsprechend</td>
+          <td>Konsequenz: «weil das so ist» (dementsprechend = dem + entsprechend)</td>
+          <td><span class="ref">Deshalb</span> kochte sie ein Risotto mit Trüffel und Safran.</td>
+        </tr>
+        <tr>
+          <td class="ref">damals</td>
+          <td>temporal, Vergangenheit</td>
+          <td><span class="ref">Damals</span> trank man schon zum Frühstück Alkohol.</td>
+        </tr>
+        <tr>
+          <td class="ref">dort / da</td>
+          <td>lokal</td>
+          <td><span class="ref">Dort</span> befinden sich Milliarden von Bakterien.</td>
+        </tr>
+        <tr>
+          <td class="ref">dafür</td>
+          <td>Präpositionalpronomen, zeigt zurück</td>
+          <td><span class="ref">Dafür</span> brauche ich Rindfleisch und Gemüse.</td>
+        </tr>
+        <tr>
+          <td class="ref">daran (+ dass-Satz)</td>
+          <td>zeigt voraus auf den dass-Satz</td>
+          <td>Ich erinnere mich <span class="ref">daran</span>, dass ...</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note-link">Mehr Konnektoren: <a href="Konnektoren.html">Konnektoren.html</a></div>
+</div>
+
+<!-- ═══ D ═══ -->
+<div class="section">
+  <div class="sec-label"><span class="dot"></span> Übung: Text umschreiben</div>
+  <div class="card">
+    <div class="orig">Meine Mutter und ich besuchen heute ein neues Restaurant. Meine Mutter und ich haben das Restaurant in der Zeitung entdeckt. In der Zeitung stand geschrieben, dass das Restaurant eine grosse Auswahl an Gemüseeintöpfen bietet. Weil das Restaurant eine grosse Auswahl an Gemüseeintöpfen bietet, denke ich, dass wir als Vegetarierinnen sicher etwas Gutes zum Essen finden werden.</div>
+    <div class="task">Was haltet ihr von diesem Text? Ersetze die Wiederholungen durch Verweiswörter.</div>
+    <details><summary>Lösung</summary><div class="answer">
+      <ul>
+        <li>2. «Meine Mutter und ich» → <span class="ref">wir</span></li>
+        <li>2. «in der Zeitung» → <span class="ref">dort / da</span></li>
+        <li>2. «das Restaurant» → <span class="ref">es / das Lokal / dieses Restaurant</span></li>
+        <li>2. «eine grosse Auswahl an Gemüseeintöpfen» → <span class="ref">ein vielfältiges Angebot / dieses Angebot</span></li>
+        <li>«Weil ..., denke ich» → <span class="ref">Deshalb denke ich</span></li>
+      </ul>
+      <div class="answer-label">Ein möglicher Text</div>
+      <div class="orig">Meine Mutter und ich besuchen heute ein neues Restaurant. Wir haben es in der Zeitung entdeckt. Dort stand geschrieben, dass das Lokal eine grosse Auswahl an Gemüseeintöpfen bietet. Deshalb denke ich, dass wir als Vegetarierinnen sicher etwas Gutes zum Essen finden werden.</div>
+    </div></details>
+  </div>
+</div>
+
+</div>
+</body>
+</html>
