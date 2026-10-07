@@ -73,6 +73,7 @@
   .verb-name{font-size:17px}
   .search-box{max-width:100%}
   .tooltip{white-space:normal;min-width:240px;max-width:300px}
+  details.vp{padding:8px 10px} .vp-verb{font-size:14px}
 }
 /* ─── Guess Mode ─── */
 .fbtn.guess-active{background:#2a1848;border-color:#7a60c0;color:#c8a8ff}
@@ -110,6 +111,32 @@
 .wk-grid em { font-style: normal; font-weight: 600; }
 .wk-grid .wk-wissen { color: #60d0e8; }
 .wk-grid .wk-kennen { color: #c8a8ff; }
+/* ─── Verbpaare (V52) ─── */
+details.vp{margin:0 0 14px;background:#343438;border:1px solid #44444c;border-radius:9px;padding:10px 14px}
+details.vp summary{cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;color:#e0e0e4}
+details.vp[open] summary{color:#c8a8ff;margin-bottom:8px}
+.vp-intro{font-size:13px;color:#ababba;line-height:1.5;margin-bottom:8px}
+.vp-table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:13px;line-height:1.45}
+.vp-table th,.vp-table td{width:50%;vertical-align:top;text-align:left;padding:7px 10px 7px 0;border-bottom:1px solid #3e3e44}
+.vp-table th{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:#8888a0}
+.vp-table .vp-group th{font-size:13px;color:#c8a8ff;text-transform:none;padding-top:14px;border-bottom:1px solid #7a60c0}
+.vp-table th.vp-wo{color:#70d890}
+.vp-table th.vp-wohin{color:#e8a840}
+.vp-verb{font-family:'Inter',sans-serif;font-size:15px;font-weight:700;color:#f0f0f4;margin-right:6px}
+.vp-forms{display:block;font-family:'JetBrains Mono',monospace;font-size:11px;color:#c0c0c8;margin-top:2px}
+.vp-mean{display:block;font-size:12px;color:#ababba}
+.vp-ex{display:block;font-size:12px;color:#c0c0c8;font-style:italic;margin-top:3px}
+.vp-dat{color:#70d890;font-style:normal;font-weight:600}
+.vp-akk{color:#e8a840;font-style:normal;font-weight:600}
+.vp-reg{font-size:10px;color:#8888a0}
+.vp-merke td{font-size:12px;color:#ababba;padding-top:0}
+.vp-merke td::before{content:'Merke: ';font-weight:700;color:#c8a8ff}
+@media(max-width:600px){
+  .vp-table{font-size:12px}
+  .vp-table th,.vp-table td{padding:6px 6px 6px 0}
+  .vp-forms{font-size:10px}
+  .vp-ex,.vp-mean{font-size:11px}
+}
 </style>
 </head>
 <body>
@@ -129,6 +156,137 @@
   <div class="stats">Showing <span id="stats">0</span></div>
 </div>
 <div class="container">
+<details class="vp">
+  <summary>⚖️ Verbpaare: liegen/legen, sitzen/setzen, auffordern/anfordern …</summary>
+  <div class="vp-intro">Links: Position (Wo? + Dativ), intransitiv, meist stark. Rechts: Handlung (Wohin? + Akkusativ), transitiv, schwach, Perfekt immer mit <em>haben</em>. In der Schweiz, in Österreich und in Süddeutschland bilden die Verben links das Perfekt mit <em>sein</em>. Präpositionen: <a href="Praepositionen.html" style="color:#c8a8ff">Wechselpräpositionen</a>.</div>
+  <table class="vp-table">
+    <tbody>
+      <tr class="vp-group"><th colspan="2">Positionsverben</th></tr>
+      <tr><th class="vp-wo">Wo? + Dativ · Zustand</th><th class="vp-wohin">Wohin? + Akkusativ · Handlung</th></tr>
+      <tr>
+        <td><span class="vp-verb">liegen</span><span class="type-tag t-stark">stark</span>
+<span class="vp-forms">liegt - lag - hat <span class="vp-reg">(D)</span> / ist <span class="vp-reg">(CH)</span> gelegen</span>
+<span class="vp-ex">Das Handy liegt <em class="vp-dat">auf dem Tisch</em>.</span></td>
+        <td><span class="vp-verb">legen</span><span class="type-tag t-schwach">schwach</span>
+<span class="vp-forms">legt - legte - hat gelegt</span>
+<span class="vp-ex">Ich habe das Handy <em class="vp-akk">auf den Tisch</em> gelegt.</span></td>
+      </tr>
+      <tr>
+        <td><span class="vp-verb">sitzen</span><span class="type-tag t-stark">stark</span>
+<span class="vp-forms">sitzt - sass - hat <span class="vp-reg">(D)</span> / ist <span class="vp-reg">(CH)</span> gesessen</span>
+<span class="vp-ex">Die Katze sitzt <em class="vp-dat">auf dem Boden</em>.</span></td>
+        <td><span class="vp-verb">setzen</span><span class="type-tag t-schwach">schwach</span>
+<span class="vp-forms">setzt - setzte - hat gesetzt</span>
+<span class="vp-ex">Er hat die Katze <em class="vp-akk">auf den Boden</em> gesetzt.</span></td>
+      </tr>
+      <tr>
+        <td><span class="vp-verb">stehen</span><span class="type-tag t-stark">stark</span>
+<span class="vp-forms">steht - stand - hat <span class="vp-reg">(D)</span> / ist <span class="vp-reg">(CH)</span> gestanden</span>
+<span class="vp-ex">Der Grill steht <em class="vp-dat">auf dem Balkon</em>.</span></td>
+        <td><span class="vp-verb">stellen</span><span class="type-tag t-schwach">schwach</span>
+<span class="vp-forms">stellt - stellte - hat gestellt</span>
+<span class="vp-ex">Wir haben den Grill <em class="vp-akk">auf den Balkon</em> gestellt.</span></td>
+      </tr>
+      <tr>
+        <td><span class="vp-verb">hängen</span><span class="type-tag t-stark">stark</span>
+<span class="vp-forms">hängt - hing - hat <span class="vp-reg">(D)</span> / ist <span class="vp-reg">(CH)</span> gehangen</span>
+<span class="vp-ex">Der Spiegel hängt <em class="vp-dat">an der Wand</em>.</span></td>
+        <td><span class="vp-verb">hängen</span><span class="type-tag t-schwach">schwach</span>
+<span class="vp-forms">hängt - hängte - hat gehängt</span>
+<span class="vp-ex">Olaf hat den Spiegel <em class="vp-akk">an die Wand</em> gehängt.</span></td>
+      </tr>
+      <tr>
+        <td><span class="vp-verb">stecken</span><span class="type-tag t-schwach">schwach</span>
+<span class="vp-forms">steckt - steckte - hat <span class="vp-reg">(D)</span> / ist <span class="vp-reg">(CH)</span> gesteckt</span>
+<span class="vp-ex">Der Schlüssel steckt <em class="vp-dat">im Schloss</em>.</span></td>
+        <td><span class="vp-verb">stecken</span><span class="type-tag t-schwach">schwach</span>
+<span class="vp-forms">steckt - steckte - hat gesteckt</span>
+<span class="vp-ex">Hast du den Schlüssel <em class="vp-akk">ins Schloss</em> gesteckt?</span></td>
+      </tr>
+      <tr class="vp-merke"><td colspan="2">sich legen, sich setzen, sich stellen = Wohin? + Akk: Ich setze mich auf den Stuhl. stecken ist in beiden Bedeutungen schwach.</td></tr>
+    </tbody>
+    <tbody>
+      <tr class="vp-group"><th colspan="2">Verwechslungsgefahr</th></tr>
+      <tr>
+        <td><span class="vp-verb">auffordern</span><span class="type-tag t-schwach">schwach</span>
+<span class="vp-forms">jdn. (Akk) + zu / zu + Inf.</span>
+<span class="vp-mean">to call on sb. to do sth.</span>
+<span class="vp-ex">Der Busfahrer hat den Mann aufgefordert, seinen Platz freizugeben.</span></td>
+        <td><span class="vp-verb">anfordern</span><span class="type-tag t-schwach">schwach</span>
+<span class="vp-forms">etw. (Akk)</span>
+<span class="vp-mean">to request, order (sth. to be sent)</span>
+<span class="vp-ex">Wir haben neue Unterlagen angefordert.</span></td>
+      </tr>
+      <tr class="vp-merke"><td colspan="2">auffordern: eine Person soll etwas tun. anfordern: man will eine Sache bekommen.</td></tr>
+      <tr>
+        <td><span class="vp-verb">unterbrechen</span><span class="type-tag t-stark">stark, untrennbar</span>
+<span class="vp-forms">unterbricht - unterbrach - hat unterbrochen</span>
+<span class="vp-mean">to interrupt, pause</span>
+<span class="vp-ex">Wir unterbrechen die Sitzung für zehn Minuten.</span></td>
+        <td><span class="vp-verb">abbrechen</span><span class="type-tag t-stark">stark, trennbar</span>
+<span class="vp-forms">bricht ab - brach ab - hat abgebrochen</span>
+<span class="vp-mean">to break off, quit</span>
+<span class="vp-ex">Er hat das Studium nach zwei Semestern abgebrochen.</span></td>
+      </tr>
+      <tr class="vp-merke"><td colspan="2">unterbrechen: Pause, es geht weiter. abbrechen: Schluss, es geht nicht weiter.</td></tr>
+      <tr>
+        <td><span class="vp-verb">sprechen</span><span class="type-tag t-stark">stark</span>
+<span class="vp-forms">über + Akk / mit + Dat</span>
+<span class="vp-mean">to talk about / with</span>
+<span class="vp-ex">Wir sprechen <em class="vp-akk">über das Problem</em>.</span></td>
+        <td><span class="vp-verb">besprechen</span><span class="type-tag t-stark">stark</span>
+<span class="vp-forms">etw. (Akk), ohne Präposition</span>
+<span class="vp-mean">to discuss sth.</span>
+<span class="vp-ex">Wir besprechen <em class="vp-akk">das Problem</em>.</span></td>
+      </tr>
+      <tr class="vp-merke"><td colspan="2">be- macht das Verb transitiv: nicht "über etwas besprechen".</td></tr>
+      <tr>
+        <td><span class="vp-verb">etwas kündigen</span><span class="type-tag t-schwach">schwach</span>
+<span class="vp-forms">Akk</span>
+<span class="vp-mean">to quit (a job), cancel (contract, flat)</span>
+<span class="vp-ex">Ich habe <em class="vp-akk">meine Stelle</em> gekündigt.</span></td>
+        <td><span class="vp-verb">jemandem kündigen</span><span class="type-tag t-schwach">schwach</span>
+<span class="vp-forms">Dat (+ Akk)</span>
+<span class="vp-mean">to give sb. notice, dismiss</span>
+<span class="vp-ex">Die Firma hat <em class="vp-dat">ihm</em> gekündigt. Der Vermieter hat <em class="vp-dat">mir</em> die Wohnung gekündigt.</span></td>
+      </tr>
+      <tr class="vp-merke"><td colspan="2">Akk = ich beende den Vertrag. Dativ = jemand beendet meinen Vertrag.</td></tr>
+      <tr>
+        <td><span class="vp-verb">enden</span><span class="type-tag t-schwach">schwach</span>
+<span class="vp-forms">Ohne, intransitiv</span>
+<span class="vp-mean">to end</span>
+<span class="vp-ex">Der Kurs endet um zwölf Uhr.</span></td>
+        <td><span class="vp-verb">beenden</span><span class="type-tag t-schwach">schwach</span>
+<span class="vp-forms">Akk</span>
+<span class="vp-mean">to end, finish sth.</span>
+<span class="vp-ex">Die Lehrerin beendet <em class="vp-akk">den Kurs</em> um zwölf Uhr.</span></td>
+      </tr>
+      <tr class="vp-merke"><td colspan="2">enden: etwas hört auf. beenden: jemand macht Schluss mit etwas.</td></tr>
+      <tr>
+        <td><span class="vp-verb">zerbrechen</span><span class="type-tag t-stark">stark</span>
+<span class="vp-forms">zerbricht - zerbrach - ist zerbrochen (intr.) / hat zerbrochen (trans.)</span>
+<span class="vp-mean">to break (into pieces)</span>
+<span class="vp-ex">Die Tasse ist zerbrochen. Ihre Beziehung ist zerbrochen.</span></td>
+        <td><span class="vp-verb">zerschlagen</span><span class="type-tag t-stark">stark</span>
+<span class="vp-forms">zerschlägt - zerschlug - hat zerschlagen</span>
+<span class="vp-mean">to smash (with force)</span>
+<span class="vp-ex">Er hat aus Wut einen Teller zerschlagen.</span></td>
+      </tr>
+      <tr class="vp-merke"><td colspan="2">zerbrechen geht ohne Täter (ist). zerschlagen und zerstören (hat zerstört) brauchen immer ein Objekt.</td></tr>
+      <tr>
+        <td><span class="vp-verb">ansehen</span><span class="type-tag t-stark">stark</span>
+<span class="vp-forms">sieht an - sah an - hat angesehen</span>
+<span class="vp-mean">sich (Dat) etw. ansehen = to look at, watch</span>
+<span class="vp-ex">Ich sehe mir den Film an.</span></td>
+        <td><span class="vp-verb">aussehen</span><span class="type-tag t-stark">stark</span>
+<span class="vp-forms">sieht aus - sah aus - hat ausgesehen</span>
+<span class="vp-mean">to look, appear</span>
+<span class="vp-ex">Du siehst müde aus.</span></td>
+      </tr>
+      <tr class="vp-merke"><td colspan="2">ansehen: ich schaue etwas an. aussehen: so wirkt jemand.</td></tr>
+    </tbody>
+  </table>
+</details>
   <div id="prep-label" class="section-label" style="display:none;"></div>
   <div class="grid" id="grid"></div>
   <div class="empty" id="empty">Keine Verben gefunden.</div>
@@ -617,7 +775,7 @@ const DATA = [
 ["korrigieren","Akk","hat korrigiert","to correct","w","Die Lehrerin korrigiert die Prüfungen."],
 ["kratzen","Akk","hat gekratzt","to scratch","w","Die Katze kratzt am Sofa."],
 ["kriegen","Akk","hat gekriegt","to get (colloq.)","w","Ich habe eine Erkältung gekriegt."],
-["kündigen","Dat","hat gekündigt","to resign, terminate","w","Er hat seinen Job gekündigt."],
+["kündigen","Akk","hat gekündigt","to quit (job), cancel (contract, flat)","w","Er hat seine Stelle gekündigt."],
 ["küssen","Akk","hat geküsst","to kiss","w","Er küsst sie zum Abschied."],
 ["landen","Ohne","ist gelandet","to land","w","Das Flugzeug ist sicher gelandet."],
 ["lauten","Ohne","hat gelautet","to read, say","w","Die Frage lautet: Wie geht es weiter?"],
@@ -714,7 +872,7 @@ const DATA = [
 ["schwören","Ohne","hat geschworen","to swear, vow","s","Ich schwöre, dass ich die Wahrheit sage."],
 ["segeln","Ohne","ist gesegelt","to sail","w","Wir segeln über den See."],
 ["senken","Akk","hat gesenkt","to lower, reduce","w","Die Regierung senkt die Steuern."],
-["setzen","Akk","hat gesetzt","to set, place","w","Setz dich bitte hin."],
+["setzen","Akk","hat gesetzt","to set, place","w","Setz dich bitte auf den Stuhl."],
 ["seufzen","Ohne","hat geseufzt","to sigh","w","Sie seufzt vor Erleichterung."],
 ["sicherstellen","Akk","hat sichergestellt","to ensure","w","Stell sicher, dass alles bereit ist."],
 ["siezen","Akk","hat gesiezt","to address formally","w","In der Schweiz siezt man den Chef."],
@@ -734,7 +892,7 @@ const DATA = [
 ["starten","Ohne","ist gestartet","to start, launch","w","Das Flugzeug startet pünktlich."],
 ["stattfinden","Ohne","hat stattgefunden","to take place","s","Die Konferenz findet morgen statt."],
 ["stechen","Akk","hat gestochen","to sting, pierce","s","Eine Biene hat mich gestochen."],
-["stecken","Ohne","hat gesteckt","to be stuck, put","w","Der Schlüssel steckt im Schloss."],
+["stecken","Ohne","hat (D) / ist (CH) gesteckt","to be (in), be stuck (intransitive, Wo? + Dat)","w","Der Schlüssel steckt im Schloss."],
 ["stehlen","Akk","hat gestohlen","to steal","s","Jemand hat mein Portemonnaie gestohlen."],
 ["stellen","Akk","hat gestellt","to place, put","w","Stell die Vase auf den Tisch."],
 ["stimmen","Ohne","hat gestimmt","to be correct","w","Das stimmt nicht!"],
@@ -919,7 +1077,7 @@ const DATA = [
 ["ausladen","Akk","hat ausgeladen","to unload; to uninvite","s","Wir müssen die Kisten aus dem Auto ausladen."],
 ["regnen","Ohne","hat geregnet","to rain","w","Es regnet seit drei Tagen."],
 ["hereinregnen","Ohne","hat hereingeregnet","to rain in","w","Es regnet durch das Dach herein."],
-["hängen","Ohne","hat gehangen","to hang (intransitive)","s","Das Bild hängt an der Wand."],
+["hängen","Ohne","hat (D) / ist (CH) gehangen","to hang (intransitive)","s","Das Bild hängt an der Wand."],
 ["nähen","Akk","hat genäht","to sew","w","Sie näht sich ein Kleid."],
 ["anwenden","Akk","hat angewandt","to apply (a method)","s","Man kann diese Technik in vielen Bereichen anwenden."],
 ["streiken","Ohne","hat gestreikt","to strike (labor)","w","Die Arbeiter der Gepäckabteilung haben am Flughafen gestreikt."],
@@ -947,7 +1105,7 @@ const DATA = [
 ["missverstehen","Akk","hat missverstanden","to misunderstand","s","Du hast mich missverstanden."],
 ["profitieren","von+Dat","hat profitiert","to profit, to benefit","w","Davon profitieren alle Beteiligten."],
 ["sich verabschieden","von+Dat","hat sich verabschiedet","to say goodbye","w","Er hat sich von seinen Kollegen verabschiedet."],
-["sich weiterbilden","Ohne","hat sich weitergebildet","to continue one's education","w","Sie bildet sich im Bereich IT weiter."],
+["sich weiterbilden","in+Dat","hat sich weitergebildet","to continue one's education","w","Sie bildet sich im Bereich IT weiter."],
 ["zusammenpassen","Ohne","hat zusammengepasst","to go well together, to match","w","Die beiden passen gut zusammen."],
 ["zurückgeben","Dat+Akk","hat zurückgegeben","to give back, to return","s","Kannst du mir das Buch zurückgeben?"],
 ["zurückgehen","Ohne","ist zurückgegangen","to go back; to decrease","s","Die Verkaufszahlen sind zurückgegangen."],
@@ -1017,7 +1175,33 @@ const DATA = [
 ["gefrieren", "Ohne", "ist gefroren", "to freeze", "s", "Das Wasser gefriert bei null Grad."],
 ["vorziehen", "Ohne", "hat vorgezogen", "to prefer", "s", "Ich ziehe Tee dem Kaffee vor."],
 ["verschränken", "Ohne", "hat verschränkt", "to cross, to fold", "w", "Er verschränkt die Arme."],
-["zusteigen", "Ohne", "ist zugestiegen", "to board (join en route)", "w", "An der nächsten Haltestelle steigt noch jemand zu."]
+["zusteigen", "Ohne", "ist zugestiegen", "to board (join en route)", "w", "An der nächsten Haltestelle steigt noch jemand zu."],
+// ─── V52 additions ───
+["liegen","Ohne","hat (D) / ist (CH) gelegen","to lie, be lying (Wo? + Dat)","s","Das Handy liegt auf dem Tisch."],
+["sitzen","Ohne","hat (D) / ist (CH) gesessen","to sit, be sitting (Wo? + Dat)","s","Die Katze sitzt auf dem Boden."],
+["stehen","Ohne","hat (D) / ist (CH) gestanden","to stand (Wo? + Dat)","s","Der Grill steht auf dem Balkon."],
+["stecken","Akk","hat gesteckt","to put, stick into (Wohin? + Akk)","w","Hast du den Schlüssel ins Schloss gesteckt?"],
+["kündigen","Dat","hat gekündigt","to give (sb.) notice, dismiss","w","Die Firma hat ihm gekündigt."],
+["enden","Ohne","hat geendet","to end (intransitive)","w","Der Kurs endet um zwölf Uhr."],
+["besprechen","Akk","hat besprochen","to discuss (no preposition)","s","Wir besprechen das Problem morgen."],
+["abbrechen","Akk","hat abgebrochen","to break off, quit","s","Er hat das Studium nach zwei Semestern abgebrochen."],
+["zerbrechen","Ohne","ist zerbrochen","to break, shatter (intransitive)","s","Ihre Beziehung ist zerbrochen."],
+["zerbrechen","Akk","hat zerbrochen","to break (sth.)","s","Warum hast du meinen Bleistift zerbrochen?"],
+["zerschlagen","Akk","hat zerschlagen","to smash","s","Er hat aus Wut einen Teller zerschlagen."],
+["zerschneiden","Akk","hat zerschnitten","to cut up","s","Sie hat das Papier in kleine Stücke zerschnitten."],
+["vorwerfen","Dat+Akk","hat vorgeworfen","to reproach (sb. for sth.)","s","Sie wirft ihm vor, dass er nie zuhört."],
+["durchfallen","bei+Dat","ist durchgefallen","to fail (an exam)","s","Er ist bei der Prüfung durchgefallen."],
+["eintreten","in+Akk","ist eingetreten","to enter, join","s","Sie ist letztes Jahr in den Verein eingetreten."],
+["empfinden","Akk","hat empfunden","to feel (an emotion)","s","Nach der Prüfung empfand sie grosse Erleichterung."],
+["loslassen","Akk","hat losgelassen","to let go (of)","s","Sie hat seine Hand nicht losgelassen."],
+["sich durchsetzen","gegen+Akk","hat sich durchgesetzt","to assert oneself, prevail","w","Sie hat sich gegen die anderen Bewerber durchgesetzt."],
+["umfahren (trennbar)","Akk","hat umgefahren","to knock down (with a vehicle)","s","Der Autofahrer hat das Verkehrsschild umgefahren."],
+["umfahren (untrennbar)","Akk","hat umfahren","to drive around, bypass","s","Wir haben den Stau umfahren."],
+["anbieten","Dat+Akk","hat angeboten","to offer","s","Der Kellner bot uns einen Kaffee an."],
+["hinschreiben","Akk","hat hingeschrieben","to write down","s","Schreib mir die Adresse bitte hin."],
+["anstarren","Akk","hat angestarrt","to stare at","w","Warum starrst du mich so an?"],
+["ausweichen","Dat","ist ausgewichen","to dodge, avoid, get out of the way","s","Der Fahrer ist dem Velo im letzten Moment ausgewichen."],
+["inspirieren","Akk","hat inspiriert","to inspire (sb.)","w","Ihre Geschichte hat mich inspiriert."]
 ];
 
 // Conjugation data: [Präsens 3.P.Sg., Präteritum 3.P.Sg.]
@@ -1820,7 +2004,30 @@ const CONJ = {
 "schneien":["schneit","schneite"],
 "wissen":["weiss","wusste"],
 "sinken":["sinkt","sank"],
-"steigen":["steigt","stieg"]
+"steigen":["steigt","stieg"],
+// ─── V52 additions ───
+"liegen":["liegt","lag"],
+"sitzen":["sitzt","sass"],
+"stehen":["steht","stand"],
+"enden":["endet","endete"],
+"besprechen":["bespricht","besprach"],
+"abbrechen":["bricht ab","brach ab"],
+"zerbrechen":["zerbricht","zerbrach"],
+"zerschlagen":["zerschlägt","zerschlug"],
+"zerschneiden":["zerschneidet","zerschnitt"],
+"vorwerfen":["wirft vor","warf vor"],
+"durchfallen":["fällt durch","fiel durch"],
+"eintreten":["tritt ein","trat ein"],
+"empfinden":["empfindet","empfand"],
+"loslassen":["lässt los","liess los"],
+"sich durchsetzen":["setzt sich durch","setzte sich durch"],
+"umfahren (trennbar)":["fährt um","fuhr um"],
+"umfahren (untrennbar)":["umfährt","umfuhr"],
+"anbieten":["bietet an","bot an"],
+"hinschreiben":["schreibt hin","schrieb hin"],
+"anstarren":["starrt an","starrte an"],
+"ausweichen":["weicht aus","wich aus"],
+"inspirieren":["inspiriert","inspirierte"]
 };
 
 // Extract unique prepositions for filter buttons
