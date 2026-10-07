@@ -155,8 +155,39 @@ td:first-child{
   margin:6px 0;
 }
 
+/* === DETAILS / PRACTICE === */
+.cheat-box ul{margin:8px 0 0 20px;}
+.cheat-box ol{margin:8px 0 0 20px;}
+.zeit-box{
+  margin-top:12px;padding:10px 14px;background:#2b2b2f;
+  border-radius:6px;border-left:3px solid #e8a840;
+  font-size:13px;line-height:1.7;color:#e0e0e4;
+}
+.zeit-box .label{
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;font-weight:700;color:#e8a840;
+  display:block;margin-bottom:4px;
+}
+.ex-item{
+  padding:8px 0;border-bottom:1px solid #3e3e44;
+  font-size:14px;line-height:1.7;color:#e0e0e4;
+}
+.ex-item:last-child{border-bottom:none;}
+details{
+  margin-top:4px;padding:4px 10px;background:#2b2b2f;
+  border-radius:6px;border:1px solid #44444c;
+}
+summary{
+  cursor:pointer;font-family:'JetBrains Mono',monospace;
+  font-size:12px;font-weight:700;color:#8888a0;
+}
+details[open] summary{color:#14b8a6;}
+details .answer{font-size:13px;color:#e0e0e4;padding:4px 0;}
+
 @media(max-width:600px){
   body{padding:0 8px 48px;}
+  .ex-item{font-size:12px;}
+  details .answer{font-size:12px;}
   header{padding:8px 10px 6px;margin-bottom:12px;}
   h1{font-size:18px;}
   header p{font-size:11px;}
@@ -240,10 +271,22 @@ td:first-child{
           <td>Man hat die Suppe gekocht.</td>
           <td>Die Suppe <span class="aux">ist</span> <span class="pp">gekocht</span> <span class="aux">worden</span>.</td>
         </tr>
+        <tr>
+          <td>Plusquamperfekt</td>
+          <td><span class="aux">waren</span> (konj.) + <span class="pp">Partizip II</span> + <span class="aux">worden</span></td>
+          <td>Man hatte die Suppe gekocht.</td>
+          <td>Die Suppe <span class="aux">war</span> <span class="pp">gekocht</span> <span class="aux">worden</span>.</td>
+        </tr>
+        <tr>
+          <td>Futur I</td>
+          <td><span class="aux">werden</span> (konj.) + <span class="pp">Partizip II</span> + <span class="aux">werden</span></td>
+          <td>Man wird die Suppe kochen.</td>
+          <td>Die Suppe <span class="aux">wird</span> <span class="pp">gekocht</span> <span class="aux">werden</span>.</td>
+        </tr>
       </tbody>
     </table>
     </div>
-    <div class="note">Perfekt Passiv: <strong>worden</strong> (nicht geworden!) — das Passiv-Partizip verliert das ge-Präfix.</div>
+    <div class="note">Perfekt und Plusquamperfekt Passiv: <strong>worden</strong> (nicht geworden!) — das Passiv-Partizip verliert das ge-Präfix.</div>
   </div>
 
   <!-- ═══ PASSIV MIT MODALVERBEN ═══ -->
@@ -281,6 +324,116 @@ td:first-child{
     </table>
     </div>
     <div class="note">Formel: <span class="formula">Modalverb (konj.) + Partizip II + werden</span></div>
+  </div>
+
+  <div class="table-wrap">
+    <div class="table-title">
+      <h2>Modalverb-Passiv in allen Zeiten</h2>
+      <p>Handout «Tempusformen»</p>
+    </div>
+    <div style="overflow-x:auto;">
+    <table>
+      <thead>
+        <tr>
+          <th>Tempus</th>
+          <th>Aktiv mit Modalverb</th>
+          <th>Passiv mit Modalverb</th>
+          <th>Bildung</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Präsens</td>
+          <td>Man <strong>muss</strong> die Suppe kochen.</td>
+          <td>Die Suppe <span class="aux">muss</span> <span class="pp">gekocht</span> <span class="aux">werden</span>.</td>
+          <td>Modalverb (Präs.) + Partizip II + werden</td>
+        </tr>
+        <tr>
+          <td>Präteritum</td>
+          <td>Man <strong>musste</strong> die Suppe kochen.</td>
+          <td>Die Suppe <span class="aux">musste</span> <span class="pp">gekocht</span> <span class="aux">werden</span>.</td>
+          <td>Modalverb (Prät.) + Partizip II + werden</td>
+        </tr>
+        <tr>
+          <td>Perfekt</td>
+          <td>Man <strong>hat</strong> die Suppe kochen müssen.</td>
+          <td>Die Suppe <span class="aux">hat</span> <span class="pp">gekocht</span> <span class="aux">werden müssen</span>.</td>
+          <td>haben + Partizip II + werden + Modalverb (Infinitiv)</td>
+        </tr>
+        <tr>
+          <td>Plusquamperfekt</td>
+          <td>Man <strong>hatte</strong> die Suppe kochen müssen.</td>
+          <td>Die Suppe <span class="aux">hatte</span> <span class="pp">gekocht</span> <span class="aux">werden müssen</span>.</td>
+          <td>hatten + Partizip II + werden + Modalverb (Infinitiv)</td>
+        </tr>
+        <tr>
+          <td>Futur I</td>
+          <td>Man <strong>wird</strong> die Suppe kochen müssen.</td>
+          <td>Die Suppe <span class="aux">wird</span> <span class="pp">gekocht</span> <span class="aux">werden müssen</span>.</td>
+          <td>werden + Partizip II + werden + Modalverb (Infinitiv)</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="note">Perfekt und Plusquamperfekt: Ersatzinfinitiv — das Modalverb steht im Infinitiv (müssen, nicht gemusst), das Hilfsverb ist haben/hatten (nicht sein). Kein worden im Modalverb-Passiv.</div>
+  </div>
+
+  <!-- ═══ PASSIV IM NEBENSATZ ═══ -->
+  <div class="section-title">Passiv im Nebensatz</div>
+  <div class="table-wrap">
+    <div class="table-title">
+      <h2>Der Chefkoch hat gesagt, ...</h2>
+      <p>... dass am Samstag für 150 Personen ...</p>
+    </div>
+    <div style="overflow-x:auto;">
+    <table>
+      <thead>
+        <tr>
+          <th>Tempus</th>
+          <th>ohne Modalverb</th>
+          <th>mit Modalverb</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Präsens</td>
+          <td>... dass am Samstag für 150 Personen gekocht <span class="aux">wird</span>.</td>
+          <td>... dass am Samstag für 150 Personen gekocht werden <span class="aux">muss</span>.</td>
+        </tr>
+        <tr>
+          <td>Präteritum</td>
+          <td>... gekocht <span class="aux">wurde</span>.</td>
+          <td>... gekocht werden <span class="aux">musste</span>.</td>
+        </tr>
+        <tr>
+          <td>Perfekt</td>
+          <td>... gekocht worden <span class="aux">ist</span>.</td>
+          <td>... <span class="aux">hat</span> gekocht werden müssen.</td>
+        </tr>
+        <tr>
+          <td>Plusquamperfekt</td>
+          <td>... gekocht worden <span class="aux">war</span>.</td>
+          <td>... <span class="aux">hatte</span> gekocht werden müssen.</td>
+        </tr>
+        <tr>
+          <td>Futur I</td>
+          <td>... gekocht werden <span class="aux">wird</span>.</td>
+          <td>... <span class="aux">wird</span> gekocht werden müssen.</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="cheat-box">
+    <div class="title">Verbstellung</div>
+    <ol>
+      <li>Im Nebensatz steht das finite Verb am Ende (wird, wurde, ist, war).</li>
+      <li>Ausnahme Modalverb-Passiv im Perfekt, Plusquamperfekt und Futur I: das finite Hilfsverb steht am Ende des Satzes, aber VOR den anderen Verben (hat gekocht werden müssen, hatte gekocht werden müssen, wird gekocht werden müssen).</li>
+      <li>Nebensätze mit mehr als drei Verben werden schriftlich und mündlich sehr selten benutzt.</li>
+    </ol>
+    <br>
+    Hauptsatz: Die Suppe hat schnell gekocht werden müssen.<br>
+    → Nebensatz: <span style="color:#14b8a6;font-weight:700;">... dass die Suppe schnell hat gekocht werden müssen.</span>
   </div>
 
   <!-- ═══ TRANSFORMATION RULES ═══ -->
@@ -324,6 +477,101 @@ td:first-child{
         <span class="label">Aktiv:</span> Die Zeitung berichtet <span class="hl">über den Unfall</span>.<br>
         <span class="label">Passiv:</span> <span class="hl">Über den Unfall</span> wird von der Zeitung berichtet.
       </div>
+    </div>
+
+    <div class="rule-card">
+      <div class="rule-num">Regel 5</div>
+      <h3>Vorfeld und Platzhalter «es»</h3>
+      <p>Im Passivsatz steht oft eine Ergänzung oder Angabe im Vorfeld. Gibt es nichts, was vorne stehen kann, steht der Platzhalter «es» (er fällt weg, sobald etwas anderes im Vorfeld steht). Nur die Akkusativergänzung wird zum Subjekt.</p>
+      <div class="ex">
+        <span class="label">Aktiv:</span> Der Kellner dankt <span class="hl">den Gästen</span> für das grosszügige Trinkgeld.<br>
+        <span class="label">Passiv:</span> <span class="hl">Den Gästen</span> wird vom Kellner für das grosszügige Trinkgeld gedankt.<br>
+        <span class="label">mit «es»:</span> Es wird den Gästen vom Kellner für das grosszügige Trinkgeld gedankt.
+        <span class="transl">Dativ bleibt Dativ. Verb 3. Person Singular, weil kein Akkusativ-Subjekt.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <div class="table-title">
+      <h2>Aktiv → Passiv</h2>
+      <p>Was wird aus welcher Satzstelle?</p>
+    </div>
+    <div style="overflow-x:auto;">
+    <table>
+      <thead>
+        <tr><th>Aktiv</th><th>Passiv</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="white-space:normal;">Akkusativergänzung (bestimmt oder unbestimmt)</td>
+          <td>Subjekt (Nominativ)</td>
+        </tr>
+        <tr>
+          <td style="white-space:normal;">Subjekt</td>
+          <td>von + Dativ (oder fällt weg)</td>
+        </tr>
+        <tr>
+          <td style="white-space:normal;">Angabe</td>
+          <td>bleibt Angabe (kann ins Vorfeld)</td>
+        </tr>
+        <tr>
+          <td style="white-space:normal;">Präpositional- und Lokalergänzung</td>
+          <td>bleibt unverändert</td>
+        </tr>
+        <tr>
+          <td style="white-space:normal;">Dativergänzung</td>
+          <td>bleibt Dativ (kann ins Vorfeld)</td>
+        </tr>
+        <tr>
+          <td style="white-space:normal;">keine Akkusativergänzung</td>
+          <td>kein Subjekt: Verb in 3. Person Singular</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="note">Modalverb-Passiv: <span class="aux">Jederzeit</span> können an der Bar Cocktails getrunken werden. — die Angabe «Jederzeit» steht im Vorfeld.</div>
+  </div>
+
+  <!-- ═══ SOLLEN UND WOLLEN ═══ -->
+  <div class="section-title">sollen und wollen im Passiv</div>
+  <div class="table-wrap">
+    <div class="table-title">
+      <h2>Aktiv → Passiv mit sollen</h2>
+    </div>
+    <div style="overflow-x:auto;">
+    <table>
+      <thead>
+        <tr><th>Aktiv</th><th>Bedeutung</th><th>Passiv</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="white-space:normal;">Nächstes Jahr <strong>will</strong> die Stadt auf dem Goldenberg einen Turm bauen. (wollen / möchten)</td>
+          <td>Die Stadt plant das.</td>
+          <td>Nächstes Jahr <span class="aux">soll</span> von der Stadt auf dem Goldenberg ein Turm <span class="pp">gebaut</span> <span class="aux">werden</span>.</td>
+        </tr>
+        <tr>
+          <td style="white-space:normal;">Heute <strong>soll</strong> die Sekretärin einen Brief an den Bundesrat schreiben.</td>
+          <td>Der Chef hat ihr den Auftrag gegeben.</td>
+          <td>Heute <span class="aux">soll</span> von der Sekretärin ein Brief an den Bundesrat <span class="pp">geschrieben</span> <span class="aux">werden</span>.</td>
+        </tr>
+        <tr>
+          <td style="white-space:normal;">Letzte Woche <strong>sollte</strong> die Sekretärin einen Brief an den Bundesrat schreiben.</td>
+          <td>Der Chef hatte ihr den Auftrag gegeben.</td>
+          <td>Letzte Woche <span class="aux">sollte</span> von der Sekretärin ein Brief an den Bundesrat <span class="pp">geschrieben</span> <span class="aux">werden</span>.</td>
+        </tr>
+        <tr>
+          <td style="white-space:normal;">Im Sommer <strong>sollte</strong> man viel Wasser trinken. (Konjunktiv II)</td>
+          <td>Ratschlag</td>
+          <td>Im Sommer <span class="aux">sollte</span> viel Wasser <span class="pp">getrunken</span> <span class="aux">werden</span>.</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="note">
+      • Aktiv wollen/möchten (der Plan des Subjekts) wird im Passiv zu sollen (etwas ist geplant).<br>
+      • Aktiv sollen bleibt sollen (Auftrag im Präsens, Auftrag in der Vergangenheit mit sollte, Ratschlag mit Konjunktiv II sollte).<br>
+      • Der Agens steht als von + Dativ; beim Ratschlag fällt «man» weg.
     </div>
   </div>
 
@@ -405,11 +653,115 @@ td:first-child{
     Die Briefe sind <span style="color:#e8a840;font-weight:700;">geschrieben</span>, aber leider noch nicht <span style="color:#e8a840;font-weight:700;">frankiert</span>.
   </div>
 
+  <!-- ═══ VORGANGS- ODER ZUSTANDSPASSIV ═══ -->
+  <div class="section-title">Vorgangs- oder Zustandspassiv?</div>
+  <div class="cheat-box">
+    <div class="title">So entscheidest du</div>
+    <div style="overflow-x:auto;">
+    <table style="width:100%;border-collapse:collapse;margin-top:8px;font-size:14px;">
+      <thead>
+        <tr>
+          <th style="text-align:left;padding:6px 10px;border-bottom:2px solid #3e3e44;color:#8888a0;font-size:12px;"></th>
+          <th style="text-align:left;padding:6px 10px;border-bottom:2px solid #3e3e44;color:#14b8a6;font-weight:700;">Vorgangspassiv (werden)</th>
+          <th style="text-align:left;padding:6px 10px;border-bottom:2px solid #3e3e44;color:#e8a840;font-weight:700;">Zustandspassiv (sein)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:6px 10px;color:#8888a0;border-bottom:1px solid #3e3e44;">Frage</td>
+          <td style="padding:6px 10px;border-bottom:1px solid #3e3e44;color:#c0c0c8;">Was passiert? / Was ist passiert? (Aktion)</td>
+          <td style="padding:6px 10px;border-bottom:1px solid #3e3e44;color:#c0c0c8;">Wie ist die Situation nach dieser Aktion? (Zustand)</td>
+        </tr>
+        <tr>
+          <td style="padding:6px 10px;color:#8888a0;border-bottom:1px solid #3e3e44;">Typisch</td>
+          <td style="padding:6px 10px;border-bottom:1px solid #3e3e44;color:#c0c0c8;">Anleitung: Was muss ich machen?</td>
+          <td style="padding:6px 10px;border-bottom:1px solid #3e3e44;color:#c0c0c8;">Check-Liste: Ist alles bereit? Resultat</td>
+        </tr>
+        <tr>
+          <td style="padding:6px 10px;color:#8888a0;border-bottom:1px solid #3e3e44;">Zeit</td>
+          <td style="padding:6px 10px;border-bottom:1px solid #3e3e44;color:#c0c0c8;">Vorgang läuft / geschieht</td>
+          <td style="padding:6px 10px;border-bottom:1px solid #3e3e44;color:#c0c0c8;">Vorgang ist abgeschlossen</td>
+        </tr>
+        <tr>
+          <td style="padding:6px 10px;color:#8888a0;border-bottom:1px solid #3e3e44;">Beispiel</td>
+          <td style="padding:6px 10px;border-bottom:1px solid #3e3e44;">Der Tisch <span style="color:#14b8a6;font-weight:700;">wird</span> von einem Kellner gedeckt. (Aktion)</td>
+          <td style="padding:6px 10px;border-bottom:1px solid #3e3e44;">Der Tisch <span style="color:#e8a840;font-weight:700;">ist</span> gedeckt.</td>
+        </tr>
+        <tr>
+          <td style="padding:6px 10px;color:#8888a0;">Vergangenheit</td>
+          <td style="padding:6px 10px;"><span style="color:#14b8a6;font-weight:700;">wurde</span> + Partizip II</td>
+          <td style="padding:6px 10px;"><span style="color:#e8a840;font-weight:700;">war</span> + Partizip II</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="zeit-box">
+      <span class="label">Zeit-Falle</span>
+      Bevor der Cocktail zubereitet <span class="aux">wird</span>, müssen erst noch die Banane geschält, das Eis zerstossen und die Sahne geschlagen werden. <span style="color:#8888a0;font-style:italic;">(Vorgang: die Zubereitung hat noch nicht begonnen. Noch nicht gemacht!, Anleitung)</span><br><br>
+      Als die Fotos gemacht <span class="aux">wurden</span>, waren wir im Biergarten. Deshalb sind wir auf keinem zu sehen. <span style="color:#8888a0;font-style:italic;">(Grund)</span><br>
+      Als die Kneipe frisch renoviert <span style="color:#e8a840;font-weight:700;">war</span>, ... gefeiert <span class="aux">wurde</span> ... <span style="color:#8888a0;font-style:italic;">(Zustand vorher, Vorgang dabei)</span>
+    </div>
+  </div>
+
+  <div class="cheat-box">
+    <div class="title">Übung: sein oder werden?</div>
+    <div class="ex-item">1. Brauchen wir noch mehr Sekt? - Nein, die Gläser der Gäste ___ schon alle aufgefüllt.
+      <details><summary>Lösung</summary><div class="answer">sind</div></details></div>
+    <div class="ex-item">2. Als die Fotos gemacht ___, waren wir draussen im Biergarten. Deshalb sind wir auf keinem zu sehen.
+      <details><summary>Lösung</summary><div class="answer">wurden</div></details></div>
+    <div class="ex-item">3. Warum waren unsere neuen Speisekarten noch nicht fertig? - Sie ___ schon gedruckt, aber sie ___ noch in Kisten verpackt.
+      <details><summary>Lösung</summary><div class="answer">waren / wurden</div></details></div>
+    <div class="ex-item">4. Bevor der Cocktail zubereitet ___, müssen erst noch die Banane geschält, das Eis zerstossen und die Sahne geschlagen ___.
+      <details><summary>Lösung</summary><div class="answer">wird / werden</div></details></div>
+    <div class="ex-item">5. Die Einladungen zu unserer Hochzeit ___ verschickt und die Tischdekoration ___ organisiert, aber mein Kleid ___ noch geändert!
+      <details><summary>Lösung</summary><div class="answer">sind / ist / wird</div></details></div>
+    <div class="ex-item">6. Als die Kneipe frisch renoviert ___, schlug an dem Abend, als gerade die Neueröffnungsparty gefeiert ___, ein Blitz in das Gebäude ein.
+      <details><summary>Lösung</summary><div class="answer">war / wurde</div></details></div>
+    <div class="ex-item">7. Wie ___ dein Lieblingsgericht zubereitet?
+      <details><summary>Lösung</summary><div class="answer">wird</div></details></div>
+    <div class="ex-item">8. Bevor die Flasche geöffnet ___, muss sie kräftig geschüttelt ___.
+      <details><summary>Lösung</summary><div class="answer">wird / werden</div></details></div>
+    <div class="ex-item">9. Die fertigen Chips ___ in der Fabrik in Tüten verpackt.
+      <details><summary>Lösung</summary><div class="answer">werden (im Kurs wurde auch «sind» akzeptiert)</div></details></div>
+    <div class="ex-item">10. Wir brauchen dringend neue Teelöffel. - Keine Sorge, sie ___ schon bestellt. Das habe ich gestern gemacht. Sie ___ morgen geliefert.
+      <details><summary>Lösung</summary><div class="answer">sind / werden</div></details></div>
+    <div class="ex-item">11. Der Hauptgang ___ serviert. Er steht auf dem Tisch.
+      <details><summary>Lösung</summary><div class="answer">ist</div></details></div>
+    <div class="ex-item">12. Weil das Essen kalt war, ___ uns letztes Wochenende im Restaurant ein Grappa angeboten.
+      <details><summary>Lösung</summary><div class="answer">wurde</div></details></div>
+    <div class="ex-item">13. Da auf der Speisekarte ein Fehler entdeckt ___, musste sie neu geschrieben ___.
+      <details><summary>Lösung</summary><div class="answer">wurde / werden</div></details></div>
+    <div class="ex-item">14. Alle Zutaten ___ schon vermischt. / Unsere Lieblingskneipe ___ schon geschlossen.
+      <details><summary>Lösung</summary><div class="answer">waren / war</div></details></div>
+  </div>
+
+  <div class="cheat-box">
+    <div class="title">Übung: Vom Aktiv ins Passiv</div>
+    <div class="ex-item">1. Im Restaurant Himmelblau bestellen die meisten Gäste den Kichererbsensalat.
+      <details><summary>Lösung</summary><div class="answer">Im Restaurant Himmelblau wird der Kichererbsensalat von den meisten Gästen bestellt.</div></details></div>
+    <div class="ex-item">2. Der Bäcker muss die Brote für den Wochenmarkt vor 5 Uhr morgens produzieren.
+      <details><summary>Lösung</summary><div class="answer">Die Brote für den Wochenmarkt müssen vor 5 Uhr morgens vom Bäcker produziert werden.</div></details></div>
+    <div class="ex-item">3. Letztes Jahr bot das Reformhaus noch Rindfleisch an.
+      <details><summary>Lösung</summary><div class="answer">Letztes Jahr wurde vom Reformhaus noch Rindfleisch angeboten.</div></details></div>
+    <div class="ex-item">4. Endlich konnten die Angestellten die neuen Bierdeckel verteilen.
+      <details><summary>Lösung</summary><div class="answer">Endlich konnten die neuen Bierdeckel von den Angestellten verteilt werden.</div></details></div>
+    <div class="ex-item">5. Natürlich hat der Kellner die kalte Suppe vor der warmen Vorspeise serviert.
+      <details><summary>Lösung</summary><div class="answer">Natürlich ist die kalte Suppe vom Kellner vor der warmen Vorspeise serviert worden.</div></details></div>
+    <div class="ex-item">6. Beim Kochen hat man die Sahne nicht mit der Sauce vermischen dürfen.
+      <details><summary>Lösung</summary><div class="answer">Beim Kochen hat die Sahne nicht mit der Sauce vermischt werden dürfen.</div></details></div>
+    <div class="ex-item">7. In 100 Jahren wird man in den Supermärkten wahrscheinlich nur noch lokal angebautes Gemüse verkaufen.
+      <details><summary>Lösung</summary><div class="answer">In 100 Jahren wird in den Supermärkten wahrscheinlich nur noch lokal angebautes Gemüse verkauft werden.</div></details></div>
+    <div class="ex-item">8. Dann werden die Bauern nur noch biologische Produkte anbauen dürfen.
+      <details><summary>Lösung</summary><div class="answer">Dann werden nur noch biologische Produkte von den Bauern angebaut werden dürfen.</div></details></div>
+  </div>
+
   <!-- ═══ QUICK REFERENCE ═══ -->
   <div class="cheat-box">
-    <div class="title">Zusammenfassung — Die drei Formeln</div>
+    <div class="title">Zusammenfassung — Die Formeln</div>
     <span class="formula">Präsens / Prät.</span> → <span style="color:#14b8a6;font-weight:600;">werden (konj.)</span> + <span style="color:#f59e0b;font-weight:600;">Partizip II</span><br>
     <span class="formula">Perfekt</span> → <span style="color:#14b8a6;font-weight:600;">sein (konj.)</span> + <span style="color:#f59e0b;font-weight:600;">Partizip II</span> + <span style="color:#14b8a6;font-weight:600;">worden</span><br>
+    <span class="formula">Plusquamperfekt</span> → <span style="color:#14b8a6;font-weight:600;">war</span> + <span style="color:#f59e0b;font-weight:600;">Partizip II</span> + <span style="color:#14b8a6;font-weight:600;">worden</span><br>
+    <span class="formula">Futur I</span> → <span style="color:#14b8a6;font-weight:600;">wird</span> + <span style="color:#f59e0b;font-weight:600;">Partizip II</span> + <span style="color:#14b8a6;font-weight:600;">werden</span><br>
     <span class="formula">mit Modalverb</span> → <span style="color:#14b8a6;font-weight:600;">Modalverb (konj.)</span> + <span style="color:#f59e0b;font-weight:600;">Partizip II</span> + <span style="color:#14b8a6;font-weight:600;">werden</span>
   </div>
 </div>
