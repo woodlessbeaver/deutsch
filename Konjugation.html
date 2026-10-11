@@ -10,16 +10,16 @@
 <link rel="stylesheet" href="css/common.css">
 <style>
 .top-bar{position:sticky;top:0;z-index:100;background:#232327ee;backdrop-filter:blur(12px);border-bottom:1px solid #3e3e44;padding:14px 16px 10px}
-.top-bar h1{font-family:Arial,Helvetica,sans-serif;font-size:26px;font-weight:700;color:#f0f0f4;letter-spacing:-.5px;text-align:center;margin-bottom:6px}
+.top-bar h1{font-family:Verdana,Geneva,sans-serif;font-size:26px;font-weight:700;color:#f0f0f4;letter-spacing:-.5px;text-align:center;margin-bottom:6px}
 .top-bar .sub{text-align:center;font-size:14px;color:#ababba;margin-bottom:8px}
 .controls{max-width:920px;margin:0 auto;display:flex;flex-wrap:wrap;gap:5px;align-items:center;justify-content:center}
-.search-box{flex:1 1 220px;max-width:300px;padding:7px 12px;border:2px solid #58585e;border-radius:8px;font-family:Arial,Helvetica,sans-serif;font-size:14px;outline:none;transition:border-color .2s;background:#2b2b2f;color:#e0e0e4}
+.search-box{flex:1 1 220px;max-width:300px;padding:7px 12px;border:2px solid #58585e;border-radius:8px;font-family:Verdana,Geneva,sans-serif;font-size:14px;outline:none;transition:border-color .2s;background:#2b2b2f;color:#e0e0e4}
 .search-box:focus{border-color:#6366f1}
 .search-box::placeholder{color:#6a6a7a}
-.fbtn{padding:4px 8px;border:2px solid #44444c;border-radius:7px;background:#343438;font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:600;cursor:pointer;transition:all .15s;color:#8888a0;white-space:nowrap}
+.fbtn{padding:4px 8px;border:2px solid #44444c;border-radius:7px;background:#343438;font-family:Verdana,Geneva,sans-serif;font-size:11px;font-weight:600;cursor:pointer;transition:all .15s;color:#8888a0;white-space:nowrap}
 .fbtn:hover{border-color:#ababba}
 .fbtn.active{background:#3a1848;border-color:#7a60c0;color:#c8a8ff}
-.stats{width:100%;text-align:center;font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#ababba;margin-top:4px}
+.stats{width:100%;text-align:center;font-family:Verdana,Geneva,sans-serif;font-size:13px;color:#ababba;margin-top:4px}
 
 .container{max-width:960px;margin:0 auto;padding:14px}
 
@@ -28,43 +28,43 @@
 .pat-card{padding:8px 14px;border-radius:9px;border:2px solid #44444c;background:#343438;cursor:pointer;transition:all .15s;text-align:center;min-width:90px}
 .pat-card:hover{border-color:#7a60c0;transform:translateY(-1px)}
 .pat-card.pc-active{border-color:#7a60c0;background:#2a1848}
-.pat-card .vowels{font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:700;margin-bottom:2px}
-.pat-card .count{font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#8888a0}
+.pat-card .vowels{font-family:Verdana,Geneva,sans-serif;font-size:16px;font-weight:700;margin-bottom:2px}
+.pat-card .count{font-family:Verdana,Geneva,sans-serif;font-size:10px;color:#8888a0}
 
 /* ─── Verb table ─── */
 .vtable{width:100%;border-collapse:separate;border-spacing:0 3px}
-.vtable thead th{font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;color:#8888a0;text-transform:uppercase;letter-spacing:.5px;padding:4px 8px;text-align:left;position:sticky;top:110px;background:#2b2b2f;z-index:10}
+.vtable thead th{font-family:Verdana,Geneva,sans-serif;font-size:11px;font-weight:700;color:#8888a0;text-transform:uppercase;letter-spacing:.5px;padding:4px 8px;text-align:left;position:sticky;top:110px;background:#2b2b2f;z-index:10}
 .vtable tbody tr{background:#343438;transition:all .12s;cursor:default}
 .vtable tbody tr:hover{background:#3e3e44;transform:translateX(2px)}
 .vtable td{padding:8px 10px;font-size:14px;border-top:1px solid #3e3e44;border-bottom:1px solid #3e3e44}
 .vtable td:first-child{border-left:1px solid #3e3e44;border-radius:8px 0 0 8px}
 .vtable td:last-child{border-right:1px solid #3e3e44;border-radius:0 8px 8px 0}
 
-.v-inf{font-family:Arial,Helvetica,sans-serif;font-weight:700;font-size:15px;color:#f0f0f4}
-.v-pres{font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#c8a8ff}
-.v-prat{font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:600;color:#e8a840}
-.v-part{font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:600;color:#70d890}
-.v-aux{font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:600}
+.v-inf{font-family:Verdana,Geneva,sans-serif;font-weight:700;font-size:15px;color:#f0f0f4}
+.v-pres{font-family:Verdana,Geneva,sans-serif;font-size:13px;color:#c8a8ff}
+.v-prat{font-family:Verdana,Geneva,sans-serif;font-size:14px;font-weight:600;color:#e8a840}
+.v-part{font-family:Verdana,Geneva,sans-serif;font-size:14px;font-weight:600;color:#70d890}
+.v-aux{font-family:Verdana,Geneva,sans-serif;font-size:12px;font-weight:600}
 .v-hat{color:#8888a0}
 .v-ist{color:#60d0e8}
 .v-mean{font-size:13px;color:#ababba}
-.v-pat{font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#8888a0;background:#2a2a38;padding:1px 5px;border-radius:3px}
+.v-pat{font-family:Verdana,Geneva,sans-serif;font-size:10px;color:#8888a0;background:#2a2a38;padding:1px 5px;border-radius:3px}
 
 /* Vowel highlight */
 .vow{font-weight:700;text-decoration:underline;text-underline-offset:2px}
 
 /* Group header row */
 .group-header td{background:#2a1848!important;border-color:#3a2060!important;padding:6px 10px}
-.group-header .gh-text{font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:700;color:#c8a8ff}
-.group-header .gh-pattern{font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#8888a0;margin-left:8px}
+.group-header .gh-text{font-family:Verdana,Geneva,sans-serif;font-size:14px;font-weight:700;color:#c8a8ff}
+.group-header .gh-pattern{font-family:Verdana,Geneva,sans-serif;font-size:12px;color:#8888a0;margin-left:8px}
 
 /* ─── Section label ─── */
-.sec-label{font-family:Arial,Helvetica,sans-serif;font-size:18px;font-weight:700;color:#e0e0e4;margin:24px 0 10px;display:flex;align-items:center;gap:8px}
+.sec-label{font-family:Verdana,Geneva,sans-serif;font-size:18px;font-weight:700;color:#e0e0e4;margin:24px 0 10px;display:flex;align-items:center;gap:8px}
 .sec-label .dot{width:8px;height:8px;border-radius:50%;display:inline-block}
 
 /* Notes */
 .notes{margin:16px 0;padding:14px 18px;background:#343438;border-radius:10px;border:1px solid #44444c;font-size:14px;line-height:1.8;color:#c0c0c8}
-.notes .notes-title{font-weight:700;font-family:Arial,Helvetica,sans-serif;color:#e0e0e4;margin-bottom:6px;font-size:13px}
+.notes .notes-title{font-weight:700;font-family:Verdana,Geneva,sans-serif;color:#e0e0e4;margin-bottom:6px;font-size:13px}
 
 .empty{display:none;text-align:center;padding:40px;color:#8888a0;font-size:15px}
 
@@ -96,7 +96,7 @@
   }
   .vtable td::before{
     content:attr(data-label);
-    font-family:Arial,Helvetica,sans-serif;
+    font-family:Verdana,Geneva,sans-serif;
     font-size:9px;font-weight:700;
     color:#8888a0;text-transform:uppercase;
     letter-spacing:.3px;
@@ -128,7 +128,7 @@
   margin: 12px 0 16px;
   max-width: 420px;
 }
-.futur-grid .fg-pron { color: #ababba; font-family:Arial,Helvetica,sans-serif; font-size: 13px; }
+.futur-grid .fg-pron { color: #ababba; font-family:Verdana,Geneva,sans-serif; font-size: 13px; }
 .futur-grid .fg-form { color: #e0e0e4; }
 .futur-grid .fg-form em { color: #60d0e8; font-style: normal; font-weight: 600; }
 .futur-note {
@@ -159,7 +159,7 @@
   border-radius: 8px;
 }
 .werden-title {
-  font-family:Arial,Helvetica,sans-serif;
+  font-family:Verdana,Geneva,sans-serif;
   font-size: 16px;
   font-weight: 700;
   color: #f0f0f4;
@@ -176,7 +176,7 @@
 .werden-grid .wg-header {
   background: #3a3a42;
   padding: 8px 12px;
-  font-family:Arial,Helvetica,sans-serif;
+  font-family:Verdana,Geneva,sans-serif;
   font-weight: 600;
   font-size: 11px;
   color: #c8c8d0;
@@ -204,16 +204,16 @@
 .werden-grid .wg-cell .w-purp { color: #c8a8ff; }
 /* ─── Faustregeln, example, regional aux ─── */
 details.faust{margin:0 0 16px}
-details.faust summary{cursor:pointer;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:700;color:#e0e0e4;list-style-position:inside}
+details.faust summary{cursor:pointer;font-family:Verdana,Geneva,sans-serif;font-size:13px;font-weight:700;color:#e0e0e4;list-style-position:inside}
 details.faust[open] summary{color:#c8a8ff;margin-bottom:8px}
 .faust-rule{padding:8px 0;border-top:1px solid #44444c}
 .faust-rule:first-of-type{border-top:none}
-.faust-h{font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:700;color:#c8a8ff;display:block;margin-bottom:2px}
+.faust-h{font-family:Verdana,Geneva,sans-serif;font-size:13px;font-weight:700;color:#c8a8ff;display:block;margin-bottom:2px}
 .faust-warn{margin-top:6px;padding:6px 12px;background:#2b2b2f;border-left:3px solid #e8a840;border-radius:6px}
 .faust-table{border-collapse:collapse;margin-top:6px;font-size:13px}
 .faust-table th,.faust-table td{padding:4px 12px 4px 0;text-align:left;border-bottom:1px solid #3e3e44}
-.faust-table th{font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#8888a0;text-transform:uppercase}
-.v-reg{font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#8888a0}
+.faust-table th{font-family:Verdana,Geneva,sans-serif;font-size:11px;color:#8888a0;text-transform:uppercase}
+.v-reg{font-family:Verdana,Geneva,sans-serif;font-size:10px;color:#8888a0}
 .v-ex{font-size:12px;color:#8888a0;font-style:italic;margin-top:2px;line-height:1.4}
 </style>
 </head>
@@ -304,7 +304,7 @@ details.faust[open] summary{color:#c8a8ff;margin-bottom:8px}
     <span class="v-part">grün</span> = Partizip II ·
     <span class="v-ist">blau</span> = mit <em>sein</em> ·
     <span class="v-hat">hat</span> (D) / <span class="v-ist">ist</span> (CH) = regional verschieden ·
-    Muster wie <span style="font-family:Arial,Helvetica,sans-serif;color:#c8a8ff">ei→ie→ie</span> zeigen den Vokalwechsel: Infinitiv → Präteritum → Partizip
+    Muster wie <span style="font-family:Verdana,Geneva,sans-serif;color:#c8a8ff">ei→ie→ie</span> zeigen den Vokalwechsel: Infinitiv → Präteritum → Partizip
   </div>
   <div class="notes">
     <div class="notes-title">💡 haben oder sein?</div>
@@ -324,30 +324,30 @@ details.faust[open] summary{color:#c8a8ff;margin-bottom:8px}
     <table class="vtable" style="border-collapse:collapse">
       <thead><tr><th></th><th style="color:#e8a840">haben</th></tr></thead>
       <tbody>
-        <tr><td style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:700;color:#8888a0">ich</td><td style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#e0e0e4"><span style="color:#e8a840;font-weight:700">hatte</span> + Partizip II</td></tr>
-        <tr><td style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:700;color:#8888a0">du</td><td style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#e0e0e4"><span style="color:#e8a840;font-weight:700">hattest</span> + Partizip II</td></tr>
-        <tr><td style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:700;color:#8888a0">er/sie/es</td><td style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#e0e0e4"><span style="color:#e8a840;font-weight:700">hatte</span> + Partizip II</td></tr>
-        <tr><td style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:700;color:#8888a0">wir</td><td style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#e0e0e4"><span style="color:#e8a840;font-weight:700">hatten</span> + Partizip II</td></tr>
-        <tr><td style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:700;color:#8888a0">ihr</td><td style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#e0e0e4"><span style="color:#e8a840;font-weight:700">hattet</span> + Partizip II</td></tr>
-        <tr><td style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:700;color:#8888a0">sie/Sie</td><td style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#e0e0e4"><span style="color:#e8a840;font-weight:700">hatten</span> + Partizip II</td></tr>
+        <tr><td style="font-family:Verdana,Geneva,sans-serif;font-size:13px;font-weight:700;color:#8888a0">ich</td><td style="font-family:Verdana,Geneva,sans-serif;font-size:13px;color:#e0e0e4"><span style="color:#e8a840;font-weight:700">hatte</span> + Partizip II</td></tr>
+        <tr><td style="font-family:Verdana,Geneva,sans-serif;font-size:13px;font-weight:700;color:#8888a0">du</td><td style="font-family:Verdana,Geneva,sans-serif;font-size:13px;color:#e0e0e4"><span style="color:#e8a840;font-weight:700">hattest</span> + Partizip II</td></tr>
+        <tr><td style="font-family:Verdana,Geneva,sans-serif;font-size:13px;font-weight:700;color:#8888a0">er/sie/es</td><td style="font-family:Verdana,Geneva,sans-serif;font-size:13px;color:#e0e0e4"><span style="color:#e8a840;font-weight:700">hatte</span> + Partizip II</td></tr>
+        <tr><td style="font-family:Verdana,Geneva,sans-serif;font-size:13px;font-weight:700;color:#8888a0">wir</td><td style="font-family:Verdana,Geneva,sans-serif;font-size:13px;color:#e0e0e4"><span style="color:#e8a840;font-weight:700">hatten</span> + Partizip II</td></tr>
+        <tr><td style="font-family:Verdana,Geneva,sans-serif;font-size:13px;font-weight:700;color:#8888a0">ihr</td><td style="font-family:Verdana,Geneva,sans-serif;font-size:13px;color:#e0e0e4"><span style="color:#e8a840;font-weight:700">hattet</span> + Partizip II</td></tr>
+        <tr><td style="font-family:Verdana,Geneva,sans-serif;font-size:13px;font-weight:700;color:#8888a0">sie/Sie</td><td style="font-family:Verdana,Geneva,sans-serif;font-size:13px;color:#e0e0e4"><span style="color:#e8a840;font-weight:700">hatten</span> + Partizip II</td></tr>
       </tbody>
     </table>
     <table class="vtable" style="border-collapse:collapse">
       <thead><tr><th></th><th style="color:#60d0e8">sein</th></tr></thead>
       <tbody>
-        <tr><td style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:700;color:#8888a0">ich</td><td style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#e0e0e4"><span style="color:#60d0e8;font-weight:700">war</span> + Partizip II</td></tr>
-        <tr><td style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:700;color:#8888a0">du</td><td style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#e0e0e4"><span style="color:#60d0e8;font-weight:700">warst</span> + Partizip II</td></tr>
-        <tr><td style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:700;color:#8888a0">er/sie/es</td><td style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#e0e0e4"><span style="color:#60d0e8;font-weight:700">war</span> + Partizip II</td></tr>
-        <tr><td style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:700;color:#8888a0">wir</td><td style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#e0e0e4"><span style="color:#60d0e8;font-weight:700">waren</span> + Partizip II</td></tr>
-        <tr><td style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:700;color:#8888a0">ihr</td><td style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#e0e0e4"><span style="color:#60d0e8;font-weight:700">wart</span> + Partizip II</td></tr>
-        <tr><td style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:700;color:#8888a0">sie/Sie</td><td style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#e0e0e4"><span style="color:#60d0e8;font-weight:700">waren</span> + Partizip II</td></tr>
+        <tr><td style="font-family:Verdana,Geneva,sans-serif;font-size:13px;font-weight:700;color:#8888a0">ich</td><td style="font-family:Verdana,Geneva,sans-serif;font-size:13px;color:#e0e0e4"><span style="color:#60d0e8;font-weight:700">war</span> + Partizip II</td></tr>
+        <tr><td style="font-family:Verdana,Geneva,sans-serif;font-size:13px;font-weight:700;color:#8888a0">du</td><td style="font-family:Verdana,Geneva,sans-serif;font-size:13px;color:#e0e0e4"><span style="color:#60d0e8;font-weight:700">warst</span> + Partizip II</td></tr>
+        <tr><td style="font-family:Verdana,Geneva,sans-serif;font-size:13px;font-weight:700;color:#8888a0">er/sie/es</td><td style="font-family:Verdana,Geneva,sans-serif;font-size:13px;color:#e0e0e4"><span style="color:#60d0e8;font-weight:700">war</span> + Partizip II</td></tr>
+        <tr><td style="font-family:Verdana,Geneva,sans-serif;font-size:13px;font-weight:700;color:#8888a0">wir</td><td style="font-family:Verdana,Geneva,sans-serif;font-size:13px;color:#e0e0e4"><span style="color:#60d0e8;font-weight:700">waren</span> + Partizip II</td></tr>
+        <tr><td style="font-family:Verdana,Geneva,sans-serif;font-size:13px;font-weight:700;color:#8888a0">ihr</td><td style="font-family:Verdana,Geneva,sans-serif;font-size:13px;color:#e0e0e4"><span style="color:#60d0e8;font-weight:700">wart</span> + Partizip II</td></tr>
+        <tr><td style="font-family:Verdana,Geneva,sans-serif;font-size:13px;font-weight:700;color:#8888a0">sie/Sie</td><td style="font-family:Verdana,Geneva,sans-serif;font-size:13px;color:#e0e0e4"><span style="color:#60d0e8;font-weight:700">waren</span> + Partizip II</td></tr>
       </tbody>
     </table>
   </div>
 
   <div class="notes" style="padding:12px 18px;margin-bottom:12px">
-    <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#8888a0;margin-bottom:8px;letter-spacing:1px">ZEITSTRAHL</div>
-    <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#e0e0e4;line-height:1.8">
+    <div style="font-family:Verdana,Geneva,sans-serif;font-size:12px;color:#8888a0;margin-bottom:8px;letter-spacing:1px">ZEITSTRAHL</div>
+    <div style="font-family:Verdana,Geneva,sans-serif;font-size:13px;color:#e0e0e4;line-height:1.8">
       <span style="color:#8888a0">──────────────────────────────────────────►</span> <span style="color:#ababba">Zeit</span><br>
       &nbsp;&nbsp;&nbsp;<span style="color:#e8a840">▲</span> <span style="color:#e8a840">PQP</span> <span style="color:#ababba">(zuerst)</span>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#c8a8ff">▲</span> <span style="color:#c8a8ff">Prät./Perfekt</span> <span style="color:#ababba">(danach)</span>
@@ -359,12 +359,12 @@ details.faust[open] summary{color:#c8a8ff;margin-bottom:8px}
       <thead><tr><th style="color:#c8a8ff">Präteritum / Perfekt</th><th style="color:#e8a840">Plusquamperfekt (frühere Handlung)</th></tr></thead>
       <tbody>
         <tr>
-          <td style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#e0e0e4">Ich kam um 07:01 Uhr zum Bahnhof.</td>
-          <td style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#e0e0e4">Der Zug <span style="color:#e8a840;font-weight:700">war</span> schon <span style="color:#70d890;font-weight:700">abgefahren</span>.</td>
+          <td style="font-family:Verdana,Geneva,sans-serif;font-size:13px;color:#e0e0e4">Ich kam um 07:01 Uhr zum Bahnhof.</td>
+          <td style="font-family:Verdana,Geneva,sans-serif;font-size:13px;color:#e0e0e4">Der Zug <span style="color:#e8a840;font-weight:700">war</span> schon <span style="color:#70d890;font-weight:700">abgefahren</span>.</td>
         </tr>
         <tr>
-          <td style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#e0e0e4">Ich fand meine Geldbörse nicht.</td>
-          <td style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#e0e0e4">Ich <span style="color:#e8a840;font-weight:700">hatte</span> sie wahrscheinlich im Bus <span style="color:#70d890;font-weight:700">verloren</span>.</td>
+          <td style="font-family:Verdana,Geneva,sans-serif;font-size:13px;color:#e0e0e4">Ich fand meine Geldbörse nicht.</td>
+          <td style="font-family:Verdana,Geneva,sans-serif;font-size:13px;color:#e0e0e4">Ich <span style="color:#e8a840;font-weight:700">hatte</span> sie wahrscheinlich im Bus <span style="color:#70d890;font-weight:700">verloren</span>.</td>
         </tr>
       </tbody>
     </table>
@@ -373,9 +373,9 @@ details.faust[open] summary{color:#c8a8ff;margin-bottom:8px}
   <div class="notes">
     <div class="notes-title">🔗 Wichtige Konnektoren</div>
     <strong style="color:#60d0e8">nachdem</strong> → löst immer einen Tempuswechsel aus:<br>
-    <span style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#e0e0e4;margin-left:16px"><em>Nachdem er die Zähne <span style="color:#e8a840;font-weight:700">geputzt hatte</span>, <span style="color:#c8a8ff;font-weight:700">ging</span> er ins Bett.</em></span><br><br>
+    <span style="font-family:Verdana,Geneva,sans-serif;font-size:13px;color:#e0e0e4;margin-left:16px"><em>Nachdem er die Zähne <span style="color:#e8a840;font-weight:700">geputzt hatte</span>, <span style="color:#c8a8ff;font-weight:700">ging</span> er ins Bett.</em></span><br><br>
     <strong style="color:#60d0e8">als</strong> → PQP kann in beiden Teilsätzen stehen:<br>
-    <span style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#e0e0e4;margin-left:16px"><em>Als ich den Brief <span style="color:#e8a840;font-weight:700">gelesen hatte</span>, <span style="color:#c8a8ff;font-weight:700">habe</span> ich angefangen zu lachen.</em></span>
+    <span style="font-family:Verdana,Geneva,sans-serif;font-size:13px;color:#e0e0e4;margin-left:16px"><em>Als ich den Brief <span style="color:#e8a840;font-weight:700">gelesen hatte</span>, <span style="color:#c8a8ff;font-weight:700">habe</span> ich angefangen zu lachen.</em></span>
   </div>
 </div>
 
@@ -697,7 +697,7 @@ function render() {
   if (shuffleMode) {
     shuffleArray(f).forEach(v => {
       const [inf, pres, prat, part, aux, mean, pat, sc, ex] = v;
-      const scBadge = sc ? `<span style="font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#c8a8ff;background:#2a1848;padding:1px 4px;border-radius:3px;margin-left:4px">${sc}</span>` : '';
+      const scBadge = sc ? `<span style="font-family:Verdana,Geneva,sans-serif;font-size:10px;color:#c8a8ff;background:#2a1848;padding:1px 4px;border-radius:3px;margin-left:4px">${sc}</span>` : '';
       const gc = guessMode ? ' class="guess-cell-hidden"' : '';
       h += `<tr>`;
       h += `<td data-label="Infinitiv"><span class="v-inf">${inf}</span>${scBadge}</td>`;
@@ -729,7 +729,7 @@ function render() {
       lastPat = pat;
     }
 
-    const scBadge = sc ? `<span style="font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#c8a8ff;background:#2a1848;padding:1px 4px;border-radius:3px;margin-left:4px">${sc}</span>` : '';
+    const scBadge = sc ? `<span style="font-family:Verdana,Geneva,sans-serif;font-size:10px;color:#c8a8ff;background:#2a1848;padding:1px 4px;border-radius:3px;margin-left:4px">${sc}</span>` : '';
 
     const gc = guessMode ? ' class="guess-cell-hidden"' : '';
     h += `<tr>`;
