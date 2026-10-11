@@ -7,23 +7,22 @@
 <link rel="icon" href="assets/favicon-32x32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <title>Modalverben — können · müssen · dürfen · sollen · wollen · möchten</title>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/common.css">
 <style>
 body { padding: 0 0 48px; }
 header{position:sticky;top:0;z-index:100;background:#232327ee;backdrop-filter:blur(12px);border-bottom:1px solid #3e3e44;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
-h1{font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;color:#f0f0f4;letter-spacing:-.5px}
+h1{font-family:Arial,Helvetica,sans-serif;font-size:26px;font-weight:700;color:#f0f0f4;letter-spacing:-.5px}
 nav{display:flex;gap:6px;flex-wrap:wrap}
-nav a{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;padding:5px 9px;border-radius:8px;background:#343438;color:#8888a0;text-decoration:none;border:1px solid #44444c;transition:all .15s}
+nav a{font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:500;padding:5px 9px;border-radius:8px;background:#343438;color:#8888a0;text-decoration:none;border:1px solid #44444c;transition:all .15s}
 nav a:hover,nav a.active{background:#1a4a2a;color:#fff;border-color:#70d890}
 .container{max-width:900px;margin:0 auto;padding:0 16px}
 
 /* Sections */
 .section{margin-top:32px;scroll-margin-top:70px}
-.section-title{font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;color:#e0e0e4;display:flex;align-items:center;gap:8px;margin-bottom:2px}
+.section-title{font-family:Arial,Helvetica,sans-serif;font-size:26px;font-weight:700;color:#e0e0e4;display:flex;align-items:center;gap:8px;margin-bottom:2px}
 .section-title .dot{width:10px;height:10px;border-radius:50%;display:inline-block}
 .section-sub{font-size:14px;color:#ababba;margin-bottom:16px;font-style:italic}
-.sub-label{font-family:'JetBrains Mono',monospace;font-size:17px;font-weight:700;margin-bottom:8px;margin-top:24px;color:#e0e0e4}
+.sub-label{font-family:Arial,Helvetica,sans-serif;font-size:17px;font-weight:700;margin-bottom:8px;margin-top:24px;color:#e0e0e4}
 .sub-label .hint{font-weight:400;font-size:13px;color:#ababba}
 
 /* Modal color accents */
@@ -38,15 +37,15 @@ nav a:hover,nav a.active{background:#1a4a2a;color:#fff;border-color:#70d890}
 .modal-overview{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:8px;margin:14px 0}
 .mo-card{border-radius:10px;padding:14px 16px;border:2px solid;transition:all .15s}
 .mo-card:hover{transform:translateY(-2px);box-shadow:0 4px 14px rgba(0,0,0,.3)}
-.mo-card .mo-verb{font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:700;margin-bottom:4px}
+.mo-card .mo-verb{font-family:Arial,Helvetica,sans-serif;font-size:22px;font-weight:700;margin-bottom:4px}
 .mo-card .mo-meaning{font-size:14px;margin-bottom:6px}
-.mo-card .mo-ex{font-family:'JetBrains Mono',monospace;font-size:13px;opacity:.7;font-style:italic;line-height:1.5}
+.mo-card .mo-ex{font-family:Arial,Helvetica,sans-serif;font-size:13px;opacity:.7;font-style:italic;line-height:1.5}
 
 /* Conjugation grids */
 .conj-grid{width:100%;border-collapse:separate;border-spacing:0 2px;margin:12px 0}
-.conj-grid th{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:#8888a0;text-transform:uppercase;letter-spacing:.5px;padding:4px 6px;text-align:center}
+.conj-grid th{font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;color:#8888a0;text-transform:uppercase;letter-spacing:.5px;padding:4px 6px;text-align:center}
 .conj-grid th:first-child{text-align:left}
-.conj-grid td{background:#343438;padding:8px 8px;font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;text-align:center;border-top:1px solid #3e3e44;border-bottom:1px solid #3e3e44}
+.conj-grid td{background:#343438;padding:8px 8px;font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:600;text-align:center;border-top:1px solid #3e3e44;border-bottom:1px solid #3e3e44}
 .conj-grid td:first-child{border-left:1px solid #3e3e44;border-radius:8px 0 0 8px;text-align:left;font-weight:700;color:#8888a0;font-size:13px;min-width:50px}
 .conj-grid td:last-child{border-right:1px solid #3e3e44;border-radius:0 8px 8px 0}
 .conj-grid .stem-change{text-decoration:underline;text-underline-offset:2px}
@@ -58,13 +57,13 @@ nav a:hover,nav a.active{background:#1a4a2a;color:#fff;border-color:#70d890}
 /* Rule cards */
 .rule-cards{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
 .rule-card{flex:1 1 260px;background:#343438;border:1px solid #44444c;border-left:3px solid #70d890;border-radius:10px;padding:12px 16px}
-.rule-card .rule-title{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;margin-bottom:5px}
+.rule-card .rule-title{font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:700;margin-bottom:5px}
 .rule-card p{font-size:14px;color:#c0c0c8;line-height:1.6}
-.rule-card .example{font-family:'JetBrains Mono',monospace;font-size:13px;color:#ababba;margin-top:6px;font-style:italic;line-height:1.6}
+.rule-card .example{font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#ababba;margin-top:6px;font-style:italic;line-height:1.6}
 
 /* Notes */
 .notes{margin-top:16px;padding:14px 18px;background:#343438;border-radius:10px;border:1px solid #44444c;font-size:15px;line-height:1.8;color:#c0c0c8}
-.notes .notes-title{font-weight:700;font-family:'JetBrains Mono',monospace;color:#e0e0e4;margin-bottom:6px;font-size:13px}
+.notes .notes-title{font-weight:700;font-family:Arial,Helvetica,sans-serif;color:#e0e0e4;margin-bottom:6px;font-size:13px}
 .warn{background:#3a2e10;border-color:#9a7a20}
 .warn .notes-title{color:#e8a840}
 
@@ -72,8 +71,8 @@ nav a:hover,nav a.active{background:#1a4a2a;color:#fff;border-color:#70d890}
 .satz{display:flex;align-items:stretch;gap:3px;margin:10px 0 16px;overflow-x:auto;padding-bottom:4px}
 .pos{display:flex;flex-direction:column;align-items:center;gap:3px;min-width:70px;flex-shrink:0}
 .pos.wide{flex:1;min-width:100px}
-.pos-label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;color:#8888a0;text-transform:uppercase;text-align:center;white-space:nowrap}
-.pos-val{width:100%;background:#343438;border:2px solid #44444c;border-radius:8px;padding:8px 10px;font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:600;color:#e0e0e4;text-align:center;min-height:44px;display:flex;align-items:center;justify-content:center;line-height:1.3}
+.pos-label{font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:700;color:#8888a0;text-transform:uppercase;text-align:center;white-space:nowrap}
+.pos-val{width:100%;background:#343438;border:2px solid #44444c;border-radius:8px;padding:8px 10px;font-family:Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#e0e0e4;text-align:center;min-height:44px;display:flex;align-items:center;justify-content:center;line-height:1.3}
 .pos-val.verb{border-color:#a04040;color:#f08888;background:#3a1818}
 .pos-val.subj{border-color:#3a6ea8;color:#8ec4ff;background:#1e2e45}
 .pos-val.bracket{border-color:#a04040;color:#f08888;background:#3a1818;border-style:dashed}
@@ -81,11 +80,11 @@ nav a:hover,nav a.active{background:#1a4a2a;color:#fff;border-color:#70d890}
 /* Comparison boxes */
 .vs-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
 .vs-box{background:#343438;border:1px solid #44444c;border-radius:10px;padding:14px 16px}
-.vs-box .vs-title{font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:700;margin-bottom:6px}
+.vs-box .vs-title{font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:700;margin-bottom:6px}
 .vs-box .vs-meaning{font-size:14px;margin-bottom:8px}
-.vs-box .vs-ex{font-family:'JetBrains Mono',monospace;font-size:13px;color:#ababba;font-style:italic;line-height:1.7}
+.vs-box .vs-ex{font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#ababba;font-style:italic;line-height:1.7}
 
-kw{font-family:'JetBrains Mono',monospace;font-weight:700;padding:1px 5px;border-radius:4px;font-size:.95em}
+kw{font-family:Arial,Helvetica,sans-serif;font-weight:700;padding:1px 5px;border-radius:4px;font-size:.95em}
 kw.v{background:#3a1818;color:#f08888}
 
 @media(max-width:700px){
@@ -106,7 +105,7 @@ kw.v{background:#3a1818;color:#f08888}
   .pos{min-width:55px}
 }
 /* ─── Guess Mode ─── */
-.guess-btn{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;padding:5px 9px;border-radius:8px;background:#343438;color:#8888a0;text-decoration:none;border:1px solid #44444c;transition:all .15s;cursor:pointer}
+.guess-btn{font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:500;padding:5px 9px;border-radius:8px;background:#343438;color:#8888a0;text-decoration:none;border:1px solid #44444c;transition:all .15s;cursor:pointer}
 .guess-btn:hover,.guess-btn.active{background:#2a1848;color:#c8a8ff;border-color:#7a60c0}
 /* ─── Alternativformen ─── */
 .alt-section {
@@ -116,7 +115,7 @@ kw.v{background:#3a1818;color:#f08888}
   border-radius: 8px;
 }
 .alt-title {
-  font-family: 'JetBrains Mono', monospace;
+  font-family:Arial,Helvetica,sans-serif;
   font-size: 16px;
   font-weight: 700;
   color: #f0f0f4;
@@ -144,7 +143,7 @@ kw.v{background:#3a1818;color:#f08888}
   margin-top: 16px;
 }
 .alt-row-header span {
-  font-family: 'JetBrains Mono', monospace;
+  font-family:Arial,Helvetica,sans-serif;
   font-size: 11px;
   font-weight: 600;
   color: #c8c8d0;
@@ -161,7 +160,7 @@ kw.v{background:#3a1818;color:#f08888}
 .alt-cell .m-verb { color: #70d890; }
 .alt-cell .a-verb { color: #60d0e8; }
 .alt-label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family:Arial,Helvetica,sans-serif;
   font-size: 13px;
   font-weight: 600;
   color: #c8a8ff;
@@ -337,7 +336,7 @@ kw.v{background:#3a1818;color:#f08888}
   <div class="notes warn">
     <div class="notes-title">⚠ Achtung: sollen / wollen</div>
     <strong>sollte</strong> und <strong>wollte</strong> sind identisch in Präteritum und Konjunktiv II — der Kontext entscheidet.<br>
-    <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#ababba;">
+    <span style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#ababba;">
       Er <strong>sollte</strong> kommen. (Prät. = he was supposed to / KII = he should)<br>
       Sie <strong>wollte</strong> gehen. (Prät. = she wanted to / KII = she would want to)
     </span>
@@ -381,7 +380,7 @@ kw.v{background:#3a1818;color:#f08888}
   <div class="notes warn">
     <div class="notes-title">⚠ In der Praxis</div>
     Das Perfekt mit Modalverben ist umständlich. In der Umgangssprache und auch schriftlich benutzt man fast immer das <strong>Präteritum</strong>:<br>
-    <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#ababba;">
+    <span style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#ababba;">
       Sie <strong>konnte</strong> nicht kommen. ✓ (natürlich)<br>
       Sie hat nicht kommen können. ✓ (korrekt, aber seltener)
     </span>
@@ -500,7 +499,7 @@ kw.v{background:#3a1818;color:#f08888}
   <div class="notes" style="margin-top:16px;border-left:3px solid #ff6060;">
     <div class="notes-title" style="color:#ff6060;">🇬🇧→🇩🇪 Übersetzungsfalle</div>
     English "must not" = <strong>nicht dürfen</strong> (Verbot), nicht „nicht müssen"!<br>
-    <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#ababba;">
+    <span style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#ababba;">
       You must not park here = Du <strong>darfst</strong> hier nicht parkieren. ✓<br>
       Du <strong>musst</strong> hier nicht parkieren = You don't have to park here. (andere Bedeutung!)
     </span>
