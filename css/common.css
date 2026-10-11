@@ -12,27 +12,27 @@ body {
 button, input, select, textarea, summary { font-family: inherit; }
 
 /* ─── Home button (back to index; needed in iOS home-screen web app mode) ─── */
+/* Sits in the top-left corner of the page header, styled like the Raten button.
+   :where() keeps specificity 0 so a page's own sticky/position rule on the header wins. */
+:where(header, .top-bar) { position: relative; }
 .home-btn {
-  position: fixed;
-  left: 14px;
-  bottom: calc(14px + env(safe-area-inset-bottom, 0px));
-  z-index: 150;
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: #232327ee;
-  border: 1px solid #7a60c0;
-  color: #c8a8ff;
-  font-size: 22px;
-  line-height: 1;
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  z-index: 2;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.2;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: #343438;
+  color: #8888a0;
+  border: 1px solid #44444c;
   text-decoration: none;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  transition: all .15s;
   -webkit-tap-highlight-color: transparent;
 }
-.home-btn:hover, .home-btn:active { background: #2a1848; }
+.home-btn:hover, .home-btn:active { background: #2a1848; color: #c8a8ff; border-color: #7a60c0; }
 @media print { .home-btn { display: none; } }
 
 /* ─── Guess Mode — Card variant ─── */
