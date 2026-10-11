@@ -3,7 +3,7 @@
 
 /* ─── Base ─── */
 body {
-  font-family:Verdana,Geneva,sans-serif;
+  font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;
   background: #2b2b2f;
   color: #e0e0e4;
   min-height: 100vh;
@@ -47,7 +47,7 @@ body {
   font-style: italic;
   white-space: nowrap;
   max-width: 420px;
-  font-family:Verdana,Geneva,sans-serif;
+  font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;
   z-index: 200;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
   pointer-events: none;
