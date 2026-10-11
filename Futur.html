@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="assets/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" href="assets/favicon-32x32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<title>Futur</title>
+<link rel="stylesheet" href="css/common.css">
+<style>
+.top-bar{position:sticky;top:0;z-index:100;background:#232327ee;backdrop-filter:blur(12px);border-bottom:1px solid #3e3e44;padding:14px 16px 10px}
+.top-bar h1{font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;font-size:26px;font-weight:700;color:#f0f0f4;letter-spacing:-.5px;text-align:center;margin-bottom:6px}
+.top-bar .sub{text-align:center;font-size:14px;color:#ababba;margin-bottom:8px}
+.container{max-width:960px;margin:0 auto;padding:14px}
+.vtable{width:100%;border-collapse:separate;border-spacing:0 3px}
+.vtable thead th{font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;font-size:11px;font-weight:700;color:#8888a0;text-transform:uppercase;letter-spacing:.5px;padding:4px 8px;text-align:left;position:sticky;top:110px;background:#2b2b2f;z-index:10}
+.vtable tbody tr{background:#343438;transition:all .12s;cursor:default}
+.vtable tbody tr:hover{background:#3e3e44;transform:translateX(2px)}
+.vtable td{padding:8px 10px;font-size:14px;border-top:1px solid #3e3e44;border-bottom:1px solid #3e3e44}
+.vtable td:first-child{border-left:1px solid #3e3e44;border-radius:8px 0 0 8px}
+.vtable td:last-child{border-right:1px solid #3e3e44;border-radius:0 8px 8px 0}
+.sec-label{font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;font-size:18px;font-weight:700;color:#e0e0e4;margin:24px 0 10px;display:flex;align-items:center;gap:8px}
+.sec-label .dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+.notes{margin:16px 0;padding:14px 18px;background:#343438;border-radius:10px;border:1px solid #44444c;font-size:14px;line-height:1.8;color:#c0c0c8}
+.notes .notes-title{font-weight:700;font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;color:#e0e0e4;margin-bottom:6px;font-size:13px}
+.vtable thead th{position:static}
+@media(max-width:700px){.top-bar h1{font-size:20px}}
+/* ─── Futur I ─── */
+.futur-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 16px;
+  font-size: 14px;
+  margin: 12px 0 16px;
+  max-width: 420px;
+}
+.futur-grid .fg-pron { color: #ababba; font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif; font-size: 13px; }
+.futur-grid .fg-form { color: #e0e0e4; }
+.futur-grid .fg-form em { color: #60d0e8; font-style: normal; font-weight: 600; }
+.futur-note {
+  background: #2e2e34;
+  border-left: 3px solid #60d0e8;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 12px 0;
+  font-size: 13px;
+  color: #c8c8d0;
+  line-height: 1.6;
+}
+.futur-note strong { color: #60d0e8; font-weight: 600; }
+.futur-ex {
+  margin: 6px 0;
+  padding-left: 12px;
+  border-left: 2px solid #3a3a40;
+  color: #c8c8d0;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.futur-ex em { color: #e8a840; font-style: normal; }
+/* ─── werden Übersicht ─── */
+.werden-section {
+  margin-top: 28px;
+  padding: 20px;
+  background: #2e2e34;
+  border-radius: 8px;
+}
+.werden-title {
+  font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #f0f0f4;
+  margin-bottom: 12px;
+}
+.werden-grid {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr 1fr;
+  gap: 0;
+  font-size: 13px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.werden-grid .wg-header {
+  background: #3a3a42;
+  padding: 8px 12px;
+  font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  color: #c8c8d0;
+  text-align: center;
+}
+.werden-grid .wg-fn {
+  background: #333338;
+  padding: 10px 12px;
+  font-weight: 600;
+  color: #e0e0e4;
+  border-bottom: 1px solid #3a3a40;
+  display: flex;
+  align-items: center;
+}
+.werden-grid .wg-cell {
+  padding: 10px 12px;
+  color: #c8c8d0;
+  border-bottom: 1px solid #3a3a40;
+  line-height: 1.5;
+}
+.werden-grid .wg-cell em { font-style: normal; font-weight: 700; }
+.werden-grid .wg-cell .w-cyan { color: #60d0e8; }
+.werden-grid .wg-cell .w-gold { color: #e8a840; }
+.werden-grid .wg-cell .w-pink { color: #f08888; }
+.werden-grid .wg-cell .w-purp { color: #c8a8ff; }
+</style>
+</head>
+<body>
+<div class="top-bar">
+  <h1>Futur</h1>
+  <div class="sub">Futur I und die Funktionen von werden</div>
+</div>
+
+<div class="container">
+<!-- ═══ FUTUR I ═══ -->
+<div class="sec-label" style="margin-top:32px"><span class="dot" style="background:#60d0e8"></span> Futur I</div>
+
+<div style="color:#ababba;font-size:13px;margin-bottom:8px">
+  Bildung: <strong style="color:#60d0e8">werden</strong> <span style="color:#ababba">(konjugiert)</span> + <strong style="color:#e8a840">Infinitiv</strong> <span style="color:#ababba">(am Satzende)</span>
+</div>
+
+<div class="futur-grid">
+  <span class="fg-pron">ich</span>     <span class="fg-form"><em>werde</em> … Infinitiv</span>
+  <span class="fg-pron">du</span>      <span class="fg-form"><em>wirst</em> … Infinitiv</span>
+  <span class="fg-pron">er/sie/es</span> <span class="fg-form"><em>wird</em> … Infinitiv</span>
+  <span class="fg-pron">wir</span>     <span class="fg-form"><em>werden</em> … Infinitiv</span>
+  <span class="fg-pron">ihr</span>     <span class="fg-form"><em>werdet</em> … Infinitiv</span>
+  <span class="fg-pron">sie/Sie</span> <span class="fg-form"><em>werden</em> … Infinitiv</span>
+</div>
+
+<div style="color:#c8a8ff;font-size:13px;font-weight:600;margin:16px 0 6px">Verwendung</div>
+
+<div class="futur-ex">
+  <strong style="color:#60d0e8;font-size:12px">Zukunft</strong><br>
+  Morgen <em>werde</em> ich einkaufen <em>gehen</em>.<br>
+  Nächstes Jahr <em>werden</em> wir nach Japan <em>reisen</em>.
+</div>
+
+<div class="futur-ex">
+  <strong style="color:#60d0e8;font-size:12px">Vermutung</strong><br>
+  Er <em>wird</em> wohl krank <em>sein</em>.<br>
+  Sie <em>wird</em> wahrscheinlich schon zu Hause <em>sein</em>.
+</div>
+
+<div class="futur-ex">
+  <strong style="color:#60d0e8;font-size:12px">Versprechen / Vorsatz</strong><br>
+  Ich <em>werde</em> das nie <em>vergessen</em>.<br>
+  Wir <em>werden</em> unser Bestes <em>tun</em>.
+</div>
+
+<div class="futur-note">
+  <strong>Gesprochenes Deutsch:</strong> Oft wird <strong>Präsens + Zeitangabe</strong> statt Futur I benutzt:<br>
+  <em style="color:#e8a840">Morgen gehe ich einkaufen.</em> = <em style="color:#e8a840">Morgen werde ich einkaufen gehen.</em><br><br>
+  <strong>Nebensatz-Wortstellung:</strong> <em>werden</em> geht ans Satzende:<br>
+  Ich weiss, dass er morgen <em style="color:#e8a840">kommen wird</em>.
+</div>
+
+<!-- ═══ WERDEN ÜBERSICHT ═══ -->
+<div class="werden-section">
+  <div class="werden-title">Die Funktionen von „werden"</div>
+
+  <div class="werden-grid">
+    <div class="wg-header">Funktion</div>
+    <div class="wg-header">Struktur</div>
+    <div class="wg-header">Beispiel</div>
+    <div class="wg-header">Partizip II</div>
+
+    <div class="wg-fn" style="color:#60d0e8">Vollverb</div>
+    <div class="wg-cell"><em class="w-cyan">wird</em> + Adjektiv/Nomen</div>
+    <div class="wg-cell">Das Klima <em class="w-cyan">wird</em> immer heisser.</div>
+    <div class="wg-cell"><em class="w-gold">geworden</em></div>
+
+    <div class="wg-fn" style="color:#e8a840">Futur I</div>
+    <div class="wg-cell"><em class="w-cyan">wird</em> + <em class="w-gold">Infinitiv</em></div>
+    <div class="wg-cell">Ich <em class="w-cyan">werde</em> morgen <em class="w-gold">kommen</em>.</div>
+    <div class="wg-cell">—</div>
+
+    <div class="wg-fn" style="color:#f08888">Passiv</div>
+    <div class="wg-cell"><em class="w-cyan">wird</em> + <em class="w-pink">Partizip II</em></div>
+    <div class="wg-cell">Das Haus <em class="w-cyan">wird</em> <em class="w-pink">gebaut</em>.</div>
+    <div class="wg-cell"><em class="w-gold">worden</em></div>
+
+    <div class="wg-fn" style="color:#c8a8ff">Konjunktiv II</div>
+    <div class="wg-cell"><em class="w-purp">würde</em> + <em class="w-gold">Infinitiv</em></div>
+    <div class="wg-cell">Ich <em class="w-purp">würde</em> gerne <em class="w-gold">reisen</em>.</div>
+    <div class="wg-cell">—</div>
+  </div>
+</div>
+</div>
+</body>
+</html>

@@ -119,89 +119,6 @@
 }
 /* ─── Guess Mode ─── */
 .fbtn.guess-active{background:#2a1848;border-color:#7a60c0;color:#c8a8ff}
-/* ─── Futur I ─── */
-.futur-grid {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 4px 16px;
-  font-size: 14px;
-  margin: 12px 0 16px;
-  max-width: 420px;
-}
-.futur-grid .fg-pron { color: #ababba; font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif; font-size: 13px; }
-.futur-grid .fg-form { color: #e0e0e4; }
-.futur-grid .fg-form em { color: #60d0e8; font-style: normal; font-weight: 600; }
-.futur-note {
-  background: #2e2e34;
-  border-left: 3px solid #60d0e8;
-  padding: 12px 16px;
-  border-radius: 6px;
-  margin: 12px 0;
-  font-size: 13px;
-  color: #c8c8d0;
-  line-height: 1.6;
-}
-.futur-note strong { color: #60d0e8; font-weight: 600; }
-.futur-ex {
-  margin: 6px 0;
-  padding-left: 12px;
-  border-left: 2px solid #3a3a40;
-  color: #c8c8d0;
-  font-size: 13px;
-  line-height: 1.7;
-}
-.futur-ex em { color: #e8a840; font-style: normal; }
-/* ─── werden Übersicht ─── */
-.werden-section {
-  margin-top: 28px;
-  padding: 20px;
-  background: #2e2e34;
-  border-radius: 8px;
-}
-.werden-title {
-  font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  color: #f0f0f4;
-  margin-bottom: 12px;
-}
-.werden-grid {
-  display: grid;
-  grid-template-columns: auto 1fr 1fr 1fr;
-  gap: 0;
-  font-size: 13px;
-  border-radius: 6px;
-  overflow: hidden;
-}
-.werden-grid .wg-header {
-  background: #3a3a42;
-  padding: 8px 12px;
-  font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;
-  font-weight: 600;
-  font-size: 11px;
-  color: #c8c8d0;
-  text-align: center;
-}
-.werden-grid .wg-fn {
-  background: #333338;
-  padding: 10px 12px;
-  font-weight: 600;
-  color: #e0e0e4;
-  border-bottom: 1px solid #3a3a40;
-  display: flex;
-  align-items: center;
-}
-.werden-grid .wg-cell {
-  padding: 10px 12px;
-  color: #c8c8d0;
-  border-bottom: 1px solid #3a3a40;
-  line-height: 1.5;
-}
-.werden-grid .wg-cell em { font-style: normal; font-weight: 700; }
-.werden-grid .wg-cell .w-cyan { color: #60d0e8; }
-.werden-grid .wg-cell .w-gold { color: #e8a840; }
-.werden-grid .wg-cell .w-pink { color: #f08888; }
-.werden-grid .wg-cell .w-purp { color: #c8a8ff; }
 /* ─── Faustregeln, example, regional aux ─── */
 details.faust{margin:0 0 16px}
 details.faust summary{cursor:pointer;font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;font-size:13px;font-weight:700;color:#e0e0e4;list-style-position:inside}
@@ -306,6 +223,19 @@ details.faust[open] summary{color:#c8a8ff;margin-bottom:8px}
     <span class="v-hat">hat</span> (D) / <span class="v-ist">ist</span> (CH) = regional verschieden ·
     Muster wie <span style="font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;color:#c8a8ff">ei→ie→ie</span> zeigen den Vokalwechsel: Infinitiv → Präteritum → Partizip
   </div>
+  <!-- ═══ PERFEKT ═══ -->
+  <div class="sec-label" style="margin-top:32px"><span class="dot" style="background:#70d890"></span> Perfekt</div>
+
+  <div class="notes">
+    <div class="notes-title">haben / sein + Partizip II</div>
+    <strong>haben</strong> oder <strong>sein</strong> (konjugiert, an 2. Stelle) + <span class="v-part">Partizip II</span> (am Satzende):<br>
+    <span style="font-size:13px;color:#e0e0e4;margin-left:16px"><em>Ich <span style="color:#e8a840;font-weight:700">habe</span> gestern Pizza <span class="v-part">gegessen</span>.</em></span><br>
+    <span style="font-size:13px;color:#e0e0e4;margin-left:16px"><em>Wir <span style="color:#60d0e8;font-weight:700">sind</span> nach Bern <span class="v-part">gefahren</span>.</em></span><br><br>
+    <strong>Nebensatz:</strong> das konjugierte Hilfsverb geht ans Ende:<br>
+    <span style="font-size:13px;color:#e0e0e4;margin-left:16px"><em>Ich weiss, dass er Pizza <span class="v-part">gegessen</span> <span style="color:#e8a840;font-weight:700">hat</span>.</em></span><br><br>
+    <strong>Wann Perfekt?</strong> Im gesprochenen Deutsch, in der Schweiz auch beim Erzählen, statt Präteritum. Das Präteritum steht vor allem in Texten. Bei <em>sein, haben</em> und den Modalverben auch gesprochen: <em>ich war, ich hatte, ich wollte</em>.
+  </div>
+
   <div class="notes">
     <div class="notes-title">💡 haben oder sein?</div>
     <strong>sein</strong> bei: Bewegung mit Richtung (gehen, fahren, fliegen, kommen, laufen …), Zustandsänderung (werden, sterben, wachsen, einschlafen …), und die Ausnahmen <em>sein</em>, <em>bleiben</em>, <em>passieren</em>, <em>gelingen</em>, <em>geschehen</em>.<br>
@@ -313,145 +243,6 @@ details.faust[open] summary{color:#c8a8ff;margin-bottom:8px}
     <strong>haben</strong> bei: allem anderen.
   </div>
 
-  <!-- ═══ PLUSQUAMPERFEKT ═══ -->
-  <div class="sec-label" style="margin-top:32px"><span class="dot" style="background:#e8a840"></span> Plusquamperfekt</div>
-
-  <div class="notes" style="margin-bottom:16px">
-    Beschreibt eine Handlung, die <strong>vor</strong> einer anderen vergangenen Handlung passiert ist (Vorzeitigkeit).
-  </div>
-
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px">
-    <table class="vtable" style="border-collapse:collapse">
-      <thead><tr><th></th><th style="color:#e8a840">haben</th></tr></thead>
-      <tbody>
-        <tr><td style="font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;font-size:13px;font-weight:700;color:#8888a0">ich</td><td style="font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;font-size:13px;color:#e0e0e4"><span style="color:#e8a840;font-weight:700">hatte</span> + Partizip II</td></tr>
-        <tr><td style="font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;font-size:13px;font-weight:700;color:#8888a0">du</td><td style="font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;font-size:13px;color:#e0e0e4"><span style="color:#e8a840;font-weight:700">hattest</span> + Partizip II</td></tr>
-        <tr><td style="font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;font-size:13px;font-weight:700;color:#8888a0">er/sie/es</td><td style="font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;font-size:13px;color:#e0e0e4"><span style="color:#e8a840;font-weight:700">hatte</span> + Partizip II</td></tr>
-        <tr><td style="font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;font-size:13px;font-weight:700;color:#8888a0">wir</td><td style="font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;font-size:13px;color:#e0e0e4"><span style="color:#e8a840;font-weight:700">hatten</span> + Partizip II</td></tr>
-        <tr><td style="font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;font-size:13px;font-weight:700;color:#8888a0">ihr</td><td style="font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;font-size:13px;color:#e0e0e4"><span style="color:#e8a840;font-weight:700">hattet</span> + Partizip II</td></tr>
-        <tr><td style="font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;font-size:13px;font-weight:700;color:#8888a0">sie/Sie</td><td style="font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;font-size:13px;color:#e0e0e4"><span style="color:#e8a840;font-weight:700">hatten</span> + Partizip II</td></tr>
-      </tbody>
-    </table>
-    <table class="vtable" style="border-collapse:collapse">
-      <thead><tr><th></th><th style="color:#60d0e8">sein</th></tr></thead>
-      <tbody>
-        <tr><td style="font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;font-size:13px;font-weight:700;color:#8888a0">ich</td><td style="font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;font-size:13px;color:#e0e0e4"><span style="color:#60d0e8;font-weight:700">war</span> + Partizip II</td></tr>
-        <tr><td style="font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;font-size:13px;font-weight:700;color:#8888a0">du</td><td style="font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;font-size:13px;color:#e0e0e4"><span style="color:#60d0e8;font-weight:700">warst</span> + Partizip II</td></tr>
-        <tr><td style="font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;font-size:13px;font-weight:700;color:#8888a0">er/sie/es</td><td style="font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;font-size:13px;color:#e0e0e4"><span style="color:#60d0e8;font-weight:700">war</span> + Partizip II</td></tr>
-        <tr><td style="font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;font-size:13px;font-weight:700;color:#8888a0">wir</td><td style="font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;font-size:13px;color:#e0e0e4"><span style="color:#60d0e8;font-weight:700">waren</span> + Partizip II</td></tr>
-        <tr><td style="font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;font-size:13px;font-weight:700;color:#8888a0">ihr</td><td style="font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;font-size:13px;color:#e0e0e4"><span style="color:#60d0e8;font-weight:700">wart</span> + Partizip II</td></tr>
-        <tr><td style="font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;font-size:13px;font-weight:700;color:#8888a0">sie/Sie</td><td style="font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;font-size:13px;color:#e0e0e4"><span style="color:#60d0e8;font-weight:700">waren</span> + Partizip II</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="notes" style="padding:12px 18px;margin-bottom:12px">
-    <div style="font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;font-size:12px;color:#8888a0;margin-bottom:8px;letter-spacing:1px">ZEITSTRAHL</div>
-    <div style="font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;font-size:13px;color:#e0e0e4;line-height:1.8">
-      <span style="color:#8888a0">──────────────────────────────────────────►</span> <span style="color:#ababba">Zeit</span><br>
-      &nbsp;&nbsp;&nbsp;<span style="color:#e8a840">▲</span> <span style="color:#e8a840">PQP</span> <span style="color:#ababba">(zuerst)</span>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#c8a8ff">▲</span> <span style="color:#c8a8ff">Prät./Perfekt</span> <span style="color:#ababba">(danach)</span>
-    </div>
-  </div>
-
-  <div class="notes" style="padding:0;overflow:hidden;margin-bottom:12px">
-    <table class="vtable" style="border-collapse:collapse;margin:0">
-      <thead><tr><th style="color:#c8a8ff">Präteritum / Perfekt</th><th style="color:#e8a840">Plusquamperfekt (frühere Handlung)</th></tr></thead>
-      <tbody>
-        <tr>
-          <td style="font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;font-size:13px;color:#e0e0e4">Ich kam um 07:01 Uhr zum Bahnhof.</td>
-          <td style="font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;font-size:13px;color:#e0e0e4">Der Zug <span style="color:#e8a840;font-weight:700">war</span> schon <span style="color:#70d890;font-weight:700">abgefahren</span>.</td>
-        </tr>
-        <tr>
-          <td style="font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;font-size:13px;color:#e0e0e4">Ich fand meine Geldbörse nicht.</td>
-          <td style="font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;font-size:13px;color:#e0e0e4">Ich <span style="color:#e8a840;font-weight:700">hatte</span> sie wahrscheinlich im Bus <span style="color:#70d890;font-weight:700">verloren</span>.</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="notes">
-    <div class="notes-title">🔗 Wichtige Konnektoren</div>
-    <strong style="color:#60d0e8">nachdem</strong> → löst immer einen Tempuswechsel aus:<br>
-    <span style="font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;font-size:13px;color:#e0e0e4;margin-left:16px"><em>Nachdem er die Zähne <span style="color:#e8a840;font-weight:700">geputzt hatte</span>, <span style="color:#c8a8ff;font-weight:700">ging</span> er ins Bett.</em></span><br><br>
-    <strong style="color:#60d0e8">als</strong> → PQP kann in beiden Teilsätzen stehen:<br>
-    <span style="font-family:Calibri,Carlito,'Segoe UI',Roboto,sans-serif;font-size:13px;color:#e0e0e4;margin-left:16px"><em>Als ich den Brief <span style="color:#e8a840;font-weight:700">gelesen hatte</span>, <span style="color:#c8a8ff;font-weight:700">habe</span> ich angefangen zu lachen.</em></span>
-  </div>
-</div>
-
-<!-- ═══ FUTUR I ═══ -->
-<div class="sec-label" style="margin-top:32px"><span class="dot" style="background:#60d0e8"></span> Futur I</div>
-
-<div style="color:#ababba;font-size:13px;margin-bottom:8px">
-  Bildung: <strong style="color:#60d0e8">werden</strong> <span style="color:#ababba">(konjugiert)</span> + <strong style="color:#e8a840">Infinitiv</strong> <span style="color:#ababba">(am Satzende)</span>
-</div>
-
-<div class="futur-grid">
-  <span class="fg-pron">ich</span>     <span class="fg-form"><em>werde</em> … Infinitiv</span>
-  <span class="fg-pron">du</span>      <span class="fg-form"><em>wirst</em> … Infinitiv</span>
-  <span class="fg-pron">er/sie/es</span> <span class="fg-form"><em>wird</em> … Infinitiv</span>
-  <span class="fg-pron">wir</span>     <span class="fg-form"><em>werden</em> … Infinitiv</span>
-  <span class="fg-pron">ihr</span>     <span class="fg-form"><em>werdet</em> … Infinitiv</span>
-  <span class="fg-pron">sie/Sie</span> <span class="fg-form"><em>werden</em> … Infinitiv</span>
-</div>
-
-<div style="color:#c8a8ff;font-size:13px;font-weight:600;margin:16px 0 6px">Verwendung</div>
-
-<div class="futur-ex">
-  <strong style="color:#60d0e8;font-size:12px">Zukunft</strong><br>
-  Morgen <em>werde</em> ich einkaufen <em>gehen</em>.<br>
-  Nächstes Jahr <em>werden</em> wir nach Japan <em>reisen</em>.
-</div>
-
-<div class="futur-ex">
-  <strong style="color:#60d0e8;font-size:12px">Vermutung</strong><br>
-  Er <em>wird</em> wohl krank <em>sein</em>.<br>
-  Sie <em>wird</em> wahrscheinlich schon zu Hause <em>sein</em>.
-</div>
-
-<div class="futur-ex">
-  <strong style="color:#60d0e8;font-size:12px">Versprechen / Vorsatz</strong><br>
-  Ich <em>werde</em> das nie <em>vergessen</em>.<br>
-  Wir <em>werden</em> unser Bestes <em>tun</em>.
-</div>
-
-<div class="futur-note">
-  <strong>Gesprochenes Deutsch:</strong> Oft wird <strong>Präsens + Zeitangabe</strong> statt Futur I benutzt:<br>
-  <em style="color:#e8a840">Morgen gehe ich einkaufen.</em> = <em style="color:#e8a840">Morgen werde ich einkaufen gehen.</em><br><br>
-  <strong>Nebensatz-Wortstellung:</strong> <em>werden</em> geht ans Satzende:<br>
-  Ich weiss, dass er morgen <em style="color:#e8a840">kommen wird</em>.
-</div>
-
-<!-- ═══ WERDEN ÜBERSICHT ═══ -->
-<div class="werden-section">
-  <div class="werden-title">Die Funktionen von „werden"</div>
-
-  <div class="werden-grid">
-    <div class="wg-header">Funktion</div>
-    <div class="wg-header">Struktur</div>
-    <div class="wg-header">Beispiel</div>
-    <div class="wg-header">Partizip II</div>
-
-    <div class="wg-fn" style="color:#60d0e8">Vollverb</div>
-    <div class="wg-cell"><em class="w-cyan">wird</em> + Adjektiv/Nomen</div>
-    <div class="wg-cell">Das Klima <em class="w-cyan">wird</em> immer heisser.</div>
-    <div class="wg-cell"><em class="w-gold">geworden</em></div>
-
-    <div class="wg-fn" style="color:#e8a840">Futur I</div>
-    <div class="wg-cell"><em class="w-cyan">wird</em> + <em class="w-gold">Infinitiv</em></div>
-    <div class="wg-cell">Ich <em class="w-cyan">werde</em> morgen <em class="w-gold">kommen</em>.</div>
-    <div class="wg-cell">—</div>
-
-    <div class="wg-fn" style="color:#f08888">Passiv</div>
-    <div class="wg-cell"><em class="w-cyan">wird</em> + <em class="w-pink">Partizip II</em></div>
-    <div class="wg-cell">Das Haus <em class="w-cyan">wird</em> <em class="w-pink">gebaut</em>.</div>
-    <div class="wg-cell"><em class="w-gold">worden</em></div>
-
-    <div class="wg-fn" style="color:#c8a8ff">Konjunktiv II</div>
-    <div class="wg-cell"><em class="w-purp">würde</em> + <em class="w-gold">Infinitiv</em></div>
-    <div class="wg-cell">Ich <em class="w-purp">würde</em> gerne <em class="w-gold">reisen</em>.</div>
-    <div class="wg-cell">—</div>
-  </div>
 </div>
 
 <script src="js/common.js"></script>
