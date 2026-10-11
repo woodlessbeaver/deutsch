@@ -8,6 +8,8 @@ body {
   color: #e0e0e4;
   min-height: 100vh;
 }
+/* Form controls ignore the body font by default */
+button, input, select, textarea, summary { font-family: inherit; }
 
 /* ─── Guess Mode — Card variant ─── */
 .guess-hidden {
