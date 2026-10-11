@@ -11,30 +11,6 @@ body {
 /* Form controls ignore the body font by default */
 button, input, select, textarea, summary { font-family: inherit; }
 
-/* ─── Home button (back to index; needed in iOS home-screen web app mode) ─── */
-/* Sits in the top-left corner of the page header, styled like the Raten button.
-   :where() keeps specificity 0 so a page's own sticky/position rule on the header wins. */
-:where(header, .top-bar) { position: relative; }
-.home-btn {
-  position: absolute;
-  top: 10px;
-  left: 12px;
-  z-index: 2;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.1;
-  padding: 4px 12px;
-  border-radius: 8px;
-  background: #343438;
-  color: #8888a0;
-  border: 1px solid #44444c;
-  text-decoration: none;
-  transition: all .15s;
-  -webkit-tap-highlight-color: transparent;
-}
-.home-btn:hover, .home-btn:active { background: #2a1848; color: #c8a8ff; border-color: #7a60c0; }
-@media print { .home-btn { display: none; } }
-
 /* ─── Guess Mode — Card variant ─── */
 .guess-hidden {
   background: #343438 !important;
